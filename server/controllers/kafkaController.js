@@ -8,29 +8,28 @@ const { Kafka } = require('kafkajs');
 // });
 const kafka = new Kafka({
   clientId: 'my-app',
-  brokers: async () => {
-    const clusterResponse = await axios
-      .get('https://kafka-rest:8082/v3/clusters', {
-        headers: { 'Content-Type': 'application/vnd.api+json' },
-        mode: 'cors',
-      })
-      .then((response) => response.json());
-    const clusterUrl = clusterResponse.data[0].links.self;
+  // brokers: async () => {
+  //   const clusterResponse = await axios
+  //     .get('https://kafka-rest:8082/v3/clusters', {
+  //       headers: { 'Content-Type': 'application/vnd.api+json' },
+  //     })
+  //     .then((response) => response.json());
+  //   const clusterUrl = clusterResponse.data[0].links.self;
 
-    const brokersResponse = await axios
-      .get(`${clusterUrl}/brokers`, {
-        headers: { 'Content-Type': 'application/vnd.api+json' },
-        mode: 'cors',
-      })
-      .then((response) => response.json());
+  //   const brokersResponse = await axios
+  //     .get(`${clusterUrl}/brokers`, {
+  //       headers: { 'Content-Type': 'application/vnd.api+json' },
+  //     })
+  //     .then((response) => response.json());
 
-    const brokers = brokersResponse.data.map((broker) => {
-      const { host, port } = broker.attributes;
-      return `${host}:${port}`;
-    });
+  //   const brokers = brokersResponse.data.map((broker) => {
+  //     const { host, port } = broker.attributes;
+  //     return `${host}:${port}`;
+  //   });
 
-    return brokers;
-  },
+  //   return brokers;
+  // },
+  brokers: ['jonathans-imac:9092'],
 });
 
 const kafkaController = {};

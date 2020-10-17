@@ -102,3 +102,9 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Files for building Electron app
+out/
+
+# Env
+.env

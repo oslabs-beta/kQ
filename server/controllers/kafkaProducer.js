@@ -70,67 +70,69 @@
 // module.exports = kafkaController;
 
 const { Kafka } = require('kafkajs');
+const msg = process.argv[3];
+// const kafkaController = {};
+const kafkaProducer = {};
 
-const kafkaController = {};
-
-kafkaController.startKafka = async (req, res, next) => {
-  try {
-    const kafka = new Kafka({
-      clientId: 'myapp',
-      brokers: ['Weis-NB.local:9092'],
-    });
-
-    const admin = kafka.admin();
-    console.log('connecting');
-    await admin.connect();
-    console.log('connected');
-    await admin.createTopics({
-      topics: [
-        {
-          topic: 'Users',
-          numPartitions: 2,
-        },
-      ],
-    });
-    console.log('created successfully');
-    // console.log(kafka);
-    await admin.disconnect();
-  } catch (ex) {
-    console.error(`Something bad happened ${ex}`);
-  } finally {
-    next();
-  }
-};
-
-// kafkaController.produce = async (req, res, next) => {
+// kafkaController.startKafka = async (req, res, next) => {
 //   try {
 //     const kafka = new Kafka({
 //       clientId: 'myapp',
 //       brokers: ['Weis-NB.local:9092'],
 //     });
 
-//     const producer = kafka.producer();
-//     console.log('Connecting');
-//     await producer.connect();
-//     console.log('Connected');
-//     const result = await producer.send({
-//       topic: 'Users',
-//       messages: [
+//     const admin = kafka.admin();
+//     console.log('connecting');
+//     await admin.connect();
+//     console.log('connected');
+//     await admin.createTopics({
+//       topics: [
 //         {
-//           value: 'msg',
-//           partition: 0,
+//           topic: 'Users',
+//           numPartitions: 2,
 //         },
 //       ],
 //     });
-
-//     console.log(`send successfully ${JSON.stringify(result)}`);
-//     await producer.disconnect();
+//     console.log('created successfully');
+//     // console.log(kafka);
+//     await admin.disconnect();
 //   } catch (ex) {
 //     console.error(`Something bad happened ${ex}`);
 //   } finally {
 //     next();
 //   }
 // };
+
+kafkaProducer.produce = async (req, res, next) => {
+  try {
+    const kafka = new Kafka({
+      clientId: 'myapp',
+      brokers: ['Weis-NB.local:9092'],
+    });
+
+    const producer = kafka.producer();
+    console.log('Connecting');
+    await producer.connect();
+    console.log('Connected');
+    const partition = msg[0] < 'N' ? 0 : 1;
+    const result = await producer.send({
+      topic: 'Users',
+      messages: [
+        {
+          value: msg,
+          partition: partition,
+        },
+      ],
+    });
+
+    console.log(`send successfully ${JSON.stringify(result)}`);
+    await producer.disconnect();
+  } catch (ex) {
+    console.error(`Something bad happened ${ex}`);
+  } finally {
+    next();
+  }
+};
 
 // kafkaController.consume = async (req, res, next) => {
 //   try {
@@ -167,4 +169,5 @@ run();
 
 async function run() {}
 
-module.exports = kafkaController;
+// module.exports = kafkaController;
+module.exports = kafkaProducer;

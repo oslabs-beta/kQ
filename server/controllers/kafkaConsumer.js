@@ -71,36 +71,37 @@
 
 const { Kafka } = require('kafkajs');
 
-const kafkaController = {};
+// const kafkaController = {};
+const kafkaConsumer = {};
 
-kafkaController.startKafka = async (req, res, next) => {
-  try {
-    const kafka = new Kafka({
-      clientId: 'myapp',
-      brokers: ['Weis-NB.local:9092'],
-    });
+// kafkaController.startKafka = async (req, res, next) => {
+//   try {
+//     const kafka = new Kafka({
+//       clientId: 'myapp',
+//       brokers: ['Weis-NB.local:9092'],
+//     });
 
-    const admin = kafka.admin();
-    console.log('connecting');
-    await admin.connect();
-    console.log('connected');
-    await admin.createTopics({
-      topics: [
-        {
-          topic: 'Users',
-          numPartitions: 2,
-        },
-      ],
-    });
-    console.log('created successfully');
-    // console.log(kafka);
-    await admin.disconnect();
-  } catch (ex) {
-    console.error(`Something bad happened ${ex}`);
-  } finally {
-    next();
-  }
-};
+//     const admin = kafka.admin();
+//     console.log('connecting');
+//     await admin.connect();
+//     console.log('connected');
+//     await admin.createTopics({
+//       topics: [
+//         {
+//           topic: 'Users',
+//           numPartitions: 2,
+//         },
+//       ],
+//     });
+//     console.log('created successfully');
+//     // console.log(kafka);
+//     await admin.disconnect();
+//   } catch (ex) {
+//     console.error(`Something bad happened ${ex}`);
+//   } finally {
+//     next();
+//   }
+// };
 
 // kafkaController.produce = async (req, res, next) => {
 //   try {
@@ -132,39 +133,40 @@ kafkaController.startKafka = async (req, res, next) => {
 //   }
 // };
 
-// kafkaController.consume = async (req, res, next) => {
-//   try {
-//     const kafka = new Kafka({
-//       clientId: 'myapp',
-//       brokers: ['Weis-NB.local:9092'],
-//     });
+kafkaConsumer.consume = async (req, res, next) => {
+  try {
+    const kafka = new Kafka({
+      clientId: 'myapp',
+      brokers: ['Weis-NB.local:9092'],
+    });
 
-//     const consumer = kafka.consumer({
-//       groupId: 'test',
-//     });
-//     console.log('Connecting');
-//     await consumer.connect();
-//     console.log('Connected');
-//     consumer.subscribe({
-//       topic: 'Users',
-//       fromBeginning: true,
-//     });
-//     await consumer.run({
-//       eachMessage: async (result) => {
-//         console.log(
-//           `received msg from ${result.message.value} on partition ${result.partition}`
-//         );
-//       },
-//     });
-//   } catch (ex) {
-//     console.error(`Something bad happened ${ex}`);
-//   } finally {
-//     next();
-//   }
-// };
+    const consumer = kafka.consumer({
+      groupId: 'test',
+    });
+    console.log('Connecting');
+    await consumer.connect();
+    console.log('Connected');
+    consumer.subscribe({
+      topic: 'Users',
+      fromBeginning: true,
+    });
+    await consumer.run({
+      eachMessage: async (result) => {
+        console.log(
+          `received msg from ${result.message.value} on partition ${result.partition}`
+        );
+      },
+    });
+  } catch (ex) {
+    console.error(`Something bad happened ${ex}`);
+  } finally {
+    next();
+  }
+};
 
 run();
 
 async function run() {}
 
-module.exports = kafkaController;
+// module.exports = kafkaController;
+module.exports = kafkaConsumer;

@@ -21,8 +21,8 @@ async function run() {
     });
     console.log('created successfully!');
     await admin.disconnect();
-  } catch (ex) {
-    console.error(`something bad happened ${ex}`);
+  } catch (err) {
+    console.error(`ERROR: ${err}`);
   } finally {
     process.exit(0);
   }

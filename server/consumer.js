@@ -27,8 +27,8 @@ async function run() {
         );
       },
     });
-  } catch (ex) {
-    console.error(`something bad happened ${ex}`);
+  } catch (err) {
+    console.error(`something bad happened ${err}`);
   } finally {
   }
 }

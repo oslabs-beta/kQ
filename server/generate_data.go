@@ -8,47 +8,49 @@ import (
 	"encoding/json"
 	"bytes"
 	"math/rand"
+	"strings"
+	// "strconv"
 	// "math"
 )
 
-type JSONresponse struct {
-	Testing string `json:"testing"` 
-}
+// type JSONresponse struct {
+// 	Testing string `json:"testing"` 
+// }
 
 func main() {
-	// router := gin.Default()
-	// router.GET("/", saveData)
-	// router.Run(":5000")
+	NUM_STRINGS := 100
 
-	NUM_ARRAYS := 100
-
-	// Generate a bunch of arrays of random numbers and send them to our Express server
-	for i := 0; i < NUM_ARRAYS; i++ {
-		data := generateData() // Generate an array of 10 random integers
+	// Generate a bunch of strings of random numbers and send them to our Express server
+	for i := 0; i < NUM_STRINGS; i++ {
+		msg := generateData() // Generate a random string
 		
-		// Put this array into a map before we send it
-		mapData := map[string][]int{
-			"data": data}
+		// Put this string into a map before we send it
+		mapData := map[string]string{
+			"msg": msg}
 
 		// Make a POST request to our Express server
 		saveData(mapData)
 	}
 }
 
-func generateData() []int{
+func generateData() string{
 	/*
-	This function returns an array of 10 integers in the range [0, 99] (note that this is inclusive)
+	This function returns a random string
 	*/
 
-	data := make([]int, 0)
-	for i := 0; i < 10; i++ {
-		data = append(data, rand.Intn(100))
+	data := make([]string, 0)
+	stringSize := rand.Intn(10) + 5 // Make sure the string has at least 5 characters
+
+	for i := 0; i < stringSize; i++ {
+		num := rand.Intn(26) + 97 // Get an int representing a character in the range ["a", "z"]
+		s := string(num) // Convert this int to a string
+		data = append(data, s) // Append the string to data
 	}
-	return data
+	return strings.Join(data, "") // Join our string array together
 }
 
 // func saveData(c *gin.Context) {
-func saveData(data map[string][]int) {
+func saveData(data map[string]string) {
 	/*
 	This function takes a map and sends it as a POST request to our Express server
 	*/
@@ -61,7 +63,7 @@ func saveData(data map[string][]int) {
 	}
 
 	// Send a POST request to port 3000
-	url := "http://localhost:3000/"
+	url := "http://localhost:3000/api/send"
 	resp, reqError := http.Post(url, "application/json", bytes.NewBuffer(requestBody))
 
 	if reqError != nil {

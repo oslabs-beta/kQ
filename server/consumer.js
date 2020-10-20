@@ -1,12 +1,12 @@
 const { Kafka } = require('kafkajs');
-const msg = process.argv[2];
+// const msg = process.argv[2];
 
 run();
 async function run() {
   try {
     const kafka = new Kafka({
       clientId: 'myapp',
-      brokers: ['Weis-NB.local:9092'],
+      brokers: ['Shreshths-MacBook-Pro-2.local:9092'],
     });
     const consumer = kafka.consumer({
       groupId: 'test',
@@ -23,12 +23,12 @@ async function run() {
     await consumer.run({
       eachMessage: async (result) => {
         console.log(
-          `RVD Msg ${result.message.value} on partition ${result.partition}`
+          `MSG: ${result.message.value} PARTITION: ${result.partition}`
         );
       },
     });
   } catch (err) {
-    console.error(`something bad happened ${err}`);
+    console.log(`ERROR: ${err}`);
   } finally {
   }
 }

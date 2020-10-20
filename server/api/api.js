@@ -2,13 +2,9 @@ const express = require('express');
 
 const router = express.Router();
 
-const {
-  startKafka,
-  produce,
-  consume,
-} = require('../controllers/kafkaController');
+const { produceMessage, subscribe } = require('../controllers/kafkaController');
 
-router.get('/', startKafka, produce, consume, (req, res) => {
+router.post('/send', produceMessage, (req, res) => {
   res.sendStatus(200);
 });
 

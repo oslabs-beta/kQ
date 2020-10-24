@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Dashboard from './Dashboard';
+import Homepage from './Homepage';
 
 const api = {
   key: '9cf4213d3cc82809c8344f68d1ea107f',

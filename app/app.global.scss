@@ -4,4 +4,76 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  // background-color: cadetblue;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    'title title title'
+    'db db db';
+  border: teal solid 20px;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: cornflowerblue;
+  grid-area: title;
+  border: cyan solid 1rem;
+  color: white;
+}
+
+.dashTitle {
+  background-color: orange;
+  border: 10px solid blueviolet;
+}
+
+.dashboard {
+  width: 100%;
+  display: flex;
+  // flex: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  grid-area: db;
+  background-color: cornflowerblue;
+  border: orange solid 10px;
+}
+
+.dashboard-container {
+  width: 100%;
+}
+
+.dashForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.system-data-container {
+  display: flex;
+  align-items: center;
+}
+
+.system-data {
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  background-color: chartreuse;
+  border: red solid 1rem;
+}
+
+.graph {
+  border: 10 px solid black;
+  background-color: darkkhaki;
+}
+
+.stopLight {
+  border: 10 px solid black;
+  background-color: forestgreen;
 }

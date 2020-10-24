@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Dashboard from './Dashboard';
+import Homepage from './Homepage';
 
 /* eslint-disable */
 // const api = {

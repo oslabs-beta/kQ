@@ -11,13 +11,14 @@ import Homepage from './Homepage';
 class App extends Component {
   render() {
     return (
-      <div className ="app">
-        <div className="title">
+      <div className="app">
+        {/* <div className="title">
           <h1>kafkaQ</h1>
         </div>
         <div className="dashboard-container">
           <Dashboard />
-        </div>
+        </div> */}
+        hi
       </div>
     );
   }

@@ -35,7 +35,8 @@
     "test-e2e": "node -r @babel/register ./internals/scripts/CheckBuildsExist.js && cross-env NODE_ENV=test testcafe electron:./app ./test/e2e/HomePage.e2e.ts",
     "test-e2e-live": "node -r @babel/register ./internals/scripts/CheckBuildsExist.js && cross-env NODE_ENV=test testcafe --live electron:./app ./test/e2e/HomePage.e2e.ts",
     "test-watch": "yarn test --watch",
-    "server": "nodemon kafkaApplicationSimulator/kafkaSimulatorServer.js"
+    "server": "nodemon kafkaApplicationSimulator/kafkaSimulatorServer.js",
+    "app-server": "nodemon server/server.js"
   },
   "lint-staged": {
     "{*.json,.{babelrc,eslintrc,prettierrc,stylelintrc}}": [
@@ -277,6 +278,7 @@
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "regenerator-runtime": "^0.13.5",
+    "socket.io": "^2.3.0",
     "source-map-support": "^0.5.19"
   },
   "devEngines": {

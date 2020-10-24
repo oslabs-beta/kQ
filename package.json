@@ -35,7 +35,7 @@
     "test-e2e": "node -r @babel/register ./internals/scripts/CheckBuildsExist.js && cross-env NODE_ENV=test testcafe electron:./app ./test/e2e/HomePage.e2e.ts",
     "test-e2e-live": "node -r @babel/register ./internals/scripts/CheckBuildsExist.js && cross-env NODE_ENV=test testcafe --live electron:./app ./test/e2e/HomePage.e2e.ts",
     "test-watch": "yarn test --watch",
-    "server": "nodemon kafkaApplicationSimulator/kafkaSimulatorServer.js"
+    "server": "node kafkaApplicationSimulator/kafkaSimulatorServer.js"
   },
   "lint-staged": {
     "{*.json,.{babelrc,eslintrc,prettierrc,stylelintrc}}": [
@@ -286,6 +286,7 @@
     "express": "^4.17.1",
     "history": "^4.7.2",
     "kafkajs": "^1.14.0",
+    "kafkaq-monitor": "file:kafkaq-monitor",
     "react": "^16.13.1",
     "react-dom": "^16.12.0",
     "react-hot-loader": "^4.12.21",

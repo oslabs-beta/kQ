@@ -285,6 +285,7 @@
     "electron-updater": "^4.3.4",
     "express": "^4.17.1",
     "history": "^4.7.2",
+    "kafka-node": "^5.0.0",
     "kafkajs": "^1.14.0",
     "kafkaq-monitor": "file:kafkaq-monitor",
     "react": "^16.13.1",

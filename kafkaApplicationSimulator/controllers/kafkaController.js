@@ -1,4 +1,5 @@
 const { Kafka } = require('kafkajs');
+const { trackProducer } = require('../../kafkaq-monitor/index.js')
 
 const kafkaController = {};
 
@@ -16,6 +17,8 @@ kafkaController.produceMessage = async (req, res, next) => {
 
     const { msg } = req.body;
     console.log(msg);
+
+    trackProducer(producer);
 
     const partition = msg[0].toLowerCase() < 'n' ? 0 : 1;
     const result = await producer.send({

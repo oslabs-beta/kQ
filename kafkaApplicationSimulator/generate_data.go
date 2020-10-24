@@ -62,8 +62,8 @@ func saveData(data map[string]string) {
 		fmt.Println(err)
 	}
 
-	// Send a POST request to port 3000
-	url := "http://localhost:3000/api/send"
+	// Send a POST request to port 4000
+	url := "http://localhost:4000/api/send"
 	resp, reqError := http.Post(url, "application/json", bytes.NewBuffer(requestBody))
 
 	if reqError != nil {

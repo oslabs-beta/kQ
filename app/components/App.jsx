@@ -12,13 +12,12 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        {/* <div className="title">
+        <div className="title">
           <h1>kafkaQ</h1>
         </div>
         <div className="dashboard-container">
           <Dashboard />
-        </div> */}
-        hi
+        </div>
       </div>
     );
   }

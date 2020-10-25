@@ -22,18 +22,16 @@ class Dashboard extends Component {
   // }
 
   componentDidMount() {
-    // alert('hi');
-    console.log('hey');
-    // const socket = io.connect('http://localhost:5000');
-    // alert('here');
+    const socket = io.connect('http://localhost:5000');
+    console.log('cnct');
 
-    // socket.on('message', (data) => {
-    //   alert(data.msg);
-    // });
+    socket.on('message', (data) => {
+      console.log(data.msg);
+    });
 
-    // socket.emit('message', {
-    //   msg: 'hi',
-    // });
+    socket.emit('message', {
+      msg: 'hi',
+    });
   }
 
   clickMe(e) {

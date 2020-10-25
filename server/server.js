@@ -12,8 +12,23 @@ const server = app.listen(PORT);
 const io = socket(server);
 
 const socketSend = (req, res) => {
-  console.log(`in here: ${Object.keys(req.body.data)}`);
-  io.sockets.emit('data', req.body.data);
+  /*
+  req.body.data looks like:
+  {
+    size: 129, 
+    duration: 3, 
+    sentAt: 1603588918552
+  }
+  */
+
+  const { data } = req.body;
+  const processedData = {
+    size: data.size,
+    duration: data.duration,
+    processingTimeInMilliseconds: Date.now() - data.sentAt,
+  };
+
+  io.sockets.emit('data', processedData);
   res.sendStatus(200);
 };
 

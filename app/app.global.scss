@@ -1,5 +1,19 @@
 @import '~bootstrap/scss/bootstrap';
 
+// Variables
+$primary: rgb(0, 195, 255);
+$secondary: #222;
+$white: rgb(240, 240, 240);
+$dark: rgb(36, 36, 36);
+
+// Similar to a "function", centers elements
+@mixin flexCenter() {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 * {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -8,23 +22,37 @@
 }
 
 .app {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: auto auto auto;
-  grid-template-areas:
-    'title title title'
-    'db db db';
-  border: teal solid 20px;
+  // display: grid;
+  // grid-template-columns: auto auto auto;
+  // grid-template-rows: auto auto auto;
+  // grid-template-areas:
+  //   'title title title'
+  //   'db db db';
+  // border: teal solid 20px;
 }
 
 .title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: cornflowerblue;
-  grid-area: title;
-  border: cyan solid 1rem;
-  color: white;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  @include flexCenter();
+  background-color: $dark;
+  // grid-area: title;
+  // border: cyan solid 1rem;
+
+  height: 40px;
+
+  h1 {
+    color: $primary;
+    font-size: 30px;
+  }
+
+  h2 {
+    position: absolute;
+    left: 0;
+
+    color: $white;
+  }
 }
 
 .dashTitle {

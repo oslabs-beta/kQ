@@ -12,7 +12,18 @@ class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: '',
+      dataSize: {
+        sum: 0,
+        numOfDataPoints: 0,
+        smallest: Number.POSITIVE_INFINITY,
+        largest: Number.NEGATIVE_INFINITY,
+      },
+      processingTimeInMilliseconds: {
+        sum: 0,
+        numOfDataPoints: 0,
+        smallest: Number.POSITIVE_INFINITY,
+        largest: Number.NEGATIVE_INFINITY,
+      },
     };
     this.clickMe = this.clickMe.bind(this);
   }
@@ -26,7 +37,31 @@ class Dashboard extends Component {
     console.log('cnct');
 
     socket.on('data', (data) => {
-      console.log(data);
+      const { dataSize, processingTimeInMilliseconds } = this.state;
+      console.log(this.state);
+      this.setState({
+        ...this.state,
+        dataSize: {
+          sum: dataSize.sum + data.size,
+          numOfDataPoints: dataSize.numOfDataPoints + 1,
+          smallest: Math.min(dataSize.smallest, data.size),
+          largest: Math.max(dataSize.largest, data.size),
+        },
+        processingTimeInMilliseconds: {
+          sum:
+            processingTimeInMilliseconds.sum +
+            data.processingTimeInMilliseconds,
+          numOfDataPoints: processingTimeInMilliseconds.numOfDataPoints + 1,
+          smallest: Math.min(
+            processingTimeInMilliseconds.smallest,
+            data.processingTimeInMilliseconds
+          ),
+          largest: Math.max(
+            processingTimeInMilliseconds.largest,
+            data.processingTimeInMilliseconds
+          ),
+        },
+      });
     });
 
     // socket.emit('message', {
@@ -71,9 +106,21 @@ class Dashboard extends Component {
           {/* should dynamically render number of SystemData boxes */}
         </div>
         <div className="system-data-container">
-          <SystemData className="item" />
-          <SystemData className="item" />
-          <SystemData className="item" />
+          <SystemData
+            className="item"
+            data={this.state.dataSize}
+            title={'Data Size'}
+          />
+          <SystemData
+            className="item"
+            data={this.state.dataSize}
+            title={'Data Size'}
+          />
+          <SystemData
+            className="item"
+            data={this.state.processingTimeInMilliseconds}
+            title={'Processing Time'}
+          />
         </div>
       </div>
     );

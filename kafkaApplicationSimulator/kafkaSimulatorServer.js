@@ -9,9 +9,4 @@ app.use(express.json());
 
 app.use('/api', api);
 
-app.get('/', (req, res) => {
-  printHello();
-  res.sendStatus(200);
-});
-
 app.listen(PORT);

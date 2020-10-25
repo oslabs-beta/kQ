@@ -25,13 +25,13 @@ class Dashboard extends Component {
     const socket = io.connect('http://localhost:5000');
     console.log('cnct');
 
-    socket.on('message', (data) => {
-      console.log(data.msg);
+    socket.on('data', (data) => {
+      console.log(data);
     });
 
-    socket.emit('message', {
-      msg: 'hi',
-    });
+    // socket.emit('message', {
+    //   msg: 'hi',
+    // });
   }
 
   clickMe(e) {

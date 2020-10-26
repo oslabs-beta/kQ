@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import SystemData from './SystemData';
 /* eslint-disable */
 
-const api = {
-  key: '9cf4213d3cc82809c8344f68d1ea107f',
-  base: 'https://api.openweathermap.org/data/2.5/',
-};
+// const api = {
+//   key: '9cf4213d3cc82809c8344f68d1ea107f',
+//   base: 'https://api.openweathermap.org/data/2.5/',
+// };
 
 class Dashboard extends Component {
   // state should probably go in this component
@@ -18,8 +18,8 @@ class Dashboard extends Component {
         smallest: Number.POSITIVE_INFINITY,
         largest: Number.NEGATIVE_INFINITY,
       },
-      apiName: {
-        name: '',
+      pendingDuration: {
+        time: 0,
       },
       processingTimeInMilliseconds: {
         sum: 0,
@@ -40,7 +40,11 @@ class Dashboard extends Component {
     console.log('cnct');
 
     socket.on('data', (data) => {
-      const { dataSize, apiName, processingTimeInMilliseconds } = this.state;
+      const {
+        dataSize,
+        pendingDuration,
+        processingTimeInMilliseconds,
+      } = this.state;
       console.log(this.state);
       this.setState({
         ...this.state,
@@ -50,8 +54,8 @@ class Dashboard extends Component {
           smallest: Math.min(dataSize.smallest, data.size),
           largest: Math.max(dataSize.largest, data.size),
         },
-        apiName: {
-          name: apiName.name,
+        pendingDuration: {
+          time: data.pendingDuration,
         },
         processingTimeInMilliseconds: {
           sum:
@@ -119,8 +123,8 @@ class Dashboard extends Component {
           />
           <SystemData
             className="item"
-            data={this.state.apiName}
-            title={'Api Name'}
+            data={this.state.pendingDuration}
+            title={'Pending Duration'}
           />
           <SystemData
             className="item"

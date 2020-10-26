@@ -7,9 +7,9 @@ const trackProducer = (producer) => {
   const { REQUEST } = producer.events;
   const sendListener = producer.on(REQUEST, (e) => {
     const url = 'http://localhost:5000/data';
-    const { size, apiName, sentAt } = e.payload;
-    const data = { size, apiName, sentAt };
-    console.log('this is the api name:', apiName);
+    const { size, pendingDuration, sentAt } = e.payload;
+    const data = { size, pendingDuration, sentAt };
+    console.log('pendingDuration:', pendingDuration);
     // console.log(`data: ${Object.keys(data)}`);
     axios.post(url, { data });
 

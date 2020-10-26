@@ -18,6 +18,9 @@ class Dashboard extends Component {
         smallest: Number.POSITIVE_INFINITY,
         largest: Number.NEGATIVE_INFINITY,
       },
+      apiName: {
+        name: '',
+      },
       processingTimeInMilliseconds: {
         sum: 0,
         numOfDataPoints: 0,
@@ -37,7 +40,7 @@ class Dashboard extends Component {
     console.log('cnct');
 
     socket.on('data', (data) => {
-      const { dataSize, processingTimeInMilliseconds } = this.state;
+      const { dataSize, apiName, processingTimeInMilliseconds } = this.state;
       console.log(this.state);
       this.setState({
         ...this.state,
@@ -46,6 +49,9 @@ class Dashboard extends Component {
           numOfDataPoints: dataSize.numOfDataPoints + 1,
           smallest: Math.min(dataSize.smallest, data.size),
           largest: Math.max(dataSize.largest, data.size),
+        },
+        apiName: {
+          name: apiName.name,
         },
         processingTimeInMilliseconds: {
           sum:
@@ -113,8 +119,8 @@ class Dashboard extends Component {
           />
           <SystemData
             className="item"
-            data={this.state.dataSize}
-            title={'Data Size'}
+            data={this.state.apiName}
+            title={'Api Name'}
           />
           <SystemData
             className="item"

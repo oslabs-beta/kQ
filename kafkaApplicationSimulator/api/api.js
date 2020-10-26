@@ -2,7 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 
-const { produceMessage, subscribe } = require('../controllers/kafkaController');
+const { produceMessage } = require('../controllers/kafkaController');
 
 router.post('/send', produceMessage, (req, res) => {
   res.sendStatus(200);

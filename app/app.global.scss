@@ -91,7 +91,6 @@ $dark: rgb(36, 36, 36);
 .system-data-container {
   display: flex;
   align-items: center;
-  padding: 30px;
 }
 
 .system-data {
@@ -100,18 +99,15 @@ $dark: rgb(36, 36, 36);
   align-items: flex-start;
 
   height: 400px;
-  width: 300px;
+  width: 315px;
 
+  margin: 10px;
   padding: 10px 20px;
 
   background-color: $dark;
 
   border: 1px solid $dark;
   border-radius: 15px;
-}
-
-.system-data {
-  margin: 5px;
 }
 
 .metrics {

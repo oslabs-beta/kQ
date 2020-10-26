@@ -35,30 +35,29 @@
 
 const kafka = require('kafka-node');
 
-const kafkaController = {};
-
-kafkaController.consumer = async (req, res, next) => {
+run();
+async function run() {
   try {
     const Consumer = kafka.Consumer;
     const client = new kafka.KafkaClient({ kafkaHost: 'Weis-NB.local:9092' });
 
-    const partition = msg[0].toLowerCase() < 'n' ? 0 : 1;
     const consumer = new Consumer(
       client,
       [
         {
-          topic: 'Users',
-          offset: 0,
-          partition: partition,
+          topic: 'Users-1',
+          partitions: 0,
         },
       ],
       {
         autoCommit: false,
+        fetchMaxBytes: 1024 * 1024,
       }
     );
-    // async?
+
+    // await?
     consumer.on('message', function (message) {
-      console.log(`this is the consumer message ${message}`);
+      console.log(`consumer received message ${JSON.stringify(message)}`);
     });
 
     consumer.on('error', function (err) {
@@ -67,4 +66,4 @@ kafkaController.consumer = async (req, res, next) => {
   } catch (err) {
     console.log(err);
   }
-};
+}

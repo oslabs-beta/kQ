@@ -99,7 +99,7 @@ $dark: rgb(36, 36, 36);
   justify-content: normal;
   align-items: flex-start;
 
-  height: 400px;
+  height: 550px;
   width: 315px;
 
   margin: 10px;
@@ -136,6 +136,11 @@ $dark: rgb(36, 36, 36);
 
 .chart {
   background-color: $white;
+
+  padding: 5px;
+  padding-top: 10px;
+  padding-left: 0px;
+  border-radius: 5px;
 
   height: 300px;
   width: 275px;

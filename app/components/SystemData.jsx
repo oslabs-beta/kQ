@@ -21,36 +21,46 @@ class SystemData extends Component {
       labels: [title],
       datasets: [
         {
-          backgroundColor: 'rgb(0, 195, 255)',
+          backgroundColor: ['rgb(0, 195, 255)'],
           borderWidth: 2,
-          borderColor: rgb(36, 36, 36),
+          borderColor: 'rgb(36, 36, 36)',
           data: [avg],
         },
       ],
     };
 
     const fontSize = 30;
+    const fontColor = 'rgb(36, 36, 36)';
+    const fontFamily = 'Lato';
     const chartOptions = {
       title: {
         display: false,
-      }
+      },
       legend: {
         display: false,
-      }
+      },
       responsive: true,
-      maintainAspectRatio: true,
+      maintainAspectRatio: false,
       scales: {
-        xAxes: [{
-          ticks: {
-            fontSize
-          }
-        }],
-        yAxes: [{
-          ticks: {
-            fontSize
-          }
-        }],
-      }
+        xAxes: [
+          {
+            ticks: {
+              fontSize,
+              fontColor,
+              fontFamily,
+            },
+          },
+        ],
+        yAxes: [
+          {
+            ticks: {
+              fontSize,
+              fontColor,
+              fontFamily,
+            },
+          },
+        ],
+      },
     };
 
     return (

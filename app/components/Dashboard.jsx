@@ -88,14 +88,14 @@ class Dashboard extends Component {
   render() {
     return (
       <div className="dashboard">
-        <div className="dashTitle">
-          <h2>THIS IS THE DASHBOARD:</h2>
+        {/* <div className="dashTitle"> */}
+        {/* <h2>THIS IS THE DASHBOARD:</h2>
           <form className="dashForm" onSubmit={this.clickMe}>
             <input placeholder="search"></input>
             <button type="submit">click me</button>
-          </form>
+          </form> */}
 
-          {/* <input
+        {/* <input
                type="text"
                className="search-bar"
                placeholder="Search..."
@@ -103,8 +103,8 @@ class Dashboard extends Component {
                value={query}
                onClick={search}
           /> */}
-          {/* should dynamically render number of SystemData boxes */}
-        </div>
+        {/* should dynamically render number of SystemData boxes */}
+        {/* </div> */}
         <div className="system-data-container">
           <SystemData
             className="item"

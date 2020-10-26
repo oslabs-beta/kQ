@@ -40,18 +40,23 @@ $dark: rgb(36, 36, 36);
   // grid-area: title;
   // border: cyan solid 1rem;
 
-  height: 40px;
+  height: 80px;
+  margin-bottom: 30px;
+  border-radius: 0px 0px 5px 5px;
 
   h1 {
-    color: $primary;
-    font-size: 30px;
+    color: $white;
+
+    font-size: 50px;
   }
 
   h2 {
     position: absolute;
     left: 0;
+    margin-left: 25px;
 
-    color: $white;
+    font-size: 40px;
+    color: $primary;
   }
 }
 
@@ -61,15 +66,16 @@ $dark: rgb(36, 36, 36);
 }
 
 .dashboard {
+  height: 100%;
   width: 100%;
   display: flex;
   // flex: 1;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  grid-area: db;
-  background-color: cornflowerblue;
-  border: orange solid 10px;
+  // grid-area: db;
+  // background-color: cornflowerblue;
+  // border: orange solid 10px;
 }
 
 .dashboard-container {
@@ -85,23 +91,48 @@ $dark: rgb(36, 36, 36);
 .system-data-container {
   display: flex;
   align-items: center;
+  padding: 30px;
 }
 
 .system-data {
-  display: flex;
-  flex-direction: column;
-  // justify-content: center;
-  align-items: center;
-  background-color: chartreuse;
-  border: red solid 1rem;
+  @include flexCenter();
+  justify-content: normal;
+  align-items: flex-start;
+
+  height: 400px;
+  width: 300px;
+
+  padding: 10px 20px;
+
+  background-color: $dark;
+
+  border: 1px solid $dark;
+  border-radius: 15px;
 }
 
-.graph {
-  border: 10 px solid black;
-  background-color: darkkhaki;
+.system-data {
+  margin: 5px;
 }
 
-.stopLight {
-  border: 10 px solid black;
-  background-color: forestgreen;
+.metrics {
+  color: white;
+  font-size: 24px;
 }
+
+.metric-title {
+  color: $primary;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 18px;
+}
+
+// .graph {
+//   border: 10 px solid black;
+//   background-color: darkkhaki;
+// }
+
+// .stopLight {
+//   border: 10 px solid black;
+//   background-color: forestgreen;
+// }

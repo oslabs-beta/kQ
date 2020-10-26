@@ -11,14 +11,21 @@ class SystemData extends Component {
     //   ) / 100; // Round to 2 decimals
     const { title } = this.props;
     const { sum, numOfDataPoints, smallest, largest } = this.props.data;
-    const avg = (sum / numOfDataPoints).toFixed(2);
+    const avg =
+      sum === 0 && numOfDataPoints === 0
+        ? 'None'
+        : (sum / numOfDataPoints).toFixed(2);
 
     return (
       <div className="system-data">
-        <h2>{title}:</h2>
-        <h2>Average: {avg}</h2>
-        <h2>Smallest: {smallest}</h2>
-        <h2>Largest: {largest}</h2>
+        <h2 className="metric-title">{title}</h2>
+        <p className="metrics">Average: {avg}</p>
+        <p className="metrics">
+          Smallest: {smallest === Number.POSITIVE_INFINITY ? 'None' : smallest}
+        </p>
+        <p className="metrics">
+          Largest: {largest === Number.NEGATIVE_INFINITY ? 'None' : largest}
+        </p>
         {/* <StopLight />
         <Graph /> */}
       </div>

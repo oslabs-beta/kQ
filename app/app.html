@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>kafkaQ</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
     <script>
       (() => {
         if (
@@ -40,7 +41,10 @@
         if (scripts.length) {
           document.write(
             scripts
-              .map((script) => `<script defer src="${script}"><\/script>`)
+              .map(
+                (script) =>
+                  `<script defer type="module" src="${script}"><\/script>`
+              )
               .join('')
           );
         }

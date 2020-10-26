@@ -6,12 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "apache kafka",
-    "kafka",
-    "monitoring",
-    "tracking"
-  ],
+  "keywords": ["apache kafka", "kafka", "monitoring", "tracking"],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.0"
+  }
 }

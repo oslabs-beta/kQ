@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import StopLight from './metrics/StopLight';
 import Graph from './metrics/Graph';
+import { Bar } from 'react-chartjs-2';
 
 class SystemData extends Component {
   // state should probably go in this component
@@ -16,6 +17,42 @@ class SystemData extends Component {
         ? 'None'
         : (sum / numOfDataPoints).toFixed(2);
 
+    const chartData = {
+      labels: [title],
+      datasets: [
+        {
+          backgroundColor: 'rgb(0, 195, 255)',
+          borderWidth: 2,
+          borderColor: rgb(36, 36, 36),
+          data: [avg],
+        },
+      ],
+    };
+
+    const fontSize = 30;
+    const chartOptions = {
+      title: {
+        display: false,
+      }
+      legend: {
+        display: false,
+      }
+      responsive: true,
+      maintainAspectRatio: true,
+      scales: {
+        xAxes: [{
+          ticks: {
+            fontSize
+          }
+        }],
+        yAxes: [{
+          ticks: {
+            fontSize
+          }
+        }],
+      }
+    };
+
     return (
       <div className="system-data">
         <h2 className="metric-title">{title}</h2>
@@ -26,8 +63,11 @@ class SystemData extends Component {
         <p className="metrics">
           Largest: {largest === Number.NEGATIVE_INFINITY ? 'None' : largest}
         </p>
-        {/* <StopLight />
-        <Graph /> */}
+
+        {/* Chart */}
+        <div className="chart">
+          <Bar data={chartData} options={chartOptions} />
+        </div>
       </div>
     );
   }

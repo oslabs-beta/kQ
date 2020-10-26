@@ -12,7 +12,7 @@ class SystemData extends Component {
              //   ) / 100; // Round to 2 decimals
              const { title } = this.props;
              // if title === 'data size' do the following:
-             if (title === 'Data Size' || title === 'Processing Time') {
+            //  if (title === 'Data Size' || title === 'Processing Time') {
                const {
                  sum,
                  numOfDataPoints,
@@ -42,13 +42,13 @@ class SystemData extends Component {
                  </div>
                );
                //else if title === 'Api Name' do the following:
-             } else if (title === 'Pending Duration') {
-               const { time } = this.props.data;
+            //  } else if (title === 'Pending Duration') {
+              //  const { time } = this.props.data;
 
-               return (
-                 <div className="system-data">
-                   <h2 className="metric-title">{title}</h2>
-                   <p className="metrics">Time: {time}</p>
+              //  return (
+              //    <div className="system-data">
+              //      <h2 className="metric-title">{title}</h2>
+              //      <p className="metrics">Time: {time}</p>
                    {/* <p className="metrics">
               Smallest: {smallest === Number.POSITIVE_INFINITY ? 'None' : smallest}
             </p>
@@ -57,10 +57,9 @@ class SystemData extends Component {
             </p> */}
                    {/* <StopLight />
             <Graph /> */}
-                 </div>
-               );
+                //  </div>
+               
              }
-           }
-}
+            }
 
 export default SystemData;

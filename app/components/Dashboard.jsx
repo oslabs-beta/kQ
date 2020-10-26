@@ -19,7 +19,10 @@ class Dashboard extends Component {
         largest: Number.NEGATIVE_INFINITY,
       },
       pendingDuration: {
-        time: 0,
+        sum: 0,
+        numOfDataPoints: 0,
+        smallest: 0,
+        largest: 0,
       },
       processingTimeInMilliseconds: {
         sum: 0,
@@ -55,7 +58,10 @@ class Dashboard extends Component {
           largest: Math.max(dataSize.largest, data.size),
         },
         pendingDuration: {
-          time: data.pendingDuration,
+          sum: data.pendingDuration,
+          numOfDataPoints: pendingDuration.numOfDataPoints + 1,
+          smallest: 0,
+          largest: 0,
         },
         processingTimeInMilliseconds: {
           sum:

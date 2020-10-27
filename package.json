@@ -38,18 +38,6 @@
     "server": "nodemon kafkaApplicationSimulator/kafkaSimulatorServer.js",
     "app-server": "nodemon server/server.js"
   },
-  "lint-staged": {
-    "{*.json,.{babelrc,eslintrc,prettierrc,stylelintrc}}": [
-      "prettier --ignore-path .eslintignore --parser json --write"
-    ],
-    "*.{css,scss}": [
-      "stylelint --ignore-path .eslintignore --syntax scss --fix",
-      "prettier --ignore-path .eslintignore --single-quote --write"
-    ],
-    "*.{html,md,yml}": [
-      "prettier --ignore-path .eslintignore --single-quote --write"
-    ]
-  },
   "build": {
     "productName": "ElectronReact",
     "appId": "org.develar.ElectronReact",
@@ -76,17 +64,26 @@
       ]
     },
     "win": {
-      "target": ["nsis", "msi"]
+      "target": [
+        "nsis",
+        "msi"
+      ]
     },
     "linux": {
-      "target": ["deb", "rpm", "AppImage"],
+      "target": [
+        "deb",
+        "rpm",
+        "AppImage"
+      ],
       "category": "Development"
     },
     "directories": {
       "buildResources": "resources",
       "output": "release"
     },
-    "extraResources": ["./resources/**"],
+    "extraResources": [
+      "./resources/**"
+    ],
     "publish": {
       "provider": "github",
       "owner": "electron-react-boilerplate",
@@ -143,9 +140,20 @@
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/internals/mocks/fileMock.js",
       "\\.(css|less|sass|scss)$": "identity-obj-proxy"
     },
-    "moduleFileExtensions": ["js", "jsx", "ts", "tsx", "json"],
-    "moduleDirectories": ["node_modules", "app/node_modules"],
-    "setupFiles": ["./internals/scripts/CheckBuildsExist.js"]
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "ts",
+      "tsx",
+      "json"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "app/node_modules"
+    ],
+    "setupFiles": [
+      "./internals/scripts/CheckBuildsExist.js"
+    ]
   },
   "devDependencies": {
     "@amilajack/testcafe-browser-provider-electron": "^0.0.15-alpha.1",
@@ -260,6 +268,7 @@
     "@reduxjs/toolkit": "^1.4.0",
     "axios": "^0.20.0",
     "bootstrap": "^4.5.3",
+    "chart.js": "^2.9.4",
     "connected-react-router": "^6.6.1",
     "cors": "^2.8.5",
     "electron-debug": "^3.1.0",
@@ -267,10 +276,13 @@
     "electron-updater": "^4.3.4",
     "express": "^4.17.1",
     "history": "^4.7.2",
+    "jquery": "^3.5.1",
     "kafkajs": "^1.14.0",
     "kafkaq-monitor": "file:kafkaq-monitor",
+    "popper.js": "^1.16.1",
     "react": "^16.13.1",
     "react-bootstrap": "^1.4.0",
+    "react-chartjs-2": "^2.10.0",
     "react-dom": "^16.12.0",
     "react-hot-loader": "^4.12.21",
     "react-redux": "^7.2.1",
@@ -293,7 +305,12 @@
   "prettier": {
     "overrides": [
       {
-        "files": [".prettierrc", ".babelrc", ".eslintrc", ".stylelintrc"],
+        "files": [
+          ".prettierrc",
+          ".babelrc",
+          ".eslintrc",
+          ".stylelintrc"
+        ],
         "options": {
           "parser": "json"
         }
@@ -302,15 +319,17 @@
     "singleQuote": true
   },
   "stylelint": {
-    "extends": ["stylelint-config-standard", "stylelint-config-prettier"]
+    "extends": [
+      "stylelint-config-standard",
+      "stylelint-config-prettier"
+    ]
   },
   "renovate": {
-    "extends": ["bliss"],
-    "baseBranches": ["next"]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "extends": [
+      "bliss"
+    ],
+    "baseBranches": [
+      "next"
+    ]
   }
 }

@@ -29,6 +29,7 @@ $dark: rgb(36, 36, 36);
   //   'title title title'
   //   'db db db';
   // border: teal solid 20px;
+  background-color: $white;
 }
 
 .title {
@@ -98,7 +99,7 @@ $dark: rgb(36, 36, 36);
   justify-content: normal;
   align-items: flex-start;
 
-  height: 400px;
+  height: 550px;
   width: 315px;
 
   margin: 10px;
@@ -132,3 +133,15 @@ $dark: rgb(36, 36, 36);
 //   border: 10 px solid black;
 //   background-color: forestgreen;
 // }
+
+.chart {
+  background-color: $white;
+
+  padding: 5px;
+  padding-top: 10px;
+  padding-left: 0px;
+  border-radius: 5px;
+
+  height: 300px;
+  width: 275px;
+}

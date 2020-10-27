@@ -43,42 +43,53 @@ class Dashboard extends Component {
     console.log('cnct');
 
     socket.on('data', (data) => {
-      const {
-        dataSize,
-        pendingDuration,
-        processingTimeInMilliseconds,
-      } = this.state;
-      console.log(this.state);
-      this.setState({
-        ...this.state,
-        dataSize: {
-          sum: dataSize.sum + data.size,
-          numOfDataPoints: dataSize.numOfDataPoints + 1,
-          smallest: Math.min(dataSize.smallest, data.size),
-          largest: Math.max(dataSize.largest, data.size),
-        },
-        pendingDuration: {
-          sum: data.pendingDuration,
-          numOfDataPoints: pendingDuration.numOfDataPoints + 1,
-          smallest: 0,
-          largest: 0,
-        },
-        processingTimeInMilliseconds: {
-          sum:
-            processingTimeInMilliseconds.sum +
-            data.processingTimeInMilliseconds,
-          numOfDataPoints: processingTimeInMilliseconds.numOfDataPoints + 1,
-          smallest: Math.min(
-            processingTimeInMilliseconds.smallest,
-            data.processingTimeInMilliseconds
-          ),
-          largest: Math.max(
-            processingTimeInMilliseconds.largest,
-            data.processingTimeInMilliseconds
-          ),
-        },
-      });
-    });
+                                  const {
+                                    dataSize,
+                                    pendingDuration,
+                                    processingTimeInMilliseconds,
+                                  } = this.state;
+                                  console.log(this.state);
+
+                                  this.setState({
+                                    ...this.state,
+                                    dataSize: {
+                                      sum: dataSize.sum + data.size,
+                                      numOfDataPoints:
+                                        dataSize.numOfDataPoints + 1,
+                                      smallest: Math.min(
+                                        dataSize.smallest,
+                                        data.size
+                                      ),
+                                      largest: Math.max(
+                                        dataSize.largest,
+                                        data.size
+                                      ),
+                                    },
+                                    pendingDuration: {
+                                      sum: data.pendingDuration,
+                                      numOfDataPoints:
+                                        pendingDuration.numOfDataPoints + 1,
+                                      smallest: 0,
+                                      largest: 0,
+                                    },
+                                    processingTimeInMilliseconds: {
+                                      sum:
+                                        processingTimeInMilliseconds.sum +
+                                        data.processingTimeInMilliseconds,
+                                      numOfDataPoints:
+                                        processingTimeInMilliseconds.numOfDataPoints +
+                                        1,
+                                      smallest: Math.min(
+                                        processingTimeInMilliseconds.smallest,
+                                        data.processingTimeInMilliseconds
+                                      ),
+                                      largest: Math.max(
+                                        processingTimeInMilliseconds.largest,
+                                        data.processingTimeInMilliseconds
+                                      ),
+                                    },
+                                  });
+                                });
 
     // socket.emit('message', {
     //   msg: 'hi',

@@ -30,7 +30,7 @@ class SystemData extends Component {
                    backgroundColor: ['rgb(0, 195, 255)'],
                    borderWidth: 2,
                    borderColor: 'rgb(36, 36, 36)',
-                   data: [avg],
+                   data: [avg === 'None' ? 0 : avg],
                  },
                ],
              };

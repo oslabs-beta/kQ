@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import ProducerMetrics from './containers/ProducerMetrics.jsx';
+import ConsumerMetrics from './containers/ConsumerMetrics.jsx';
+import AdminMetrics from './containers/AdminMetrics.jsx';
 import SystemData from './SystemData';
 /* eslint-disable */
 
@@ -105,7 +108,7 @@ class Dashboard extends Component {
           /> */}
         {/* should dynamically render number of SystemData boxes */}
         {/* </div> */}
-        <div className="system-data-container">
+        {/* <div className="system-data-container">
           <SystemData
             className="item"
             data={this.state.dataSize}
@@ -121,7 +124,10 @@ class Dashboard extends Component {
             data={this.state.processingTimeInMilliseconds}
             title={'Processing Time'}
           />
-        </div>
+        </div> */}
+        <ProducerMetrics />
+        <ConsumerMetrics />
+        <AdminMetrics />
       </div>
     );
   }

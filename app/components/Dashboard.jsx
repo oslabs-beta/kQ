@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ProducerMetrics from './containers/ProducerMetrics.jsx';
 import ConsumerMetrics from './containers/ConsumerMetrics.jsx';
 import AdminMetrics from './containers/AdminMetrics.jsx';
-import SystemData from './SystemData';
+import SystemData from './SystemData.jsx';
 /* eslint-disable */
 
 const api = {

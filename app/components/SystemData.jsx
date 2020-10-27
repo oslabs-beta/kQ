@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import StopLight from './metrics/StopLight';
-import Graph from './metrics/Graph';
+import StopLight from './old-metrics/StopLight';
+import Graph from './old-metrics/Graph';
 import { Bar } from 'react-chartjs-2';
 
 class SystemData extends Component {

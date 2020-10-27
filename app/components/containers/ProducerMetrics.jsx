@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import DataSize from '../metrics/DataSize.jsx';
 
 class ProducerMetrics extends Component {
   render() {
@@ -6,6 +7,7 @@ class ProducerMetrics extends Component {
       <div>
         <h1>Producer Metrics</h1>
         <p>put stuff here</p>
+        <DataSize />
       </div>
     );
   }

@@ -21,8 +21,8 @@ class Dashboard extends Component {
       pendingDuration: {
         sum: 0,
         numOfDataPoints: 0,
-        smallest: 0,
-        largest: 0,
+        smallest: Number.POSITIVE_INFINITY,
+        largest: Number.NEGATIVE_INFINITY,
       },
       processingTimeInMilliseconds: {
         sum: 0,
@@ -43,7 +43,7 @@ class Dashboard extends Component {
     console.log('cnct');
 
     socket.on('data', (data) => {
-                                  const {
+      const {
                                     dataSize,
                                     pendingDuration,
                                     processingTimeInMilliseconds,
@@ -66,11 +66,25 @@ class Dashboard extends Component {
                                       ),
                                     },
                                     pendingDuration: {
-                                      sum: data.pendingDuration,
+                                      sum:
+                                        pendingDuration.sum +
+                                        data.pendingDuration,
                                       numOfDataPoints:
                                         pendingDuration.numOfDataPoints + 1,
-                                      smallest: 0,
-                                      largest: 0,
+                                      smallest: Math.min(
+                                        
+                                        pendingDuration.smallest,
+
+                                                                               data.pendingDuration
+                                      
+                                      ),
+                                      largest: Math.max(
+                                        
+                                        pendingDuration.largest,
+                                       
+                                        data.pendingDuration
+                                      
+                                      ),
                                     },
                                     processingTimeInMilliseconds: {
                                       sum:

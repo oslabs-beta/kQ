@@ -5,7 +5,7 @@ async function run() {
   try {
     const kafka = new Kafka({
       clientId: 'myapp',
-      brokers: ['Shreshths-MacBook-Pro-2.local:9092'],
+      brokers: ['Jonathans-iMac.local:9092'],
     });
     const admin = kafka.admin();
     console.log('connecting...');

@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import SystemData from './SystemData';
 /* eslint-disable */
 
-const api = {
-  key: '9cf4213d3cc82809c8344f68d1ea107f',
-  base: 'https://api.openweathermap.org/data/2.5/',
-};
+// const api = {
+//   key: '9cf4213d3cc82809c8344f68d1ea107f',
+//   base: 'https://api.openweathermap.org/data/2.5/',
+// };
 
 class Dashboard extends Component {
   // state should probably go in this component
@@ -13,6 +13,12 @@ class Dashboard extends Component {
     super(props);
     this.state = {
       dataSize: {
+        sum: 0,
+        numOfDataPoints: 0,
+        smallest: Number.POSITIVE_INFINITY,
+        largest: Number.NEGATIVE_INFINITY,
+      },
+      pendingDuration: {
         sum: 0,
         numOfDataPoints: 0,
         smallest: Number.POSITIVE_INFINITY,
@@ -37,32 +43,67 @@ class Dashboard extends Component {
     console.log('cnct');
 
     socket.on('data', (data) => {
-      const { dataSize, processingTimeInMilliseconds } = this.state;
-      console.log(this.state);
-      this.setState({
-        ...this.state,
-        dataSize: {
-          sum: dataSize.sum + data.size,
-          numOfDataPoints: dataSize.numOfDataPoints + 1,
-          smallest: Math.min(dataSize.smallest, data.size),
-          largest: Math.max(dataSize.largest, data.size),
-        },
-        processingTimeInMilliseconds: {
-          sum:
-            processingTimeInMilliseconds.sum +
-            data.processingTimeInMilliseconds,
-          numOfDataPoints: processingTimeInMilliseconds.numOfDataPoints + 1,
-          smallest: Math.min(
-            processingTimeInMilliseconds.smallest,
-            data.processingTimeInMilliseconds
-          ),
-          largest: Math.max(
-            processingTimeInMilliseconds.largest,
-            data.processingTimeInMilliseconds
-          ),
-        },
-      });
-    });
+      const {
+                                    dataSize,
+                                    pendingDuration,
+                                    processingTimeInMilliseconds,
+                                  } = this.state;
+                                  console.log(this.state);
+
+                                  this.setState({
+                                    ...this.state,
+                                    dataSize: {
+                                      sum: dataSize.sum + data.size,
+                                      numOfDataPoints:
+                                        dataSize.numOfDataPoints + 1,
+                                      smallest: Math.min(
+                                        dataSize.smallest,
+                                        data.size
+                                      ),
+                                      largest: Math.max(
+                                        dataSize.largest,
+                                        data.size
+                                      ),
+                                    },
+                                    pendingDuration: {
+                                      sum:
+                                        pendingDuration.sum +
+                                        data.pendingDuration,
+                                      numOfDataPoints:
+                                        pendingDuration.numOfDataPoints + 1,
+                                      smallest: Math.min(
+                                        
+                                        pendingDuration.smallest,
+
+                                                                               data.pendingDuration
+                                      
+                                      ),
+                                      largest: Math.max(
+                                        
+                                        pendingDuration.largest,
+                                       
+                                        data.pendingDuration
+                                      
+                                      ),
+                                    },
+                                    processingTimeInMilliseconds: {
+                                      sum:
+                                        processingTimeInMilliseconds.sum +
+                                        data.processingTimeInMilliseconds,
+                                      numOfDataPoints:
+                                        processingTimeInMilliseconds.numOfDataPoints +
+                                        1,
+                                      smallest: Math.min(
+                                        processingTimeInMilliseconds.smallest,
+                                        data.processingTimeInMilliseconds
+                                      ),
+                                      largest: Math.max(
+                                        processingTimeInMilliseconds.largest,
+                                        data.processingTimeInMilliseconds
+                                      ),
+                                    },
+                                  });
+                                });
 
     // socket.emit('message', {
     //   msg: 'hi',
@@ -113,8 +154,8 @@ class Dashboard extends Component {
           />
           <SystemData
             className="item"
-            data={this.state.dataSize}
-            title={'Data Size'}
+            data={this.state.pendingDuration}
+            title={'Pending Duration'}
           />
           <SystemData
             className="item"

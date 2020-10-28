@@ -30,8 +30,8 @@ class Metric extends Component {
     return (
       sum === 0 && numOfDataPoints === 0
         ? 'None'
-        : (sum / numOfDataPoints).toFixed(2);
-    )
+        : (sum / numOfDataPoints).toFixed(2)
+    );
   }
 
   // Create chart data object which will be used to instantiate Chart object. This contains numbers

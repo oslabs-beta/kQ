@@ -6,9 +6,6 @@ async function run() {
     const kafka = new Kafka({
       clientId: 'myapp',
       brokers: ['Weis-NB.local:9092'],
-=======
-      brokers: ['Jonathans-iMac.local:9092'],
->>>>>>> main
     });
     const consumer = kafka.consumer({
       groupId: 'test',

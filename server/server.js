@@ -24,7 +24,7 @@ const socketSend = (req, res) => {
   const { data } = req.body;
   const processedData = {
     size: data.size,
-    duration: data.duration,
+    pendingDuration: data.pendingDuration,
     processingTimeInMilliseconds: Date.now() - data.sentAt,
   };
 

@@ -8,7 +8,11 @@ kafkaController.produceMessage = async (req, res, next) => {
   try {
     const kafka = new Kafka({
       clientId: 'myapp',
+<<<<<<< HEAD
       brokers: ['Weis-NB.local:9092'],
+=======
+      brokers: ['Jonathans-iMac.local:9092'],
+>>>>>>> main
     });
     const producer = kafka.producer();
     console.log('connecting...');

@@ -1,12 +1,11 @@
 const { Kafka } = require('kafkajs');
-// const msg = process.argv[2];
 
 run();
 async function run() {
   try {
     const kafka = new Kafka({
       clientId: 'myapp',
-      brokers: ['Jonathans-iMac.local:9092'],
+      brokers: ['Weis-NB.local:9092'],
     });
     const consumer = kafka.consumer({
       groupId: 'test',

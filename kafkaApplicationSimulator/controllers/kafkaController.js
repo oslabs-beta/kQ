@@ -1,5 +1,5 @@
 const { Kafka } = require('kafkajs');
-const { trackProducer } = require('../../kafkaq-monitor/index.js')
+const { trackProducer } = require('../../kafkaq-monitor/index.js');
 
 const kafkaController = {};
 
@@ -8,7 +8,7 @@ kafkaController.produceMessage = async (req, res, next) => {
   try {
     const kafka = new Kafka({
       clientId: 'myapp',
-      brokers: ['Jonathans-iMac.local:9092'],
+      brokers: ['Weis-NB.local:9092'],
     });
     const producer = kafka.producer();
     console.log('connecting...');
@@ -16,7 +16,7 @@ kafkaController.produceMessage = async (req, res, next) => {
     console.log('connected!');
 
     const { msg } = req.body;
-    console.log(msg);
+    // console.log(msg);
 
     trackProducer(producer);
 

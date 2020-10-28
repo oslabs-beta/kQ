@@ -14,8 +14,17 @@ class Dashboard extends Component {
   // state should probably go in this component
   constructor(props) {
     super(props);
-    this.state = {
+
+    this.state = {};
+
+    this.state.producer = {
       dataSize: {
+        sum: 0,
+        numOfDataPoints: 0,
+        smallest: Number.POSITIVE_INFINITY,
+        largest: Number.NEGATIVE_INFINITY,
+      },
+      processingTimeInMilliseconds: {
         sum: 0,
         numOfDataPoints: 0,
         smallest: Number.POSITIVE_INFINITY,
@@ -27,7 +36,21 @@ class Dashboard extends Component {
         smallest: Number.POSITIVE_INFINITY,
         largest: Number.NEGATIVE_INFINITY,
       },
+    };
+    this.state.consumer = {
+      dataSize: {
+        sum: 0,
+        numOfDataPoints: 0,
+        smallest: Number.POSITIVE_INFINITY,
+        largest: Number.NEGATIVE_INFINITY,
+      },
       processingTimeInMilliseconds: {
+        sum: 0,
+        numOfDataPoints: 0,
+        smallest: Number.POSITIVE_INFINITY,
+        largest: Number.NEGATIVE_INFINITY,
+      },
+      pendingDuration: {
         sum: 0,
         numOfDataPoints: 0,
         smallest: Number.POSITIVE_INFINITY,
@@ -41,72 +64,71 @@ class Dashboard extends Component {
   //   this.fetchData();
   // }
 
+  // this is the average
+
   componentDidMount() {
     const socket = io.connect('http://localhost:5000');
     console.log('cnct');
 
+    // socket for the producer
     socket.on('data', (data) => {
       const {
-                                    dataSize,
-                                    pendingDuration,
-                                    processingTimeInMilliseconds,
-                                  } = this.state;
-                                  console.log(this.state);
+        dataSize,
+        pendingDuration,
+        processingTimeInMilliseconds,
+      } = this.state.producer;
 
-                                  this.setState({
-                                    ...this.state,
-                                    dataSize: {
-                                      sum: dataSize.sum + data.size,
-                                      numOfDataPoints:
-                                        dataSize.numOfDataPoints + 1,
-                                      smallest: Math.min(
-                                        dataSize.smallest,
-                                        data.size
-                                      ),
-                                      largest: Math.max(
-                                        dataSize.largest,
-                                        data.size
-                                      ),
-                                    },
-                                    pendingDuration: {
-                                      sum:
-                                        pendingDuration.sum +
-                                        data.pendingDuration,
-                                      numOfDataPoints:
-                                        pendingDuration.numOfDataPoints + 1,
-                                      smallest: Math.min(
-                                        
-                                        pendingDuration.smallest,
+      // socket for the consumer
+      // socket.on('consumerData', (data) => {
+      //   const {
+      //     dataSize,
+      //     pendingDuration,
+      //     processingTimeInMilliseconds,
+      //   } = this.state.consumer;
 
-                                                                               data.pendingDuration
-                                      
-                                      ),
-                                      largest: Math.max(
-                                        
-                                        pendingDuration.largest,
-                                       
-                                        data.pendingDuration
-                                      
-                                      ),
-                                    },
-                                    processingTimeInMilliseconds: {
-                                      sum:
-                                        processingTimeInMilliseconds.sum +
-                                        data.processingTimeInMilliseconds,
-                                      numOfDataPoints:
-                                        processingTimeInMilliseconds.numOfDataPoints +
-                                        1,
-                                      smallest: Math.min(
-                                        processingTimeInMilliseconds.smallest,
-                                        data.processingTimeInMilliseconds
-                                      ),
-                                      largest: Math.max(
-                                        processingTimeInMilliseconds.largest,
-                                        data.processingTimeInMilliseconds
-                                      ),
-                                    },
-                                  });
-                                });
+      const producerData = {
+        dataSize: {
+          sum: dataSize.sum + data.size,
+          numOfDataPoints: dataSize.numOfDataPoints + 1,
+          smallest: Math.min(dataSize.smallest, data.size),
+          largest: Math.max(dataSize.largest, data.size),
+        },
+        processingTimeInMilliseconds: {
+          sum:
+            processingTimeInMilliseconds.sum +
+            data.processingTimeInMilliseconds,
+          numOfDataPoints: processingTimeInMilliseconds.numOfDataPoints + 1,
+          smallest: Math.min(
+            processingTimeInMilliseconds.smallest,
+            data.processingTimeInMilliseconds
+          ),
+          largest: Math.max(
+            processingTimeInMilliseconds.largest,
+            data.processingTimeInMilliseconds
+          ),
+        },
+        pendingDuration: {
+          sum: pendingDuration.sum + data.pendingDuration,
+          numOfDataPoints: pendingDuration.numOfDataPoints + 1,
+          smallest: Math.min(
+            pendingDuration.smallest,
+
+            data.pendingDuration
+          ),
+          largest: Math.max(
+            pendingDuration.largest,
+
+            data.pendingDuration
+          ),
+        },
+      };
+
+      this.setState({
+        ...this.state,
+        producer: producerData,
+        //consumer: consumerData
+      });
+    });
 
     // socket.emit('message', {
     //   msg: 'hi',
@@ -130,45 +152,32 @@ class Dashboard extends Component {
   // }
 
   render() {
+    console.log('dashbd state', this.state);
+    const {
+      dataSize,
+      processingTimeInMilliseconds,
+      pendingDuration,
+    } = this.state.producer;
+    // console.log('dashboard p time', processingTime);
+
     return (
       <div className="dashboard">
-        {/* <div className="dashTitle"> */}
-        {/* <h2>THIS IS THE DASHBOARD:</h2>
-          <form className="dashForm" onSubmit={this.clickMe}>
-            <input placeholder="search"></input>
-            <button type="submit">click me</button>
-          </form> */}
-
-        {/* <input
-               type="text"
-               className="search-bar"
-               placeholder="Search..."
-               onChange={((((e)))) => setQuery(e.target.value)}
-               value={query}
-               onClick={search}
-          /> */}
-        {/* should dynamically render number of SystemData boxes */}
-        {/* </div> */}
-        {/* <div className="system-data-container">
-          <SystemData
-            className="item"
-            data={this.state.dataSize}
-            title={'Data Size'}
-          />
-          <SystemData
-            className="item"
-            data={this.state.pendingDuration}
-            title={'Pending Duration'}
-          />
-          <SystemData
-            className="item"
-            data={this.state.processingTimeInMilliseconds}
-            title={'Processing Time'}
-          />
-        </div> */}
-        <ProducerMetrics />
-        <ConsumerMetrics />
-        <AdminMetrics />
+        <ProducerMetrics
+          dataSize={dataSize}
+          processingTime={processingTimeInMilliseconds}
+          pendingDuration={pendingDuration}
+        />
+        {/* <ConsumerMetrics
+          dataSize={this.state.consumer.dataSize}
+          processingTime={this.state.consumer.processingTimeInMilliseconds}
+          pendingDuration={this.state.consumer.pendingDuration}
+        /> */}
+        <ConsumerMetrics
+          dataSize={dataSize}
+          processingTime={processingTimeInMilliseconds}
+          pendingDuration={pendingDuration}
+        />
+        {/* <AdminMetrics /> */}
       </div>
     );
   }

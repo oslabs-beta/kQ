@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import StopLight from './old-metrics/StopLight';
 import Graph from './old-metrics/Graph';
+import { time } from 'console';
 import { Bar } from 'react-chartjs-2';
 
 class SystemData extends Component {
@@ -24,7 +25,7 @@ class SystemData extends Component {
           backgroundColor: ['rgb(0, 195, 255)'],
           borderWidth: 2,
           borderColor: 'rgb(36, 36, 36)',
-          data: [avg],
+          data: [avg === 'None' ? 0 : avg],
         },
       ],
     };

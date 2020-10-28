@@ -2,31 +2,23 @@ import React, { Component } from 'react';
 
 /*
 
-/-Method to calculate avg
-const avg =
-      sum === 0 && numOfDataPoints === 0
-        ? 'None'
-        : (sum / numOfDataPoints).toFixed(2);
+This class designs a "template" for our metrics. It contains basic methods to render JSX code
+that can be used by the various metrics components we have. Here are all the methods we have written:
 
-/-Method to create chartData (params: title, avg) object
-
-/-Method to create chartOptions object
-
-/-Method to create a title
-
-/-Method to create a label (these are things like avg, smallest, largest)
-
-/-Method to create a graph
-
-add comments to methods
-
+-Method to calculate avg
+-Method to create chartData (params: title, avg) object
+-Method to create chartOptions object
+-Method to create a title
+-Method to create a label (these are things like avg, smallest, largest)
+-Method to create a graph
 */
-// Metric class does...
+
 class Metric extends Component {
   constructor() {
     this.backgroundColor = 'rgb(0, 195, 255)';
     this.borderWidth = 2;
     this.borderColor = 'rgb(36, 36, 36)';
+
     this.fontSize = 30;
     this.fontColor = 'rgb(36, 36, 36)';
     this.fontFamily = 'Lato';
@@ -41,8 +33,12 @@ class Metric extends Component {
         : (sum / numOfDataPoints).toFixed(2);
     )
   }
-  // Create chart data
+
+  // Create chart data object which will be used to instantiate Chart object. This contains numbers
+  // to be used in the graph, along with some of the stlying like backgroundColor
   generateChartData(title, avg) {
+    const processedAvg = avg === 'None' ? 0 : avg;
+
     return {
       labels: [title],
       datasets: [
@@ -50,17 +46,18 @@ class Metric extends Component {
           backgroundColor: [this.backgroundColor],
           borderWidth: this.borderWidth,
           borderColor: this.borderColor,
-          data: [avg],
+          data: [processedAvg],
         },
       ],
     };
   }
-  // Create chart title
+
+  // Create chart title h2 tag
   generateTitle(title) {
     return <h2 className="metric-title">{title}</h2>
   }
 
-  // Create a graph
+  // Create a graph given chartData and chartOptions objects which define specs of our graph
   generateGraph(chartData, chartOptions){
     return (<div className="chart">
             <Bar data={chartData} options={chartOptions} />
@@ -68,24 +65,17 @@ class Metric extends Component {
     )
   }
 
-  // Create a label for items: avg, smallest, largest
-  generateLabes(avg, smallest, largest){
+  // Create a label within a specific metric
+  generateLabel(label, num){
+    const processedNum = (num === Number.POSITIVE_INFINITY || num === Number.NEGATIVE_INFINITY) ? 'None' : num
+      
     return (
-        <p className="metrics">Average: {avg}</p>
-        <p className="metrics">
-          Smallest: {smallest === Number.POSITIVE_INFINITY ? 'None' : smallest}
-        </p>
-        <p className="metrics">
-          Largest: {largest === Number.NEGATIVE_INFINITY ? 'None' : largest}
-        </p>
+        <p className="metrics">{label}: {processedNum}</p>
     )
   }
 
-  // Create chartOptions object
+  // Create chartOptions object which is used to customize the look of our chart
   generateChartOptions(){
-    // const fontSize = 30;
-    // const fontColor = 'rgb(36, 36, 36)';
-    // const fontFamily = 'Lato';
     return {
       title: {
         display: false,
@@ -101,7 +91,7 @@ class Metric extends Component {
             ticks: {
               this.fontSize,
               this.fontColor,
-              thisfontFamily,
+              this.fontFamily,
             },
           },
         ],
@@ -116,10 +106,6 @@ class Metric extends Component {
         ],
       },
     };
-  }
-
-  render() {
-    return <p>hi</p>;
   }
 }
 

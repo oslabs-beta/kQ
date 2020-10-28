@@ -1,11 +1,12 @@
 const { Kafka } = require('kafkajs');
+const { trackConsumer } = require('../kafkaq-monitor/index.js')
 
 run();
 async function run() {
   try {
     const kafka = new Kafka({
       clientId: 'myapp',
-      brokers: ['Weis-NB.local:9092'],
+      brokers: ['Yigits-MacBook-Pro-2.local:9092'],
     });
     const consumer = kafka.consumer({
       groupId: 'test',
@@ -19,15 +20,21 @@ async function run() {
       fromBeginning: true,
     });
 
+
+
     await consumer.run({
       eachMessage: async (result) => {
+        trackConsumer(consumer)
         console.log(
           `MSG: ${result.message.value} PARTITION: ${result.partition}`
         );
       },
     });
+
   } catch (err) {
     console.log(`ERROR: ${err}`);
   } finally {
+
   }
+
 }

@@ -78,14 +78,6 @@ class Dashboard extends Component {
         processingTimeInMilliseconds,
       } = this.state.producer;
 
-      // socket for the consumer
-      // socket.on('consumerData', (data) => {
-      //   const {
-      //     dataSize,
-      //     pendingDuration,
-      //     processingTimeInMilliseconds,
-      //   } = this.state.consumer;
-
       const producerData = {
         dataSize: {
           sum: dataSize.sum + data.size,
@@ -127,6 +119,57 @@ class Dashboard extends Component {
         ...this.state,
         producer: producerData,
         //consumer: consumerData
+      });
+    });
+
+    // socket for the consumer
+    socket.on('consumer', (data) => {
+      const {
+        dataSize,
+        pendingDuration,
+        processingTimeInMilliseconds,
+      } = this.state.consumer;
+
+      const consumerData = {
+        dataSize: {
+          sum: dataSize.sum + data.size,
+          numOfDataPoints: dataSize.numOfDataPoints + 1,
+          smallest: Math.min(dataSize.smallest, data.size),
+          largest: Math.max(dataSize.largest, data.size),
+        },
+        processingTimeInMilliseconds: {
+          sum:
+            processingTimeInMilliseconds.sum +
+            data.processingTimeInMilliseconds,
+          numOfDataPoints: processingTimeInMilliseconds.numOfDataPoints + 1,
+          smallest: Math.min(
+            processingTimeInMilliseconds.smallest,
+            data.processingTimeInMilliseconds
+          ),
+          largest: Math.max(
+            processingTimeInMilliseconds.largest,
+            data.processingTimeInMilliseconds
+          ),
+        },
+        pendingDuration: {
+          sum: pendingDuration.sum + data.pendingDuration,
+          numOfDataPoints: pendingDuration.numOfDataPoints + 1,
+          smallest: Math.min(
+            pendingDuration.smallest,
+
+            data.pendingDuration
+          ),
+          largest: Math.max(
+            pendingDuration.largest,
+
+            data.pendingDuration
+          ),
+        },
+      };
+
+      this.setState({
+        ...this.state,
+        consumer: consumerData,
       });
     });
 

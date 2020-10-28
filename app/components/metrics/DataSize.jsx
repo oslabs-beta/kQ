@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
 import Metric from '../templates/Metric.jsx';
 
-const labels = ['Average', 'Smallest', 'Largest'];
-
 class DataSize extends Metric {
   render() {
+    const title = 'Data Size';
+
+    const labels = ['Average', 'Smallest', 'Largest'];
+    const nums = [15, 10, 20];
+
+    const chartData = this.generateChartData(title, nums[0]);
+    const chartOptions = this.generateChartOptions();
+
     return (
-      <div>
-        {this.generateTitle('Data Size')}
-        {this.generateLabel(labels[0], 15)}
-        {this.generateLabel(labels[1], 10)}
-        {this.generateLabel(labels[2], 20)}
+      <div className="system-data">
+        {this.generateTitle(title)}
+        {labels.map((label, idx) => this.generateLabel(label, nums[idx]))}
+        {this.generateChart(chartData, chartOptions)}
       </div>
     );
   }

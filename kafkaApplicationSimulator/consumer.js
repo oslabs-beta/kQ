@@ -5,7 +5,6 @@ async function run() {
   try {
     const kafka = new Kafka({
       clientId: 'myapp',
-<<<<<<< HEAD
       brokers: ['Weis-NB.local:9092'],
 =======
       brokers: ['Jonathans-iMac.local:9092'],

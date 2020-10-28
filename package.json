@@ -38,7 +38,7 @@
     "consumerjs": "node kafkaJSAppSimulator/consumer.js",
     "consumernode": "node kafkaNodeAppSimulator/consumer.js",
     "app-server": "nodemon server/server.js",
-    "companion-server": "NODE_ENV=development nodemon server/server.js & NODE_ENV=development webpack-dev-server --open"
+    "companion-server": "NODE_ENV=development nodemon server/server.js & NODE_ENV=development webpack-dev-server --open",
     "server": "nodemon kafkaApplicationSimulator/kafkaSimulatorServer.js"
   },
   "build": {
@@ -279,12 +279,9 @@
     "electron-updater": "^4.3.4",
     "express": "^4.17.1",
     "history": "^4.7.2",
-<<<<<<< HEAD
     "kafka-client": "^3.0.0",
     "kafka-node": "^5.0.0",
-=======
     "jquery": "^3.5.1",
->>>>>>> main
     "kafkajs": "^1.14.0",
     "kafkaq-monitor": "file:kafkaq-monitor",
     "popper.js": "^1.16.1",

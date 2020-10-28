@@ -13,25 +13,21 @@ that can be used by the various metrics components we have. Here are all the met
 -Method to create a graph
 */
 
+const backgroundColor = 'rgb(0, 195, 255)';
+const borderWidth = 2;
+const borderColor = 'rgb(36, 36, 36)';
+
+const fontSize = 30;
+const fontColor = 'rgb(36, 36, 36)';
+const fontFamily = 'Lato';
+
 class Metric extends Component {
-  constructor() {
-    this.backgroundColor = 'rgb(0, 195, 255)';
-    this.borderWidth = 2;
-    this.borderColor = 'rgb(36, 36, 36)';
-
-    this.fontSize = 30;
-    this.fontColor = 'rgb(36, 36, 36)';
-    this.fontFamily = 'Lato';
-  }
-
   // Calculate avg given sum and number of data points
   // Note: this method will return 'None' if both arguments are 0
   calculateAvg(sum, numOfDataPoints) {
-    return (
-      sum === 0 && numOfDataPoints === 0
-        ? 'None'
-        : (sum / numOfDataPoints).toFixed(2)
-    );
+    return sum === 0 && numOfDataPoints === 0
+      ? 'None'
+      : (sum / numOfDataPoints).toFixed(2);
   }
 
   // Create chart data object which will be used to instantiate Chart object. This contains numbers
@@ -43,9 +39,9 @@ class Metric extends Component {
       labels: [title],
       datasets: [
         {
-          backgroundColor: [this.backgroundColor],
-          borderWidth: this.borderWidth,
-          borderColor: this.borderColor,
+          backgroundColor: [backgroundColor],
+          borderWidth,
+          borderColor,
           data: [processedAvg],
         },
       ],
@@ -54,28 +50,34 @@ class Metric extends Component {
 
   // Create chart title h2 tag
   generateTitle(title) {
-    return <h2 className="metric-title">{title}</h2>
+    return <h2 className="metric-title">{title}</h2>;
   }
 
   // Create a graph given chartData and chartOptions objects which define specs of our graph
-  generateGraph(chartData, chartOptions){
-    return (<div className="chart">
-            <Bar data={chartData} options={chartOptions} />
-          </div>
-    )
+  generateGraph(chartData, chartOptions) {
+    return (
+      <div className="chart">
+        <Bar data={chartData} options={chartOptions} />
+      </div>
+    );
   }
 
   // Create a label within a specific metric
-  generateLabel(label, num){
-    const processedNum = (num === Number.POSITIVE_INFINITY || num === Number.NEGATIVE_INFINITY) ? 'None' : num
-      
+  generateLabel(label, num) {
+    const processedNum =
+      num === Number.POSITIVE_INFINITY || num === Number.NEGATIVE_INFINITY
+        ? 'None'
+        : num;
+
     return (
-        <p className="metrics">{label}: {processedNum}</p>
-    )
+      <p className="metrics">
+        {label}: {processedNum}
+      </p>
+    );
   }
 
   // Create chartOptions object which is used to customize the look of our chart
-  generateChartOptions(){
+  generateChartOptions() {
     return {
       title: {
         display: false,
@@ -89,18 +91,18 @@ class Metric extends Component {
         xAxes: [
           {
             ticks: {
-              this.fontSize,
-              this.fontColor,
-              this.fontFamily,
+              fontSize,
+              fontColor,
+              fontFamily,
             },
           },
         ],
         yAxes: [
           {
             ticks: {
-              this.fontSize,
-              this.fontColor,
-              this.fontFamily,
+              fontSize,
+              fontColor,
+              fontFamily,
             },
           },
         ],

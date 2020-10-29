@@ -55,8 +55,8 @@ const consumerSocketSend = (req, res) => {
   const { data } = req.body; // data = {size: size, pendingDuration: pendingDuration, sentAt: sentAt}
   const processedData = {
     size: data.size,
-    pendingDuration: data.pendingDuration,
     processingTimeInMilliseconds: Date.now() - data.sentAt,
+    pendingDuration: data.pendingDuration,
   };
 
   io.sockets.emit('consumer', processedData);

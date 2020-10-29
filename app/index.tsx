@@ -1,8 +1,15 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { Provider } from 'react-redux';
 import App from './components/App';
 import './app.global.scss';
+import store from './store';
 
 document.addEventListener('DOMContentLoaded', () => {
-  render(<App />, document.getElementById('root'));
+  render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    document.getElementById('root')
+  );
 });

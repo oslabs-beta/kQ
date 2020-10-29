@@ -22,24 +22,12 @@ $dark: rgb(36, 36, 36);
 }
 
 .app {
-  // display: grid;
-  // grid-template-columns: auto auto auto;
-  // grid-template-rows: auto auto auto;
-  // grid-template-areas:
-  //   'title title title'
-  //   'db db db';
-  // border: teal solid 20px;
   background-color: $white;
 }
 
 .title {
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
   @include flexCenter();
   background-color: $dark;
-  // grid-area: title;
-  // border: cyan solid 1rem;
 
   height: 80px;
   margin-bottom: 30px;
@@ -66,17 +54,32 @@ $dark: rgb(36, 36, 36);
   border: 10px solid blueviolet;
 }
 
+.metrics-container {
+  display: flex;
+  flex-direction: row;
+}
+
 .dashboard {
   height: 100%;
   width: 100%;
-  display: flex;
-  // flex: 1;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+
+  // @include flexCenter();
+  // flex-direction: row;
+
+  // display: flex;
+  // flex-direction: row;
+
+  // display: flex;
+  // // flex: 1;
+  // justify-content: center;
+  // align-items: center;
+  // flex-direction: column;
   // grid-area: db;
   // background-color: cornflowerblue;
   // border: orange solid 10px;
+  .metric-heading {
+    margin-left: 10px;
+  }
 }
 
 .dashboard-container {
@@ -89,10 +92,10 @@ $dark: rgb(36, 36, 36);
   align-items: center;
 }
 
-.system-data-container {
-  display: flex;
-  align-items: center;
-}
+// .system-data-container {
+//   display: flex;
+//   align-items: center;
+// }
 
 .system-data {
   @include flexCenter();

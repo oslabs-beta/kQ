@@ -11,7 +11,7 @@ const server = app.listen(PORT);
 // WebSocket logic
 const io = socket(server);
 
-const socketSend = (req, res) => {
+const producerSocketSend = (req, res) => {
   /*
   req.body.data looks like:
   {
@@ -21,18 +21,18 @@ const socketSend = (req, res) => {
   }
   */
 
-  const { data } = req.body;
+  const { data } = req.body; // data = {size: size, pendingDuration: pendingDuration, sentAt: sentAt}
   const processedData = {
     size: data.size,
     pendingDuration: data.pendingDuration,
     processingTimeInMilliseconds: Date.now() - data.sentAt,
   };
 
-  io.sockets.emit('data', processedData);
+  io.sockets.emit('producer', processedData);
   res.sendStatus(200);
 };
 
-app.post('/data', socketSend);
+app.post('/producer', producerSocketSend);
 
 // io.on('connection', (currSocket) => {
 //   currSocket.on('message', (data) => {
@@ -40,3 +40,27 @@ app.post('/data', socketSend);
 //     io.sockets.emit('message', data);
 //   });
 // });
+
+// create a rout to handle axios.post()
+const consumerSocketSend = (req, res) => {
+  /*
+  req.body.data looks like:
+  {
+    size: 129, 
+    duration: 3, 
+    sentAt: 1603588918552
+  }
+  */
+
+  const { data } = req.body; // data = {size: size, pendingDuration: pendingDuration, sentAt: sentAt}
+  const processedData = {
+    size: data.size,
+    pendingDuration: data.pendingDuration,
+    processingTimeInMilliseconds: Date.now() - data.sentAt,
+  };
+
+  io.sockets.emit('consumer', processedData);
+  res.sendStatus(200);
+};
+
+app.post('/consumer', consumerSocketSend);

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Metric from '../metrics/Metric.jsx';
+import Metric from '../Metric.jsx';
 // import DataSize from '../metrics/producer/DataSize.jsx';
 // import ProcessingTime from '../metrics/producer/ProcessingTime.jsx';
 

@@ -1,1 +1,2 @@
-export const ADD_NEW_DATA = 'ADD_NEW_DATA';
+export const ADD_PRODUCER_DATA = 'ADD_PRODUCER_DATA';
+export const ADD_CONSUMER_DATA = 'ADD_CONSUMER_DATA';

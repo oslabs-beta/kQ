@@ -1,4 +1,4 @@
-import { ADD_NEW_DATA } from '../constants/actionTypes';
+import { ADD_PRODUCER_DATA } from '../constants/actionTypes';
 
 const initialState = {
   dataSize: {
@@ -22,20 +22,13 @@ const initialState = {
 };
 
 const producerReducer = (state = initialState, action) => {
-  console.log('reducer invoked');
-  console.log(action.payload);
-
   switch (action.type) {
-    case ADD_NEW_DATA:
+    case ADD_PRODUCER_DATA:
       const {
         size,
         processingTimeInMilliseconds,
         pendingDuration,
       } = action.payload.data;
-      console.log('data are:', action.payload.data);
-      console.log(size);
-      console.log(processingTimeInMilliseconds);
-      console.log(pendingDuration);
 
       const newDataSize = {
         sum: state.dataSize.sum + size,

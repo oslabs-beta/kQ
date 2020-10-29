@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MetricTemplate from '../MetricTemplate.jsx';
+import MetricTemplate from './MetricTemplate.jsx';
 
 class Metric extends MetricTemplate {
   render() {

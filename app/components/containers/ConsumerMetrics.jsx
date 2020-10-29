@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Metric from '../metrics/Metric.jsx';
+import Metric from '../Metric.jsx';
 
 class ConsumerMetrics extends Component {
   render() {

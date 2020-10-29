@@ -274,6 +274,7 @@
     "chart.js": "^2.9.4",
     "connected-react-router": "^6.6.1",
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "electron-debug": "^3.1.0",
     "electron-log": "^4.2.4",
     "electron-updater": "^4.3.4",

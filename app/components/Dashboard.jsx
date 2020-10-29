@@ -71,7 +71,7 @@ class Dashboard extends Component {
     console.log('cnct');
 
     // socket for the producer
-    socket.on('data', (data) => {
+    socket.on('producer', (data) => {
       const {
         dataSize,
         pendingDuration,
@@ -210,16 +210,16 @@ class Dashboard extends Component {
           processingTime={processingTimeInMilliseconds}
           pendingDuration={pendingDuration}
         />
-        {/* <ConsumerMetrics
+        <ConsumerMetrics
           dataSize={this.state.consumer.dataSize}
           processingTime={this.state.consumer.processingTimeInMilliseconds}
           pendingDuration={this.state.consumer.pendingDuration}
-        /> */}
-        <ConsumerMetrics
+        />
+        {/* <ConsumerMetrics
           dataSize={dataSize}
           processingTime={processingTimeInMilliseconds}
           pendingDuration={pendingDuration}
-        />
+        /> */}
         {/* <AdminMetrics /> */}
       </div>
     );

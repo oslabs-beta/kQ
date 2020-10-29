@@ -1,4 +1,5 @@
 const { Kafka } = require('kafkajs');
+const { trackConsumer } = require('../kafkaq-monitor/index.js');
 
 run();
 async function run() {
@@ -18,6 +19,8 @@ async function run() {
       topic: 'Users',
       fromBeginning: true,
     });
+
+    trackConsumer(consumer);
 
     await consumer.run({
       eachMessage: async (result) => {

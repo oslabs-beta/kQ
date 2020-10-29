@@ -3,9 +3,7 @@ import MetricTemplate from '../MetricTemplate.jsx';
 
 class Metric extends MetricTemplate {
   render() {
-    console.log('before this.props', this.props);
     const { title, data } = this.props;
-    console.log('this is the data', data);
 
     const { sum, numOfDataPoints, smallest, largest } = data;
 

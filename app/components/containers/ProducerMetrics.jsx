@@ -6,9 +6,7 @@ import Metric from '../metrics/Metric.jsx';
 
 class ProducerMetrics extends Component {
   render() {
-    console.log('in prod metrics props', this.props);
     const { dataSize, processingTime, pendingDuration } = this.props;
-    console.log('in prod metrics p time', processingTime);
 
     return (
       <div className="dashboard">

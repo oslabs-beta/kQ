@@ -69,7 +69,6 @@ class Dashboard extends Component {
 
   componentDidMount() {
     const socket = io.connect('http://localhost:5000');
-    console.log('cnct');
 
     // socket for the producer
     socket.on('producer', (data) => {

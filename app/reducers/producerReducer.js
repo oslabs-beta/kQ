@@ -1,4 +1,3 @@
-import { act } from 'react-test-renderer';
 import { ADD_NEW_DATA } from '../constants/actionTypes';
 
 const initialState = {
@@ -23,6 +22,9 @@ const initialState = {
 };
 
 const producerReducer = (state = initialState, action) => {
+  console.log('reducer invoked');
+  console.log(action.payload);
+
   switch (action.type) {
     case ADD_NEW_DATA:
       const {
@@ -30,6 +32,10 @@ const producerReducer = (state = initialState, action) => {
         processingTimeInMilliseconds,
         pendingDuration,
       } = action.payload.data;
+      console.log('data are:', action.payload.data);
+      console.log(size);
+      console.log(processingTimeInMilliseconds);
+      console.log(pendingDuration);
 
       const newDataSize = {
         sum: state.dataSize.sum + size,
@@ -70,3 +76,5 @@ const producerReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+export default producerReducer;

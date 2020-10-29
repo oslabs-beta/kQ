@@ -1,11 +1,12 @@
 const { Kafka } = require('kafkajs');
+require('dotenv').config();
 
 run();
 async function run() {
   try {
     const kafka = new Kafka({
       clientId: 'myapp',
-      brokers: ['Shreshths-MacBook-Pro-2.local:9092'],
+      brokers: [`${process.env.LOCAL_COMPUTER}:9092`],
     });
     const admin = kafka.admin();
     console.log('connecting...');

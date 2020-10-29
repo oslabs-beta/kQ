@@ -18,7 +18,7 @@ import (
 // }
 
 func main() {
-	NUM_STRINGS := 1000
+	NUM_STRINGS := 100
 
 	// Generate a bunch of strings of random numbers and send them to our Express server
 	for i := 0; i < NUM_STRINGS; i++ {

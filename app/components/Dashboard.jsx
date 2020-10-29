@@ -1,208 +1,66 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import * as actions from '../actions/actions';
+
 import ProducerMetrics from './containers/ProducerMetrics.jsx';
 import ConsumerMetrics from './containers/ConsumerMetrics.jsx';
-import AdminMetrics from './containers/AdminMetrics.jsx';
-import SystemData from './SystemData.jsx';
-/* eslint-disable */
 
-// const api = {
-//   key: '9cf4213d3cc82809c8344f68d1ea107f',
-//   base: 'https://api.openweathermap.org/data/2.5/',
-// };
+const mapStateToProps = (state) => ({
+  // Producer state
+  producerDataSize: state.producer.dataSize,
+  producerProcessingTimeInMilliseconds:
+    state.producer.processingTimeInMilliseconds,
+  producerPendingDuration: state.producer.pendingDuration,
+  // Consumer state
+  consumerDataSize: state.consumer.dataSize,
+  consumerProcessingTimeInMilliseconds:
+    state.consumer.processingTimeInMilliseconds,
+  consumerPendingDuration: state.consumer.pendingDuration,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  addProducerData: (newData) => dispatch(actions.addProducerData(newData)),
+  addConsumerData: (newData) => dispatch(actions.addConsumerData(newData)),
+});
 
 class Dashboard extends Component {
-  // state should probably go in this component
-  constructor(props) {
-    super(props);
-
-    this.state = {};
-
-    this.state.producer = {
-      dataSize: {
-        sum: 0,
-        numOfDataPoints: 0,
-        smallest: Number.POSITIVE_INFINITY,
-        largest: Number.NEGATIVE_INFINITY,
-      },
-      processingTimeInMilliseconds: {
-        sum: 0,
-        numOfDataPoints: 0,
-        smallest: Number.POSITIVE_INFINITY,
-        largest: Number.NEGATIVE_INFINITY,
-      },
-      pendingDuration: {
-        sum: 0,
-        numOfDataPoints: 0,
-        smallest: Number.POSITIVE_INFINITY,
-        largest: Number.NEGATIVE_INFINITY,
-      },
-    };
-    this.state.consumer = {
-      dataSize: {
-        sum: 0,
-        numOfDataPoints: 0,
-        smallest: Number.POSITIVE_INFINITY,
-        largest: Number.NEGATIVE_INFINITY,
-      },
-      processingTimeInMilliseconds: {
-        sum: 0,
-        numOfDataPoints: 0,
-        smallest: Number.POSITIVE_INFINITY,
-        largest: Number.NEGATIVE_INFINITY,
-      },
-      pendingDuration: {
-        sum: 0,
-        numOfDataPoints: 0,
-        smallest: Number.POSITIVE_INFINITY,
-        largest: Number.NEGATIVE_INFINITY,
-      },
-    };
-    this.clickMe = this.clickMe.bind(this);
-  }
-
-  // componentDidMount() {
-  //   this.fetchData();
-  // }
-
-  // this is the average
-
+  // As soon as this component loads, establish a Web Socket connection to our server
   componentDidMount() {
     const socket = io.connect('http://localhost:5000');
-    console.log('cnct');
 
-    // socket for the producer
-    socket.on('producer', (data) => {
-      const {
-        dataSize,
-        pendingDuration,
-        processingTimeInMilliseconds,
-      } = this.state.producer;
+    // Socket event to handle updates to producer metrics
+    socket.on('producer', (data) => this.props.addProducerData(data));
 
-      const producerData = {
-        dataSize: {
-          sum: dataSize.sum + data.size,
-          numOfDataPoints: dataSize.numOfDataPoints + 1,
-          smallest: Math.min(dataSize.smallest, data.size),
-          largest: Math.max(dataSize.largest, data.size),
-        },
-        processingTimeInMilliseconds: {
-          sum:
-            processingTimeInMilliseconds.sum +
-            data.processingTimeInMilliseconds,
-          numOfDataPoints: processingTimeInMilliseconds.numOfDataPoints + 1,
-          smallest: Math.min(
-            processingTimeInMilliseconds.smallest,
-            data.processingTimeInMilliseconds
-          ),
-          largest: Math.max(
-            processingTimeInMilliseconds.largest,
-            data.processingTimeInMilliseconds
-          ),
-        },
-        pendingDuration: {
-          sum: pendingDuration.sum + data.pendingDuration,
-          numOfDataPoints: pendingDuration.numOfDataPoints + 1,
-          smallest: Math.min(
-            pendingDuration.smallest,
-
-            data.pendingDuration
-          ),
-          largest: Math.max(
-            pendingDuration.largest,
-
-            data.pendingDuration
-          ),
-        },
-      };
-
-      this.setState({
-        ...this.state,
-        producer: producerData,
-        //consumer: consumerData
-      });
-    });
-
-    // socket for the consumer
-    socket.on('consumer', (data) => {
-      const {
-        dataSize,
-        pendingDuration,
-        processingTimeInMilliseconds,
-      } = this.state.consumer;
-
-      const consumerData = {
-        dataSize: {
-          sum: dataSize.sum + data.size,
-          numOfDataPoints: dataSize.numOfDataPoints + 1,
-          smallest: Math.min(dataSize.smallest, data.size),
-          largest: Math.max(dataSize.largest, data.size),
-        },
-        processingTimeInMilliseconds: {
-          sum:
-            processingTimeInMilliseconds.sum +
-            data.processingTimeInMilliseconds,
-          numOfDataPoints: processingTimeInMilliseconds.numOfDataPoints + 1,
-          smallest: Math.min(
-            processingTimeInMilliseconds.smallest,
-            data.processingTimeInMilliseconds
-          ),
-          largest: Math.max(
-            processingTimeInMilliseconds.largest,
-            data.processingTimeInMilliseconds
-          ),
-        },
-        pendingDuration: {
-          sum: pendingDuration.sum + data.pendingDuration,
-          numOfDataPoints: pendingDuration.numOfDataPoints + 1,
-          smallest: Math.min(
-            pendingDuration.smallest,
-
-            data.pendingDuration
-          ),
-          largest: Math.max(
-            pendingDuration.largest,
-
-            data.pendingDuration
-          ),
-        },
-      };
-
-      this.setState({
-        ...this.state,
-        consumer: consumerData,
-      });
-    });
+    // Socket event to handle updates to consumer metrics
+    socket.on('consumer', (data) => this.props.addConsumerData(data));
   }
 
   render() {
-    console.log('dashbd state', this.state);
     const {
-      dataSize,
-      processingTimeInMilliseconds,
-      pendingDuration,
-    } = this.state.producer;
+      producerDataSize,
+      producerProcessingTimeInMilliseconds,
+      producerPendingDuration,
+      consumerDataSize,
+      consumerProcessingTimeInMilliseconds,
+      consumerPendingDuration,
+    } = this.props;
 
     return (
       <div className="dashboard">
         <ProducerMetrics
-          dataSize={dataSize}
-          processingTime={processingTimeInMilliseconds}
-          pendingDuration={pendingDuration}
+          dataSize={producerDataSize}
+          processingTime={producerProcessingTimeInMilliseconds}
+          pendingDuration={producerPendingDuration}
         />
         <ConsumerMetrics
-          dataSize={this.state.consumer.dataSize}
-          processingTime={this.state.consumer.processingTimeInMilliseconds}
-          pendingDuration={this.state.consumer.pendingDuration}
+          dataSize={consumerDataSize}
+          processingTime={consumerProcessingTimeInMilliseconds}
+          pendingDuration={consumerPendingDuration}
         />
-        {/* <ConsumerMetrics
-          dataSize={dataSize}
-          processingTime={processingTimeInMilliseconds}
-          pendingDuration={pendingDuration}
-        /> */}
-        {/* <AdminMetrics /> */}
       </div>
     );
   }
 }
 
-export default Dashboard;
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import Metric from '../templates/Metric.jsx';
+import MetricTemplate from './MetricTemplate.jsx';
 
-class Producer extends Metric {
+class Metric extends MetricTemplate {
   render() {
-    console.log('before this.props', this.props);
     const { title, data } = this.props;
-    console.log('this is the data', data);
 
     const { sum, numOfDataPoints, smallest, largest } = data;
 
@@ -41,4 +39,4 @@ class Producer extends Metric {
   }
 }
 
-export default Producer;
+export default Metric;

@@ -21,7 +21,7 @@ const fontSize = 30;
 const fontColor = 'rgb(36, 36, 36)';
 const fontFamily = 'Lato';
 
-class Metric extends Component {
+class MetricTemplate extends Component {
   // Calculate avg given sum and number of data points
   // Note: this method will return 'None' if both arguments are 0
   calculateAvg(sum, numOfDataPoints) {
@@ -111,4 +111,4 @@ class Metric extends Component {
   }
 }
 
-export default Metric;
+export default MetricTemplate;

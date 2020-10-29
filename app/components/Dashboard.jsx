@@ -172,27 +172,7 @@ class Dashboard extends Component {
         consumer: consumerData,
       });
     });
-
-    // socket.emit('message', {
-    //   msg: 'hi',
-    // });
   }
-
-  clickMe(e) {
-    alert('button clicked');
-  }
-
-  // fetchData() {
-  //   if (evt.key === 'Enter') {
-  //     fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
-  //       .then((res) => res.json())
-  //       .then((result) => {
-  //         setWeather(result);
-  //         setQuery('');
-  //       })
-  //       .catch((error) => console.log('fetch request failed', error));
-  //   }
-  // }
 
   render() {
     console.log('dashbd state', this.state);
@@ -201,7 +181,6 @@ class Dashboard extends Component {
       processingTimeInMilliseconds,
       pendingDuration,
     } = this.state.producer;
-    // console.log('dashboard p time', processingTime);
 
     return (
       <div className="dashboard">

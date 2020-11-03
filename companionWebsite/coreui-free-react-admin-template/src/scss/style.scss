@@ -1,0 +1,8 @@
+// If you want to override variables do it here
+@import "variables";
+
+// Import CoreUI styles
+@import "~@coreui/coreui/scss/coreui.scss";
+
+// If you want to add something do it here
+@import "custom";

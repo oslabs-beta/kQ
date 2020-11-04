@@ -1,5 +1,7 @@
 # kafkaQ
 
+not sure where to put this, but add a table of contents
+
 ## Overview
 
 - Monitor your Kafka application in real-time to find weaknesses and vulnerabilities
@@ -127,9 +129,20 @@ This is all you need to do to start Kafka! Make sure to safe your local computer
 ### Section II: Set up the Kafka application simulator
 
 1. Cd into the kafkaApplicationSimulator directory (`cd kafkaApplicationSimulator`)
-2.
+2. Start the server for our Kafka application simulator using `npm run server` (CHANGE THIS NAME). This server has a route that will connect a producer and send a message, which we will use later.
+3. Start your Kafka consumer with `node kafkaApplicationSimulator/consumer.js` (CHANGE THIS TO A PACKAGE.JSON SCRIPT). You should see output similar to this:
+
+ADD SCREENSHOT HERE
+
+(THIS NEXT PART WILL CHANGE ONCE WE SWITCH BACK TO GIN)
+
+4. Finally, we'll need to send some data through our system. To do so, run our Go script using `go run kafkaApplicationSimulator/generate_data.go` (ADD AN PACKAGE.JSON SCRIPT FOR THIS IF WE KEEP IT). Note that if you have not installed Go, you will need to run `brew install golang` before completing this step. For future reference, if you would like to increase or decrease the volume of data sent through your system, simply change the NUM_STRINGS variable in kafkaApplicationSimulator/generate_data.go
 
 ### Section III: Viewing your metrics
+
+1. Run `yarn start` to open the Electron application, and you should be able to view your data in real-time!
+
+If your metrics aren't changing, you may not have any data flowing through your system. Try re-running the Go script as described in Step 4 of the previous section.
 
 ## FAQ/Debugging suggestions/Common mistakes
 

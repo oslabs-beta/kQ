@@ -4,6 +4,8 @@ import Metric from '../Metric.jsx';
 // import DataSize from '../metrics/producer/DataSize.jsx';
 // import ProcessingTime from '../metrics/producer/ProcessingTime.jsx';
 
+// Electron App:
+// Renders Metric components for: DATA SIZE, PROCESSING TIME, PENDING DURATION
 class ProducerMetrics extends Component {
   render() {
     const { dataSize, processingTime, pendingDuration } = this.props;

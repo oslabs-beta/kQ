@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import MetricTemplate from './MetricTemplate.jsx';
 
+// Renders Metric component
 class Metric extends MetricTemplate {
   render() {
     const { title, data } = this.props;
-
     const { sum, numOfDataPoints, smallest, largest } = data;
 
     /*
@@ -15,16 +15,20 @@ class Metric extends MetricTemplate {
           largest: Math.max(dataSize.largest, data.size),
     }
     */
-
+    // Labels used in the Metric component
     const labels = ['Average', 'Smallest', 'Largest'];
 
+    // Calculate data to be displayed in each Label
     const processedData = [
       this.calculateAvg(sum, numOfDataPoints),
       smallest,
       largest,
     ];
 
+    // Generates the chart data for the chart
     const chartData = this.generateChartData(title, processedData[0]);
+
+    // Generates the style of the chart
     const chartOptions = this.generateChartOptions();
 
     return (

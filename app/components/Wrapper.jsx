@@ -3,6 +3,8 @@ import Dashboard from './Dashboard';
 import Homepage from './Homepage';
 
 /* eslint-disable */
+
+// Renders the titles and the DASHBOARD component
 class Wrapper extends Component {
   render() {
     return (

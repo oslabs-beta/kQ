@@ -4,7 +4,7 @@ import * as actions from '../actions/actions';
 import ProducerMetrics from './containers/ProducerMetrics.jsx';
 import ConsumerMetrics from './containers/ConsumerMetrics.jsx';
 
-// Mapping the selected data from the store to producer and consumer metrics
+// Mapping the selected data from the store to producer and consumer metrics within props
 const mapStateToProps = (state) => ({
   // Producer state
   producerDataSize: state.producer.dataSize,
@@ -18,7 +18,7 @@ const mapStateToProps = (state) => ({
   consumerPendingDuration: state.consumer.pendingDuration,
 });
 
-// Mapping dispatch actions to trigger state changes for Producer and Consumer metrics
+// Mapping dispatch actions to props object and triggers state changes for producer and consumer metrics
 const mapDispatchToProps = (dispatch) => ({
   addProducerData: (newData) => dispatch(actions.addProducerData(newData)),
   addConsumerData: (newData) => dispatch(actions.addConsumerData(newData)),

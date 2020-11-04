@@ -22,7 +22,7 @@ const initialState = {
   },
 };
 
-// Reducer of Consumer Data takes in initial state and action dispatched
+// Reducer of consumer data takes in initial state and action dispatched
 // to update the consumer data
 const consumerReducer = (state = initialState, action) => {
   switch (action.type) {

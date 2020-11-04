@@ -1,6 +1,6 @@
 import { ADD_PRODUCER_DATA } from '../constants/actionTypes';
 
-// Initial state of Consumer Data
+// Initial state of producer data
 const initialState = {
   dataSize: {
     sum: 0,
@@ -22,7 +22,7 @@ const initialState = {
   },
 };
 
-// Reducer of Producer Data takes in initial state and action dispatched
+// Reducer of producer data takes in initial state and action dispatched
 // to update the producer data
 const producerReducer = (state = initialState, action) => {
   switch (action.type) {

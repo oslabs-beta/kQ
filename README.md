@@ -28,6 +28,8 @@ kafkaQ is incredibly easy to incorporate into your application. Let's walk throu
 1. In your project's root directory, run `npm install kafkaq-monitor`
 2. In the producer script of your Kafka application, import our `trackProducer` method and invoke it immediately after the code connecting your producer, passing in your producer as an argument. Here's an example:
 
+FIGURE OUT WHY THESE AREN'T COLORED
+
 ```javascript
 const { Kafka } = require('kafkajs');
 const { trackProducer } = require('kafkaq-monitor'); // kafkaQ's NPM package
@@ -107,16 +109,17 @@ If you haven't yet set up your Kafka application, but you want to see how kafkaQ
 1. Clone this repo (`git clone XXX`) and cd into it (`cd kafkaq`).
 
 We're going to break this into 3 sections for clarify:
+reorganize the last 2 sentences
 
 ## Section I: Starting Kafka
 
-We will be using Docker images to start Confluent Kafka, so start by installing Docker and creating an account.
+We will be using Docker images to start Confluent Kafka, so make sure to install Docker and create an account.
 
-1. Start my ensuring that Docker is running with `docker run hello-world`. You should see something similar to this:
+1. Start by ensuring that Docker is running with `docker run hello-world`. You should see something similar to this:
 
 ADD SCREENSHOT HERE
 
-2. Now, we will start a KAFKA ZOOKEEPER INSTANCE (COME BACK TO THIS TO CHECK PRECISION).Run this command to start a zookeeper instance and expose it on port 2181: `docker run --name zookeeper -p 2181:2181 zookeeper`
+2. Now, we will start a KAFKA ZOOKEEPER INSTANCE (COME BACK TO THIS TO CHECK PRECISION). Run this command to start a zookeeper instance and expose it on port 2181: `docker run --name zookeeper -p 2181:2181 zookeeper`
 
 3. For our next step, you will need to copy your computer's reference on your local network. On a Mac, you can find this by going to Systems Preferences > Sharing. Under the section "Computer Name", you should be able to find it. See the example below:
 
@@ -127,6 +130,8 @@ ADD SCREENSHOT HERE
 This is all you need to do to start Kafka! Make sure to safe your local computer's reference as we will use that in future sections.
 
 ### Section II: Set up the Kafka application simulator
+
+add something about setting up their env file
 
 1. Cd into the kafkaApplicationSimulator directory (`cd kafkaApplicationSimulator`)
 2. Start the server for our Kafka application simulator using `npm run server` (CHANGE THIS NAME). This server has a route that will connect a producer and send a message, which we will use later.
@@ -147,3 +152,12 @@ If your metrics aren't changing, you may not have any data flowing through your 
 ## FAQ/Debugging suggestions/Common mistakes
 
 Not done
+
+## Authors
+
+_Lascaux_ Engineers
+
+[Jonathan Barenboim](https://github.com/Jbaren01)  
+[Kaiwei Hsu](https://github.com/FIXTHIS)  
+[Micah Turan](https://github.com/ymturan)  
+[Shreshth Srivastava](https://github.com/Shreshth3)

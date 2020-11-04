@@ -5,6 +5,7 @@ import App from './components/App';
 import './app.global.scss';
 import store from './store';
 
+// Redux is implemented here using "Provider" and store attribute
 document.addEventListener('DOMContentLoaded', () => {
   render(
     <Provider store={store}>

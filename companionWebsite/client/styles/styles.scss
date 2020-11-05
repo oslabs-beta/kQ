@@ -10,6 +10,13 @@ $menu-background-color: #23252d;
 $box-background-color: #23252d;
 // $box-background-color: #3b404c;
 
+@mixin flexCenter() {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 * {
   background-color: $app-background-color;
   color: $dim-white;
@@ -23,11 +30,21 @@ $box-background-color: #23252d;
 
   height: 5000px;
 
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
 .box-background {
   background-color: $box-background-color;
+}
+
+.home {
+  @include flexCenter();
+
+  p {
+    margin: 30px;
+    color: $bright-white;
+    font-size: 25px;
+  }
 }
 
 .title {
@@ -40,4 +57,14 @@ $box-background-color: #23252d;
 
 .code-block {
   margin-left: 10px;
+}
+
+footer {
+  @include flexCenter();
+
+  height: 150px;
+
+  div {
+    font-size: 12px;
+  }
 }

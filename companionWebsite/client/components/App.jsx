@@ -30,6 +30,7 @@ class App extends Component {
   // This method generates a list of menu items to display on the top bar
   generateMenuItems() {
     const headings = ['Home', 'Quick Start', 'Documentation', 'Meet the Team'];
+    // headings to add^ : demo, using our simulator
 
     return headings.map((heading) => {
       // Grab the current heading, convert it to lower case, replace all spaces with "-",
@@ -81,8 +82,39 @@ class App extends Component {
           </Switch>
 
           {/* Footer */}
-          <footer>
-            <p>We are kafkaQ</p>
+          {/* PROBABLY REPLACE ALL THESE WITH LOGOS */}
+          <footer className="box-background">
+            {/* kafkaQ info */}
+            <div className="box-background">
+              {/* logo */}
+              <h3 className="box-background">kafkaQ</h3>
+            </div>
+
+            {/* Contact us */}
+            <div className="box-background">
+              <strong className="box-background">Email: </strong>
+              kafkaQ21@gmail.com
+              <strong className="box-background"> Twitter: </strong>#kafkaQ
+            </div>
+
+            {/* GitHub repo */}
+            <div className="box-background">
+              <strong className="box-background">GitHub Repo: </strong>{' '}
+              https://github.com/oslabs-beta/kafkaQ
+            </div>
+
+            {/* Medium article */}
+            <div className="box-background">
+              <strong className="box-background">Medium article: </strong>{' '}
+              https://www.medium.com
+            </div>
+
+            {/* NPM Package */}
+            <div className="box-background">
+              <strong className="box-background">NPM Package: </strong>{' '}
+              https://www.npmjs.com/package/kafkaq-monitor
+            </div>
+            {/* <p>We are kafkaQ</p>
             <div>
               Contact us:
               <a href="https://www.gmail.com">kafkaQ21@gmail.com </a>
@@ -91,7 +123,7 @@ class App extends Component {
               <a href="https://www.twitter.com">#kafkaQ</a>
             </div>
             Join us:
-            <a href="https://codesmith.io/">Career</a>
+            <a href="https://codesmith.io/">Career</a> */}
           </footer>
         </div>
       </Router>

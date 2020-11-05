@@ -3,9 +3,12 @@ $primary: rgb(83, 190, 243);
 $bright-white: #f9f9fc;
 $dim-white: #d1d1d2;
 
-$app-background-color: #0a0b18;
-$menu-background-color: #2c2c34;
+// $app-background-color: #0a0b18;
+$app-background-color: #3b404c;
+// $menu-background-color: #2c2c34;
+$menu-background-color: #23252d;
 $box-background-color: #23252d;
+// $box-background-color: #3b404c;
 
 * {
   background-color: $app-background-color;

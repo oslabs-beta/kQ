@@ -66,9 +66,39 @@ $box-background-color: #23252d;
 footer {
   @include flexCenter();
 
-  height: 150px;
+  height: 175px;
 
   div {
     font-size: 12px;
   }
+}
+
+.footer-title {
+  @include flexCenter();
+  flex-direction: row;
+  margin: 20px;
+
+  img {
+    position: relative;
+    margin-top: 25px;
+  }
+}
+
+.logos {
+  @include flexCenter();
+
+  background-color: $box-background-color;
+  flex-direction: row;
+
+  div {
+    margin: 15px;
+  }
+}
+
+#twitter-logo {
+  margin-left: 10px;
+}
+
+#medium-logo {
+  margin-left: 0px;
 }

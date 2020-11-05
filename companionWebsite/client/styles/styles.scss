@@ -1,3 +1,5 @@
+$primary: rgb(83, 190, 243);
+
 $bright-white: #f9f9fc;
 $dim-white: #d1d1d2;
 
@@ -7,5 +9,32 @@ $box-background-color: #23252d;
 
 * {
   background-color: $app-background-color;
-  color: lightblue;
+  color: $dim-white;
+}
+
+.box {
+  background-color: $box-background-color;
+
+  margin: 20px;
+  padding: 20px;
+
+  height: 5000px;
+
+  border-radius: 3px;
+}
+
+.box-background {
+  background-color: $box-background-color;
+}
+
+.title {
+  color: $bright-white;
+}
+
+.code {
+  color: $primary;
+}
+
+.code-block {
+  margin-left: 10px;
 }

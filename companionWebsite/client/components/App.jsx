@@ -6,6 +6,7 @@ import { Menu } from 'semantic-ui-react';
 import About from './About.jsx';
 import Docs from './Docs.jsx';
 import Home from './Home.jsx';
+import QuickStart from './QuickStart.jsx';
 
 // $bright-white: #f9f9fc;
 // $dim-white: #d1d1d2;
@@ -49,40 +50,37 @@ class App extends Component {
     return (
       <Router>
         <div>
-          {/* This is App.
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-              <li>
-                <Link to="/docs">Docs</Link>
-              </li>
-            </ul>
-          </nav> */}
           <Menu pointing style={menuStyling}>
             {this.generateMenuItems()}
           </Menu>
           <Switch>
+            {/* / */}
             <Route exact={true} path="/">
               <Home />
             </Route>
+
+            {/* /home */}
             <Route path="/home">
               <Home />
             </Route>
+
+            {/* /quick-start */}
             <Route path="/quick-start">
-              <About />
+              <QuickStart />
             </Route>
+
+            {/* /documentation */}
             <Route path="/documentation">
               <Docs />
             </Route>
+
+            {/* /meet-the-team */}
             <Route path="/meet-the-team">
-              <Docs />
+              <About />
             </Route>
           </Switch>
+
+          {/* Footer */}
           <footer>
             <p>We are kafkaQ</p>
             <div>

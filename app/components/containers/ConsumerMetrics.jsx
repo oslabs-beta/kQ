@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Metric from '../Metric.jsx';
 
+// Electron App:
+// Renders consumer METRIC components for: data size, processing time, pending durationion
 class ConsumerMetrics extends Component {
   render() {
     const { dataSize, processingTime, pendingDuration } = this.props;

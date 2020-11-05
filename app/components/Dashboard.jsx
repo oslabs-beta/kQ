@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
 import * as actions from '../actions/actions';
-
 import ProducerMetrics from './containers/ProducerMetrics.jsx';
 import ConsumerMetrics from './containers/ConsumerMetrics.jsx';
 
+// Mapping the selected data from the store to producer and consumer metrics within props
 const mapStateToProps = (state) => ({
   // Producer state
   producerDataSize: state.producer.dataSize,
@@ -19,11 +18,13 @@ const mapStateToProps = (state) => ({
   consumerPendingDuration: state.consumer.pendingDuration,
 });
 
+// Mapping dispatch actions to props object and triggers state changes for producer and consumer metrics
 const mapDispatchToProps = (dispatch) => ({
   addProducerData: (newData) => dispatch(actions.addProducerData(newData)),
   addConsumerData: (newData) => dispatch(actions.addConsumerData(newData)),
 });
 
+// Renders ProducerMetrics and ConsumerMetrics components with props
 class Dashboard extends Component {
   // As soon as this component loads, establish a Web Socket connection to our server
   componentDidMount() {
@@ -35,8 +36,9 @@ class Dashboard extends Component {
     // Socket event to handle updates to consumer metrics
     socket.on('consumer', (data) => this.props.addConsumerData(data));
   }
-
+  // Render
   render() {
+    // Destructure properties from store
     const {
       producerDataSize,
       producerProcessingTimeInMilliseconds,
@@ -45,7 +47,8 @@ class Dashboard extends Component {
       consumerProcessingTimeInMilliseconds,
       consumerPendingDuration,
     } = this.props;
-
+    // Returns ProducerMetrics and ConsumerMetrics with updated state for
+    // data size, processing time, pending duration
     return (
       <div className="dashboard">
         <ProducerMetrics

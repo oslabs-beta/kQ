@@ -4,7 +4,7 @@ not sure where to put this, but add a table of contents
 
 ## Overview
 
-- Monitor your Kafka application in real-time to find weaknesses and vulnerabilities
+- Monitor your Kafka application in real-time to diagnose vulnerabilities and improve system health
 - Track key metrics like data size, processing time, and pending duration for producers and consumers
 - Integrate kafkaQ with your application in a matter of minutes
 - Compatible with the KafkaJS API for Node.js backends
@@ -94,7 +94,7 @@ You're done! In just 4 lines of code, you were able to integrate kafkaQ with you
 To view your metrics, you will need to use the Electron app built in this repo. Follow these instructions.
 
 1. Clone this repo (`git clone XXX`) and cd into it (`cd kafkaq`).
-2. Start our server with `npm run app-server CHANGE THIS****`. This allows kafkaQ to send its metrics to our the Electron UI.
+2. Start our server with `npm run app-server CHANGE THIS****`. This allows kafkaQ to send its metrics to our Electron UI.
 3. Finally, open the Electron app with `yarn start`.
 
 ** steps 2 and 3 should be combined into 1 command for the users.
@@ -108,12 +108,12 @@ If you haven't yet set up your Kafka application, but you want to see how kafkaQ
 
 1. Clone this repo (`git clone XXX`) and cd into it (`cd kafkaq`).
 
-We're going to break this into 3 sections for clarify:
+We're going to break this into 3 sections for clarity:
 reorganize the last 2 sentences
 
 ## Section I: Starting Kafka
 
-We will be using Docker images to start Confluent Kafka, so make sure to install Docker and create an account.
+We will be using Docker images to start Kafka, so make sure to install Docker and create an account.
 
 1. Start by ensuring that Docker is running with `docker run hello-world`. You should see something similar to this:
 
@@ -127,7 +127,7 @@ ADD SCREENSHOT HERE
 
 4. Now that you have your local computer's reference, you're ready to start Kafka. Make sure to replace [LOCAL_COMPUTER] with this reference (note that you should NOT include the square brackets). Run the following command: `docker run --name kafka -p 9092:9092 -e KAFKA_ZOOKEEPER_CONNECT=[LOCAL_COMPUTER]:2181 -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://[LOCAL_COMPUTER]:9092 -e KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1 confluentinc/cp-kafka`
 
-This is all you need to do to start Kafka! Make sure to safe your local computer's reference as we will use that in future sections.
+This is all you need to do to start Kafka! Make sure to save your local computer's reference as we will use that in future sections.
 
 ### Section II: Set up the Kafka application simulator
 

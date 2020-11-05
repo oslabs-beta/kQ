@@ -21,18 +21,25 @@ const menuStyling = {
   backgroundColor: menuBackgroundColor,
 };
 
-const menuItemStyling = {
+const linkStyling = {
   color: dimWhite,
 };
 
 class App extends Component {
+  // This method generates a list of menu items to display on the top bar
   generateMenuItems() {
     const headings = ['Home', 'Quick Start', 'Documentation', 'Meet the Team'];
 
     return headings.map((heading) => {
+      // Grab the current heading, convert it to lower case, replace all spaces with "-",
+      // and add a slash to the beginning
+      const routeTo = '/' + heading.toLowerCase().replace(/ /g, '-');
+
       return (
-        <Menu.Item active={false} style={menuItemStyling} link={true}>
-          {heading}
+        <Menu.Item active={false} link={'/quick-start'}>
+          <Link to={routeTo} style={linkStyling}>
+            {heading}
+          </Link>
         </Menu.Item>
       );
     });
@@ -61,6 +68,9 @@ class App extends Component {
           </Menu>
           <Switch>
             <Route exact={true} path="/">
+              <Home />
+            </Route>
+            <Route path="/home">
               <Home />
             </Route>
             <Route path="/quick-start">

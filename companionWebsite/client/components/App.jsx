@@ -1,16 +1,48 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
+import { Menu } from 'semantic-ui-react';
+
 import About from './About.jsx';
 import Docs from './Docs.jsx';
 import Home from './Home.jsx';
 
+// $bright-white: #f9f9fc;
+// $dim-white: #d1d1d2;
+
+// $app-background-color: #0a0b18;
+// $menu-background-color: #2c2c34;
+// $box-background-color: #23252d;
+
+const menuBackgroundColor = '#2c2c34';
+const dimWhite = '#d1d1d2';
+
+const menuStyling = {
+  backgroundColor: menuBackgroundColor,
+};
+
+const menuItemStyling = {
+  color: dimWhite,
+};
+
 class App extends Component {
+  generateMenuItems() {
+    const headings = ['Home', 'Quick Start', 'Documentation', 'Meet the Team'];
+
+    return headings.map((heading) => {
+      return (
+        <Menu.Item active={false} style={menuItemStyling} link={true}>
+          {heading}
+        </Menu.Item>
+      );
+    });
+  }
+
   render() {
     return (
       <Router>
         <div>
-          This is App.
+          {/* This is App.
           <nav>
             <ul>
               <li>
@@ -23,15 +55,21 @@ class App extends Component {
                 <Link to="/docs">Docs</Link>
               </li>
             </ul>
-          </nav>
+          </nav> */}
+          <Menu pointing style={menuStyling}>
+            {this.generateMenuItems()}
+          </Menu>
           <Switch>
             <Route exact={true} path="/">
               <Home />
             </Route>
-            <Route path="/about">
+            <Route path="/quick-start">
               <About />
             </Route>
-            <Route path="/docs">
+            <Route path="/documentation">
+              <Docs />
+            </Route>
+            <Route path="/meet-the-team">
               <Docs />
             </Route>
           </Switch>

@@ -24,7 +24,7 @@ const mapDispatchToProps = (dispatch) => ({
   addConsumerData: (newData) => dispatch(actions.addConsumerData(newData)),
 });
 
-// Renders ProducerMetrics and ConsumerMetrics and updates props
+// Renders ProducerMetrics and ConsumerMetrics components with props
 class Dashboard extends Component {
   // As soon as this component loads, establish a Web Socket connection to our server
   componentDidMount() {
@@ -38,7 +38,7 @@ class Dashboard extends Component {
   }
   // Render
   render() {
-    // Updated properties from store
+    // Destructure properties from store
     const {
       producerDataSize,
       producerProcessingTimeInMilliseconds,
@@ -48,7 +48,7 @@ class Dashboard extends Component {
       consumerPendingDuration,
     } = this.props;
     // Returns ProducerMetrics and ConsumerMetrics with updated state for
-    // DATA SIZE, PROCESSING TIME, PENDING DURATION
+    // data size, processing time, pending duration
     return (
       <div className="dashboard">
         <ProducerMetrics

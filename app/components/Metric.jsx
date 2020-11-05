@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import MetricTemplate from './MetricTemplate.jsx';
 
-// Renders Metric component
+// Renders Metric component which uses methods defined in MetricTemplate to
+// render component title, labels, and generate chart
 class Metric extends MetricTemplate {
   render() {
     const { title, data } = this.props;
@@ -25,10 +26,10 @@ class Metric extends MetricTemplate {
       largest,
     ];
 
-    // Generates the chart data for the chart
+    // Defined in MetricTemplate, this method generates the chart data for the chart
     const chartData = this.generateChartData(title, processedData[0]);
 
-    // Generates the style of the chart
+    // Defined in MetricTemplate, this method generates the style of the chart
     const chartOptions = this.generateChartOptions();
 
     return (

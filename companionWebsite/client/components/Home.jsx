@@ -1,6 +1,6 @@
 // rcc tab to show react boilerplate
 import React, { Component } from 'react';
-import logo from '../icons/Kafkaq-Final-large-white.png';
+import logo from '../icons/kafkaQ-logo.png';
 
 class Home extends Component {
   render() {

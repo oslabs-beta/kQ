@@ -33,6 +33,10 @@ $box-background-color: #23252d;
   border-radius: 4px;
 }
 
+.app-background {
+  background-color: $app-background-color;
+}
+
 .box-background {
   background-color: $box-background-color;
 }
@@ -43,7 +47,7 @@ $box-background-color: #23252d;
   p {
     margin: 30px;
     color: $bright-white;
-    font-size: 25px;
+    font-size: 20px;
   }
 }
 

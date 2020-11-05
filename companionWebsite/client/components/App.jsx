@@ -8,6 +8,10 @@ import Docs from './Docs.jsx';
 import Home from './Home.jsx';
 import QuickStart from './QuickStart.jsx';
 
+import gmailLogo from '../icons/gmail-logo.png';
+import twitterLogo from '../icons/twitter-logo.png';
+import githubLogo from '../icons/github-logo.png';
+
 // $bright-white: #f9f9fc;
 // $dim-white: #d1d1d2;
 
@@ -92,12 +96,46 @@ class App extends Component {
 
             {/* Contact us */}
             <div className="box-background">
-              <strong className="box-background">Email: </strong>
-              kafkaQ21@gmail.com
+              {/* <strong className="box-background">Email: </strong>
+              kafkaQ21@gmail.com */}
+              <a
+                className="box-background"
+                href="https://twitter.com/kafkaq21gmailc1"
+              >
+                <img
+                  className="box-background"
+                  src={gmailLogo}
+                  width="60"
+                  height="50"
+                />
+              </a>
+              <a
+                className="box-background"
+                href="https://twitter.com/kafkaq21gmailc1"
+              >
+                <img
+                  className="box-background"
+                  src={twitterLogo}
+                  width="60"
+                  height="50"
+                />
+              </a>
               <strong className="box-background"> Twitter: </strong>#kafkaQ
             </div>
 
             {/* GitHub repo */}
+            <a
+              className="box-background"
+              href="https://github.com/oslabs-beta/kafkaQ"
+            >
+              <img
+                className="box-background"
+                src={githubLogo}
+                width="75"
+                height="50"
+              />
+            </a>
+
             <div className="box-background">
               <strong className="box-background">GitHub Repo: </strong>{' '}
               https://github.com/oslabs-beta/kafkaQ

@@ -46,7 +46,7 @@ class MetricTemplate extends Component {
         : num;
 
     return (
-      <p className="metrics">
+      <p className="metrics" key={`${label}-${processedNum}`}>
         {label}: {processedNum}
       </p>
     );

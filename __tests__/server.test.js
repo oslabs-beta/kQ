@@ -4,14 +4,6 @@ const server = 'http://localhost:5000';
 request = request(server);
 
 describe('Route integration', () => {
-  /*
-  request body should look like:
-  {
-    size: 129, 
-    duration: 3, 
-    sentAt: 1603588918552
-  }
-  */
   const requestBody = {
     data: {
       size: 129,

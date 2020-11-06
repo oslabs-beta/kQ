@@ -1,6 +1,6 @@
 # kafkaQ
 
-![](images/kafkaq-logo.svg)
+![](images/kafkaq-logo.png)
 
 ## Table of Contents
 

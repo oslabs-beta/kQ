@@ -39,7 +39,7 @@ class Dashboard extends Component {
   }
   // Render
   render() {
-    // Destructure properties from store
+    // Destructure properties from our state
     const {
       producerDataSize,
       producerProcessingTimeInMilliseconds,
@@ -48,7 +48,7 @@ class Dashboard extends Component {
       consumerProcessingTimeInMilliseconds,
       consumerPendingDuration,
     } = this.props;
-    // Returns ProducerMetrics and ConsumerMetrics with updated state for
+    // Returns ProducerMetrics and ConsumerMetrics components with props for
     // data size, processing time, pending duration
     return (
       <div className="dashboard">

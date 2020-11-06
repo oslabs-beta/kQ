@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import logo from './assets/Kafkaq-Final-large-white.png';
 /* eslint-disable */
 
 //Renders the titles and the DASHBOARD component
@@ -33,7 +34,10 @@ class Wrapper extends Component {
       // </div>
       <div className="app">
         <div className="title">
-          <h2>kafkaQ</h2>
+          {/* <h2>kafkaQ</h2> */}
+          {/* <img src="../assets/kafkaq_logoTest.svg" />
+          <img src="../assets/Kafkaq-Final-large-no words.png" /> */}
+          <img src={logo} />
           <h1>Dashboard</h1>
         </div>
         <div className="dashboard-container">

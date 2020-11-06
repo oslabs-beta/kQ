@@ -34,12 +34,11 @@ $dim-white: #d1d1d2;
 .title {
   @include flexCenter();
   background-color: $box-background-color;
-
-  height: 70px;
+  height: 120px;
   margin-bottom: 30px;
   border-radius: 0px 0px 5px 5px;
-
-  font-size: 40px;
+  font-size: 50px;
+  box-shadow: 8px 5px 15px 2px rgba(34, 34, 34, 0.269);
 
   h1 {
     color: $bright-white;
@@ -52,6 +51,14 @@ $dim-white: #d1d1d2;
 
     color: $primary;
   }
+
+  img {
+    position: absolute;
+    left: 0;
+    margin-left: 25px;
+    width: 100px;
+    height: auto;
+  }
 }
 
 .dashTitle {
@@ -60,8 +67,16 @@ $dim-white: #d1d1d2;
 }
 
 .metrics-container {
+  // @include flexCenter();
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  display: flex;
+  margin-left: 10px;
   flex-direction: row;
+  justify-content: left;
 }
 
 .dashboard {
@@ -85,10 +100,18 @@ $dim-white: #d1d1d2;
   // background-color: cornflowerblue;
   // border: orange solid 10px;
   .metric-heading {
+    display: flex;
+    font-size: 30px;
     margin-left: 10px;
     color: $bright-white;
     font-weight: normal;
+    justify-content: left;
   }
+}
+
+.producer-content {
+  display: flex;
+  justify-content: center;
 }
 
 .dashboard-container {
@@ -110,27 +133,40 @@ $dim-white: #d1d1d2;
   @include flexCenter();
   justify-content: normal;
   align-items: flex-start;
+  box-shadow: 8px 5px 15px 2px rgba(34, 34, 34, 0.269);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(36, 171, 238);
 
   height: 550px;
   width: 310px;
+  background: linear-gradient(rgb(36, 171, 238), rgb(28, 28, 28) 70%);
 
   margin: 10px;
   padding: 10px 20px;
 
-  background-color: $box-background-color;
+  // background-color: $box-background-color;
 
-  border: 1px solid $box-background-color;
+  // border: 1px solid $box-background-color;
   border-radius: 15px;
 }
 
 .metrics {
+  padding: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-spacing: 0rem;
+  border-color: rgba(0, 0, 0, 0.5);
   color: $dim-white;
-  font-size: 24px;
+  font-size: 20px;
+  margin: -0.5px;
+  width: 275px;
 }
 
 .metric-title {
-  color: $primary;
-  font-size: 30px;
+  // color: $primary;
+  color: $dim-white;
+  font-size: 24px;
   text-align: center;
   margin-top: 8px;
   margin-bottom: 18px;
@@ -148,7 +184,6 @@ $dim-white: #d1d1d2;
 
 .chart {
   background-color: $box-background-color;
-
   padding: 5px;
   padding-top: 10px;
   padding-left: 0px;
@@ -156,4 +191,5 @@ $dim-white: #d1d1d2;
 
   height: 300px;
   width: 275px;
+  margin-top: 10px;
 }

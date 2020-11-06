@@ -1,5 +1,7 @@
 # kafkaQ
 
+![](images/kafkaq-logo.svg)
+
 not sure where to put this, but add a table of contents
 
 ## Overview

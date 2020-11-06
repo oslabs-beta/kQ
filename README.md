@@ -106,10 +106,7 @@ You're all set! You should be able to track analytics as data moves through your
 
 If you haven't yet set up your Kafka application, but you want to see how kafkaQ works, we've got you covered. In this section, we'll show you how to set up our Kafka application simulator and track its metrics using kafkaQ.
 
-1. Clone this repo (`git clone XXX`) and cd into it (`cd kafkaq`).
-
-We're going to break this into 3 sections for clarity:
-reorganize the last 2 sentences
+First, clone this repo (`git clone XXX`) and cd into it (`cd kafkaq`). From here, we will split the instructions into 3 sections for clarity.
 
 ## Section I: Starting Kafka
 
@@ -119,7 +116,7 @@ We will be using Docker images to start Kafka, so make sure to install Docker an
 
 ADD SCREENSHOT HERE
 
-2. Now, we will start a KAFKA ZOOKEEPER INSTANCE (COME BACK TO THIS TO CHECK PRECISION). Run this command to start a zookeeper instance and expose it on port 2181: `docker run --name zookeeper -p 2181:2181 zookeeper`
+2. Now, we will start a Kafka zookeeper instance. Run this command to start a zookeeper instance and expose it on port 2181: `docker run --name zookeeper -p 2181:2181 zookeeper`
 
 3. For our next step, you will need to copy your computer's reference on your local network. On a Mac, you can find this by going to Systems Preferences > Sharing. Under the section "Computer Name", you should be able to find it. See the example below:
 

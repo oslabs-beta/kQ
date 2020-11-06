@@ -57,7 +57,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className="app">
           <Menu pointing style={menuStyling}>
             {this.generateMenuItems()}
           </Menu>

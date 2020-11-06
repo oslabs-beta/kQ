@@ -4,12 +4,12 @@
 
 ## Table of Contents
 
-[Overview](overview)
-[Demo](demo)
-[Documentation](documentation)
-[Quick Start](quick-start)
-[Viewing your metrics](viewing-your-metrics)
-[See kafkaQ in action using our Kafka application simulator](see-kafkaq-in-action-using-our-kafka-application-simulator)
+[Overview](#overview)  
+[Demo](#demo)  
+[Documentation](#documentation)  
+[Quick Start](#quick-start)  
+[Viewing your metrics](#viewing-your-metrics)  
+[See kafkaQ in action using our Kafka application simulator](#see-kafkaq-in-action-using-our-kafka-application-simulator)
 
 ## Viewing your metrics
 

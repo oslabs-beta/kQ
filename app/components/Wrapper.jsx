@@ -11,35 +11,35 @@ import Col from 'react-bootstrap/Col';
 class Wrapper extends Component {
   render() {
     return (
-      <div>
-        <Container fluid>
-          <Row>
-            <Col>
-              <h2>kafkaQ</h2>
-            </Col>
-            <Col>
-              <h1>Dashboard</h1>
-            </Col>
-            <Col>
-              <h2>User</h2>
-            </Col>
-          </Row>
-        </Container>
-        <Container>
-          <Col>
-            <Dashboard />
-          </Col>
-        </Container>
-      </div>
-      // <div className="app">
-      //   <div className="title">
-      //     <h2>kafkaQ</h2>
-      //     <h1>Dashboard</h1>
-      //   </div>
-      //   <div className="dashboard-container">
-      //     <Dashboard />
-      //   </div>
+      // <div>
+      //   <Container fluid>
+      //     <Row>
+      //       <Col>
+      //         <h2>kafkaQ</h2>
+      //       </Col>
+      //       <Col>
+      //         <h1>Dashboard</h1>
+      //       </Col>
+      //       <Col>
+      //         <h2>User</h2>
+      //       </Col>
+      //     </Row>
+      //   </Container>
+      //   <Container>
+      //     <Col>
+      // <Dashboard />
+      //   {/* </Col>
+      // </Container> */}
       // </div>
+      <div className="app">
+        <div className="title">
+          <h2>kafkaQ</h2>
+          <h1>Dashboard</h1>
+        </div>
+        <div className="dashboard-container">
+          <Dashboard />
+        </div>
+      </div>
     );
   }
 }

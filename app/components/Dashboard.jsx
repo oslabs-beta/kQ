@@ -52,24 +52,24 @@ class Dashboard extends Component {
     // data size, processing time, pending duration
     return (
       <div className="dashboard">
-        <Container>
-          <Col>
-            <ProducerMetrics
-              dataSize={producerDataSize}
-              processingTime={producerProcessingTimeInMilliseconds}
-              pendingDuration={producerPendingDuration}
-            />
-          </Col>
-        </Container>
-        <Container>
-          <Col>
-            <ConsumerMetrics
-              dataSize={consumerDataSize}
-              processingTime={consumerProcessingTimeInMilliseconds}
-              pendingDuration={consumerPendingDuration}
-            />
-          </Col>
-        </Container>
+        {/* <Container>
+          <Col> */}
+        <ProducerMetrics
+          dataSize={producerDataSize}
+          processingTime={producerProcessingTimeInMilliseconds}
+          pendingDuration={producerPendingDuration}
+        />
+        {/* //   </Col>
+        // </Container>
+        // <Container>
+        //   <Col> */}
+        <ConsumerMetrics
+          dataSize={consumerDataSize}
+          processingTime={consumerProcessingTimeInMilliseconds}
+          pendingDuration={consumerPendingDuration}
+        />
+        {/* //   </Col>
+        // </Container> */}
       </div>
     );
   }

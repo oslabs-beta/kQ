@@ -1,10 +1,17 @@
 @import '~bootstrap/scss/bootstrap';
 
 // Variables
-$primary: rgb(0, 195, 255);
+$primary: rgb(83, 190, 243);
+$primary-dark: rgb(36, 171, 238);
 $secondary: #222;
 $white: rgb(240, 240, 240);
 $dark: rgb(36, 36, 36);
+
+$app-background-color: #3b404c;
+$box-background-color: #23252d;
+
+$bright-white: #f9f9fc;
+$dim-white: #d1d1d2;
 
 // Similar to a "function", centers elements
 @mixin flexCenter() {
@@ -18,25 +25,24 @@ $dark: rgb(36, 36, 36);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  // background-color: cadetblue;
 }
 
 .app {
-  background-color: $white;
+  background-color: $app-background-color;
 }
 
 .title {
   @include flexCenter();
-  background-color: $dark;
+  background-color: $box-background-color;
 
-  height: 80px;
+  height: 70px;
   margin-bottom: 30px;
   border-radius: 0px 0px 5px 5px;
 
-  h1 {
-    color: $white;
+  font-size: 40px;
 
-    font-size: 50px;
+  h1 {
+    color: $bright-white;
   }
 
   h2 {
@@ -44,7 +50,6 @@ $dark: rgb(36, 36, 36);
     left: 0;
     margin-left: 25px;
 
-    font-size: 40px;
     color: $primary;
   }
 }
@@ -63,6 +68,8 @@ $dark: rgb(36, 36, 36);
   height: 100%;
   width: 100%;
 
+  margin-left: 7px;
+
   // @include flexCenter();
   // flex-direction: row;
 
@@ -79,6 +86,8 @@ $dark: rgb(36, 36, 36);
   // border: orange solid 10px;
   .metric-heading {
     margin-left: 10px;
+    color: $bright-white;
+    font-weight: normal;
   }
 }
 
@@ -103,19 +112,19 @@ $dark: rgb(36, 36, 36);
   align-items: flex-start;
 
   height: 550px;
-  width: 315px;
+  width: 310px;
 
   margin: 10px;
   padding: 10px 20px;
 
-  background-color: $dark;
+  background-color: $box-background-color;
 
-  border: 1px solid $dark;
+  border: 1px solid $box-background-color;
   border-radius: 15px;
 }
 
 .metrics {
-  color: white;
+  color: $dim-white;
   font-size: 24px;
 }
 
@@ -138,7 +147,7 @@ $dark: rgb(36, 36, 36);
 // }
 
 .chart {
-  background-color: $white;
+  background-color: $box-background-color;
 
   padding: 5px;
   padding-top: 10px;

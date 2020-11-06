@@ -28,9 +28,14 @@
   },
   "dependencies": {
     "express": "^4.17.1",
+    "file-loader": "^6.2.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
+    "resolve-url-loader": "^3.1.2",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^2.0.1",
+    "url-loader": "^4.1.1",
     "webpack": "^5.2.0"
   }
 }

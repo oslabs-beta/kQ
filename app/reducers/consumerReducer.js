@@ -1,5 +1,6 @@
 import { ADD_CONSUMER_DATA } from '../constants/actionTypes';
 
+// Initial state of Consumer Data
 const initialState = {
   dataSize: {
     sum: 0,
@@ -21,6 +22,8 @@ const initialState = {
   },
 };
 
+// Reducer of consumer data takes in initial state and action dispatched
+// to update the consumer data
 const consumerReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_CONSUMER_DATA:

@@ -28,21 +28,27 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'resolve-url-loader'],
         include: [path.join(__dirname, 'src'), /node_modules/],
       },
+      // {
+      //   test: /\.(jpg|jpeg|png)$/,
+      //   use: {
+      //     loader: 'url-loader',
+      //   },
+      // },
       {
         test: /\.(png|woff|woff2|eot|ttf|svg)$/,
         loader: 'url-loader',
       },
-      {
-        test: /\.(png|jp(e*)g|svg|gif)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'images/[hash]-[name].[ext]',
-            },
-          },
-        ],
-      },
+      // {
+      //   test: /\.(png|jp(e*)g|svg|gif)$/,
+      //   use: [
+      //     {
+      //       loader: 'file-loader',
+      //       options: {
+      //         name: 'images/[hash]-[name].[ext]',
+      //       },
+      //     },
+      //   ],
+      // },
     ],
   },
   devServer: {

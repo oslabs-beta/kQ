@@ -39,13 +39,13 @@ class App extends Component {
     const headings = ['Home', 'Quick Start', 'Documentation', 'Meet the Team'];
     // headings to add^ : demo, using our simulator
 
-    return headings.map((heading) => {
+    return headings.map((heading, idx) => {
       // Grab the current heading, convert it to lower case, replace all spaces with "-",
       // and add a slash to the beginning
       const routeTo = '/' + heading.toLowerCase().replace(/ /g, '-');
 
       return (
-        <Menu.Item active={false} link={'/quick-start'}>
+        <Menu.Item active={false} link={true} key={`heading-${idx}`}>
           <Link to={routeTo} style={linkStyling}>
             {heading}
           </Link>

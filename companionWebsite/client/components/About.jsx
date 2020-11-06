@@ -1,10 +1,10 @@
 // rcc tab to show react boilerplate
 import React, { Component } from 'react';
 import { Card, Icon, Image, Button } from 'semantic-ui-react';
-import jonathan from '../../images/jonathan.jpeg';
-import kaiwei from '../../images/kaiwei.jpeg';
-import micah from '../../images/micah.jpeg';
-import shreshth from '../../images/shreshth.jpeg';
+// import jonathan from '../../images/jonathan.jpeg';
+// import kaiwei from '../../images/kaiwei.jpeg';
+// import micah from '../../images/micah.jpeg';
+// import shreshth from '../../images/shreshth.jpeg';
 
 const About = () => (
   <Card.Group>

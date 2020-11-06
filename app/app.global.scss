@@ -35,14 +35,14 @@ $dim-white: #d1d1d2;
   @include flexCenter();
   background-color: $box-background-color;
 
-  height: 80px;
+  height: 70px;
   margin-bottom: 30px;
   border-radius: 0px 0px 5px 5px;
 
+  font-size: 40px;
+
   h1 {
     color: $bright-white;
-
-    font-size: 50px;
   }
 
   h2 {
@@ -50,7 +50,6 @@ $dim-white: #d1d1d2;
     left: 0;
     margin-left: 25px;
 
-    font-size: 40px;
     color: $primary;
   }
 }

@@ -2,7 +2,18 @@
 
 ![](images/kafkaq-logo.svg)
 
-not sure where to put this, but add a table of contents
+## Table of Contents
+
+[Overview](overview)
+[Demo](demo)
+[Documentation](documentation)
+[Quick Start](quick-start)
+[Viewing your metrics](viewing-your-metrics)
+[See kafkaQ in action using our Kafka application simulator](see-kafkaq-in-action-using-our-kafka-application-simulator)
+
+## Viewing your metrics
+
+## See kafkaQ in action using our Kafka application simulator
 
 ## Overview
 

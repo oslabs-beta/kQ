@@ -88,7 +88,7 @@ class Docs extends Component {
         </p>
         <p>
           <strong className="title">Processing Time:</strong> The speed with
-          which your application process inbound messages can have significant
+          which your application processes inbound messages can have significant
           effects on the user experience. To assist your needs, we track the
           amount of time your Kafka system used to track your application's
           performance in milliseconds. If you find that processing time has

@@ -28,8 +28,6 @@ kafkaQ is incredibly easy to incorporate into your application. Let's walk throu
 1. In your project's root directory, run `npm install kafkaq-monitor`
 2. In the producer script of your Kafka application, import our `trackProducer` method and invoke it immediately after the code connecting your producer, passing in your producer as an argument. Here's an example:
 
-FIGURE OUT WHY THESE AREN'T COLORED
-
 ```javascript
 const { Kafka } = require('kafkajs');
 const { trackProducer } = require('kafkaq-monitor'); // kafkaQ's NPM package
@@ -93,12 +91,8 @@ You're done! In just 4 lines of code, you were able to integrate kafkaQ with you
 
 To view your metrics, you will need to use the Electron app built in this repo. Follow these instructions.
 
-1. Clone this repo (`git clone XXX`) and cd into it (`cd kafkaq`).
-2. Start our server with `npm run app-server CHANGE THIS****`. This allows kafkaQ to send its metrics to our Electron UI.
-3. Finally, open the Electron app with `yarn start`.
-
-** steps 2 and 3 should be combined into 1 command for the users.
-** also figure out if they should use npm or yarn please
+1. Clone this repo (`git clone https://github.com/oslabs-beta/kafkaQ.git`) and cd into it (`cd kafkaq`).
+2. Start the application with `npm run electron-app`. This allows kafkaQ to send its metrics to our Electron UI.
 
 You're all set! You should be able to track analytics as data moves through your Kafka application, and make vital decisions about scaling your distributed system.
 
@@ -106,15 +100,15 @@ You're all set! You should be able to track analytics as data moves through your
 
 If you haven't yet set up your Kafka application, but you want to see how kafkaQ works, we've got you covered. In this section, we'll show you how to set up our Kafka application simulator and track its metrics using kafkaQ.
 
-First, clone this repo (`git clone XXX`) and cd into it (`cd kafkaq`). From here, we will split the instructions into 3 sections for clarity.
+First, clone this repo (`git clone https://github.com/oslabs-beta/kafkaQ.git`) and cd into it (`cd kafkaq`). From here, we will split the instructions into 3 sections for clarity.
 
 ## Section I: Starting Kafka
 
 We will be using Docker images to start Kafka, so make sure to install Docker and create an account.
 
-1. Start by ensuring that Docker is running with `docker run hello-world`. You should see something similar to this:
+1. Start by ensuring that Docker is running with `docker run hello-world`. If Docker is not running, you should open the Docker desktop app; otherwise, you should see something similar to this:
 
-ADD SCREENSHOT HERE
+![](images/docker-run-hello-world.png)
 
 2. Now, we will start a Kafka zookeeper instance. Run this command to start a zookeeper instance and expose it on port 2181: `docker run --name zookeeper -p 2181:2181 zookeeper`
 

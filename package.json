@@ -35,11 +35,10 @@
     "test-e2e": "node -r @babel/register ./internals/scripts/CheckBuildsExist.js && cross-env NODE_ENV=test testcafe electron:./app ./test/e2e/HomePage.e2e.ts",
     "test-e2e-live": "node -r @babel/register ./internals/scripts/CheckBuildsExist.js && cross-env NODE_ENV=test testcafe --live electron:./app ./test/e2e/HomePage.e2e.ts",
     "test-watch": "yarn test --watch",
-    "consumerjs": "node kafkaJSAppSimulator/consumer.js",
-    "consumernode": "node kafkaNodeAppSimulator/consumer.js",
-    "app-server": "nodemon server/server.js",
-    "companion-server": "NODE_ENV=development nodemon server/server.js & NODE_ENV=development webpack-dev-server --open",
-    "server": "nodemon kafkaApplicationSimulator/kafkaSimulatorServer.js"
+    "consumer": "node kafkaApplicationSimulator/consumer.js",
+    "electron-server": "nodemon server/server.js",
+    "electron-app": "npm run electron-server & yarn start",
+    "simulator-server": "nodemon kafkaApplicationSimulator/kafkaSimulatorServer.js"
   },
   "build": {
     "productName": "ElectronReact",

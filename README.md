@@ -114,7 +114,7 @@ We will be using Docker images to start Kafka, so make sure to install Docker an
 
 3. For our next step, you will need to copy your computer's reference on your local network. On a Mac, you can find this by going to Systems Preferences > Sharing. Under the section "Computer Name", you should be able to find it. See the example below:
 
-ADD SCREENSHOT HERE
+![](images/local-computer.png)
 
 4. Now that you have your local computer's reference, you're ready to start Kafka. Make sure to replace [LOCAL_COMPUTER] with this reference (note that you should NOT include the square brackets). Run the following command: `docker run --name kafka -p 9092:9092 -e KAFKA_ZOOKEEPER_CONNECT=[LOCAL_COMPUTER]:2181 -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://[LOCAL_COMPUTER]:9092 -e KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1 confluentinc/cp-kafka`
 
@@ -122,31 +122,22 @@ This is all you need to do to start Kafka! Make sure to save your local computer
 
 ### Section II: Set up the Kafka application simulator
 
-add something about setting up their env file
+Before we get started with this section, you will need to create a file called `.env` and have it mimic this example:
+
+![](images/env.png)
 
 1. Cd into the kafkaApplicationSimulator directory (`cd kafkaApplicationSimulator`)
-2. Start the server for our Kafka application simulator using `npm run server` (CHANGE THIS NAME). This server has a route that will connect a producer and send a message, which we will use later.
-3. Start your Kafka consumer with `node kafkaApplicationSimulator/consumer.js` (CHANGE THIS TO A PACKAGE.JSON SCRIPT). You should see output similar to this:
+2. Start the server for our Kafka application simulator using `npm run simulator-server`. This server has a route that will connect a producer and send a message, which we will use later.
+3. Run `npm run electron-app` to start our server (our producer and consumer will need to connect to this) and open the Electron app.
+4. Start your Kafka consumer with `npm run consumer`. You should see output similar to this:
 
-ADD SCREENSHOT HERE
+![](images/consumer.png)
 
-(THIS NEXT PART WILL CHANGE ONCE WE SWITCH BACK TO GIN)
-
-4. Finally, we'll need to send some data through our system. To do so, run our Go script using `go run kafkaApplicationSimulator/generate_data.go` (ADD AN PACKAGE.JSON SCRIPT FOR THIS IF WE KEEP IT). Note that if you have not installed Go, you will need to run `brew install golang` before completing this step. For future reference, if you would like to increase or decrease the volume of data sent through your system, simply change the NUM_STRINGS variable in kafkaApplicationSimulator/generate_data.go
-
-### Section III: Viewing your metrics
-
-1. Run `yarn start` to open the Electron application, and you should be able to view your data in real-time!
-
-If your metrics aren't changing, you may not have any data flowing through your system. Try re-running the Go script as described in Step 4 of the previous section.
-
-## FAQ/Debugging suggestions/Common mistakes
-
-Not done
+4. Finally, we'll need to send some data through our system. To do so, run our Go script using `npm run go-script`. Note that if you have not installed Go, you will need to run `brew install golang` before completing this step. For future reference, if you would like to increase or decrease the volume of data sent through your system, simply change the NUM_STRINGS variable in kafkaApplicationSimulator/generate_data.go
 
 ## Authors
 
-_Lascaux_ Engineers
+kafkaQ Engineers
 
 [Jonathan Barenboim](https://github.com/Jbaren01)  
 [Kaiwei Hsu](https://github.com/FIXTHIS)  

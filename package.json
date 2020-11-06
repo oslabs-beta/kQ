@@ -38,6 +38,7 @@
     "consumer": "node kafkaApplicationSimulator/consumer.js",
     "electron-server": "nodemon server/server.js",
     "electron-app": "npm run electron-server & yarn start",
+    "go-script": "go run kafkaApplicationSimulator/generate_data.go",
     "simulator-server": "nodemon kafkaApplicationSimulator/kafkaSimulatorServer.js"
   },
   "build": {

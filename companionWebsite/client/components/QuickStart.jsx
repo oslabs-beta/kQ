@@ -4,7 +4,7 @@ class QuickStart extends Component {
   render() {
     return (
       <div className="box">
-        <h1 className="box-background title">Installation</h1>
+        <h1 className="box-background title">Quick Start</h1>
         <p className="box-background">
           kafkaQ is incredibly easy to incorporate into your application. Let's
           walk through the steps you'll need to take.
@@ -19,9 +19,9 @@ class QuickStart extends Component {
           </li>
           <li className="box-background">
             In the producer script of your Kafka application, import our
-            <code className="box-background code"> trackProducer </code> method
-            and invoke it immediately after the code connecting your producer,
-            passing in your producer as an argument. Here's an example:
+            <code className="code"> trackProducer </code> method and invoke it
+            immediately after the code connecting your producer, passing in your
+            producer as an argument. Here's an example:
             <br />
             <code className="box-background code-block">
               {/* Restart the code part. use span tags to get diff colors */}
@@ -53,7 +53,18 @@ class QuickStart extends Component {
               producer.disconnect();
             </code>
           </li>
+          <li>
+            Similarly, in the consumer script of your application, import our{' '}
+            <code className="code"> trackConsumer </code> method and invoke it
+            immediately after your consumer subscribes to a topic, passing in
+            your consumer as an argument. Here's an example:
+          </li>
         </ol>
+        <p>
+          That's all! In just 4 lines of code, you were able to integrate kafkaQ
+          and track your metrics in real-time. Feel free to view our
+          documentation for more details about our system's details.
+        </p>
       </div>
     );
   }

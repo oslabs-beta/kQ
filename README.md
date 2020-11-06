@@ -140,6 +140,6 @@ Before we get started with this section, you will need to create a file called `
 kafkaQ Engineers
 
 [Jonathan Barenboim](https://github.com/Jbaren01)  
-[Kaiwei Hsu](https://github.com/FIXTHIS)  
+[Kaiwei Hsu](https://github.com/kaiweih)  
 [Micah Turan](https://github.com/ymturan)  
 [Shreshth Srivastava](https://github.com/Shreshth3)

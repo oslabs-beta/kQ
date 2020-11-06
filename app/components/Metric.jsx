@@ -5,16 +5,16 @@ import MetricTemplate from './MetricTemplate.jsx';
 // render component title, labels, and generate chart
 class Metric extends MetricTemplate {
   render() {
-    // const { title, data } = this.props;
-    // const { sum, numOfDataPoints, smallest, largest } = data;
+    const { title, data } = this.props;
+    const { sum, numOfDataPoints, smallest, largest } = data;
 
     /* Dummy data for UI test purposes: */
 
-    const { title } = this.props;
-    const sum = 50;
-    const numOfDataPoints = 10;
-    const smallest = 4;
-    const largest = 16;
+    // const { title } = this.props;
+    // const sum = 50;
+    // const numOfDataPoints = 10;
+    // const smallest = 4;
+    // const largest = 16;
 
     /*
     {

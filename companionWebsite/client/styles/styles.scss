@@ -1,0 +1,108 @@
+$primary: rgb(83, 190, 243);
+
+$bright-white: #f9f9fc;
+$dim-white: #d1d1d2;
+
+// $app-background-color: #0a0b18;
+$app-background-color: #3b404c;
+// $menu-background-color: #2c2c34;
+$menu-background-color: #23252d;
+$box-background-color: #23252d;
+// $box-background-color: #3b404c;
+
+@mixin flexCenter() {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  background-color: $app-background-color;
+  color: $dim-white;
+}
+
+.box {
+  background-color: $box-background-color;
+
+  margin: 20px;
+  padding: 20px;
+
+  height: 5000px;
+
+  border-radius: 4px;
+}
+
+.app-background {
+  background-color: $app-background-color;
+}
+
+.box-background {
+  background-color: $box-background-color;
+}
+
+.home {
+  @include flexCenter();
+
+  p {
+    margin: 30px;
+    color: $bright-white;
+    font-size: 20px;
+  }
+}
+
+.title {
+  color: $bright-white;
+}
+
+.code {
+  color: $primary;
+}
+
+.code-block {
+  margin-left: 10px;
+}
+
+footer {
+  @include flexCenter();
+
+  height: 175px;
+
+  div {
+    font-size: 12px;
+  }
+
+  h3 {
+    margin-left: 10px;
+  }
+}
+
+.footer-title {
+  @include flexCenter();
+  flex-direction: row;
+  margin: 20px;
+
+  img {
+    position: relative;
+    margin-top: 25px;
+  }
+}
+
+.logos {
+  @include flexCenter();
+
+  background-color: $box-background-color;
+  flex-direction: row;
+
+  div {
+    margin: 15px;
+  }
+}
+
+#twitter-logo {
+  margin-left: 10px;
+}
+
+#medium-logo {
+  margin-left: 0px;
+}

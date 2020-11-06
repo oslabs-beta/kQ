@@ -18,8 +18,12 @@ $box-background-color: #23252d;
 }
 
 * {
-  background-color: $app-background-color;
+  // background-color: $app-background-color;
   color: $dim-white;
+}
+
+.app {
+  background-color: $app-background-color;
 }
 
 .box {

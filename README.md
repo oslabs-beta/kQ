@@ -11,10 +11,6 @@
 [Viewing your metrics](#viewing-your-metrics)  
 [See kafkaQ in action using our Kafka application simulator](#see-kafkaq-in-action-using-our-kafka-application-simulator)
 
-## Viewing your metrics
-
-## See kafkaQ in action using our Kafka application simulator
-
 ## Overview
 
 - Monitor your Kafka application in real-time to diagnose vulnerabilities and improve system health

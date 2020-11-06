@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import * as actions from '../actions/actions';
 import ProducerMetrics from './containers/ProducerMetrics.jsx';
 import ConsumerMetrics from './containers/ConsumerMetrics.jsx';
+import { Container, Col } from 'react-bootstrap';
 
 // Mapping the selected data from the store to producer and consumer metrics within props
 const mapStateToProps = (state) => ({
@@ -51,16 +52,24 @@ class Dashboard extends Component {
     // data size, processing time, pending duration
     return (
       <div className="dashboard">
+        {/* <Container>
+          <Col> */}
         <ProducerMetrics
           dataSize={producerDataSize}
           processingTime={producerProcessingTimeInMilliseconds}
           pendingDuration={producerPendingDuration}
         />
+        {/* //   </Col>
+        // </Container>
+        // <Container>
+        //   <Col> */}
         <ConsumerMetrics
           dataSize={consumerDataSize}
           processingTime={consumerProcessingTimeInMilliseconds}
           pendingDuration={consumerPendingDuration}
         />
+        {/* //   </Col>
+        // </Container> */}
       </div>
     );
   }

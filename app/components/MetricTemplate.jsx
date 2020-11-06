@@ -13,12 +13,15 @@ that can be used by the various metrics components we have. Here are all the met
 -Method to create a graph
 */
 
-const backgroundColor = 'rgb(0, 195, 255)';
+const backgroundColor = 'rgb(83, 190, 243)';
+// const backgroundColor = '#233441';
 const borderWidth = 2;
-const borderColor = 'rgb(36, 36, 36)';
+const borderColor = 'rgb(83, 190, 243)';
+// const borderColor = 'rgb(36, 171, 238)';
+// const borderColor = '#216480';
 
-const fontSize = 30;
-const fontColor = 'rgb(36, 36, 36)';
+const fontSize = 24;
+const fontColor = '#d1d1d2';
 const fontFamily = 'Lato';
 
 class MetricTemplate extends Component {

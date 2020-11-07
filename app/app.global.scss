@@ -156,7 +156,8 @@ $dim-white: #d1d1d2;
 // }
 
 .metric-heading {
-  border: solid black 1px;
+  border: none;
+  background-color: rgb(83, 190, 243);n
   border-spacing: 0rem;
   border-radius: 10px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',

@@ -1,9 +1,7 @@
 const axios = require('axios');
-// const printHello = () => console.log('hello');
-
-// let num = 0;
 
 // function invoked in kafka topic.js 
+// This method tracks producer metrics and sends them to the locally running server
 const trackProducer = (producer) => {
   const { REQUEST } = producer.events;
   const sendListener = producer.on(REQUEST, (e) => {
@@ -19,6 +17,7 @@ const trackProducer = (producer) => {
 };
 
 // function invoked in kafka consumer.js 
+// This method tracks consumer metrics and sends them to the locally running server
 const trackConsumer = (consumer) => {
   const { REQUEST } = consumer.events;
 
@@ -37,15 +36,7 @@ const trackConsumer = (consumer) => {
 
     // create a HTTP connection to server.js (kafkaQ server) to endpoint :5000/consumer and send over the data object
     axios.post(url, { data });
-
-    console.log(`Consumer REQUEST size: ${e.payload.size}`);
-    console.log(`Consumer REQUEST duration: ${e.payload.duration}`);
-    console.log(`Consumer REQUEST sentAt: ${e.payload.sentAt}\n`);
-    // num += e.payload.size;
-    // console.log(`num is: ${num}`);
   });
-
-  // printHello();
 };
 
 module.exports = { trackProducer, trackConsumer };

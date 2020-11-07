@@ -28,6 +28,7 @@ $dim-white: #d1d1d2;
 // }
 
 .app {
+  position: relative;
   background-color: $app-background-color;
   height: 100%;
   width: 100%;
@@ -91,8 +92,18 @@ $dim-white: #d1d1d2;
   }
 }
 
-.dashboard-container {
-  margin-bottom: 2rem;
+.container {
+  position: relative;
+  top: 120px;
+
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+.sidebar {
+  position: absolute;
+  left: 0;
 }
 
 .dashTitle {
@@ -157,7 +168,7 @@ $dim-white: #d1d1d2;
 
 .metric-heading {
   border: none;
-  background-color: rgb(83, 190, 243);n
+  background-color: rgb(83, 190, 243);
   border-spacing: 0rem;
   border-radius: 10px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',

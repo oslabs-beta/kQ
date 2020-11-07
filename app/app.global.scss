@@ -21,11 +21,11 @@ $dim-white: #d1d1d2;
   align-items: center;
 }
 
-* {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-}
+// * {
+//   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+//     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+//     sans-serif;
+// }
 
 .app {
   background-color: $app-background-color;
@@ -35,9 +35,10 @@ $dim-white: #d1d1d2;
 
 .title {
   @include flexCenter();
+  font-family: 'Roboto', sans-serif;
   background-color: $box-background-color;
   height: 120px;
-  margin-bottom: 30px;
+  // margin-bottom: 30px;
   // border-radius: 0px 0px 5px 5px;
   font-size: 50px;
   box-shadow: 8px 5px 15px 2px rgba(34, 34, 34, 0.269);
@@ -68,6 +69,32 @@ $dim-white: #d1d1d2;
   }
 }
 
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-style: poppins;
+  background-color: $box-background-color;
+  height: 60px;
+
+  font-size: 50px;
+  box-shadow: 8px 5px 15px 2px rgba(34, 34, 34, 0.269);
+
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+  h1 {
+    color: $bright-white;
+  }
+}
+
+.dashboard-container {
+  margin-bottom: 2rem;
+}
+
 .dashTitle {
   background-color: orange;
   border: 10px solid blueviolet;
@@ -84,6 +111,10 @@ $dim-white: #d1d1d2;
   margin-left: 10px;
   flex-direction: row;
   justify-content: left;
+
+  #firstMetric {
+    border-radius: 5px 5px 0px 0px;
+  }
 }
 
 .mainDashboard {
@@ -118,7 +149,18 @@ $dim-white: #d1d1d2;
   // background-color: cornflowerblue;
   // border: orange solid 10px;
 }
+
+// #consumer-heading-container {
+//   width: 250px;
+//   // padding: 10px;
+// }
+
 .metric-heading {
+  border: solid black 1px;
+  border-spacing: 0rem;
+  border-radius: 10px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
   display: flex;
   font-size: 30px;
   margin-left: 10px;
@@ -143,10 +185,6 @@ $dim-white: #d1d1d2;
   margin-top: 0.1rem;
   // justify-content: center;
 }
-
-// .dashboard-container {
-//   width: 100%;
-// }
 
 .dashForm {
   display: flex;
@@ -200,10 +238,6 @@ $dim-white: #d1d1d2;
   text-align: center;
   margin-top: 8px;
   margin-bottom: 18px;
-}
-
-#firstMetric {
-  border-radius: 5px 5px 0px 0px;
 }
 
 // .graph {

@@ -43,6 +43,9 @@ class Wrapper extends Component {
         <div className="dashboard-container">
           <Dashboard />
         </div>
+        <div className="footer">
+          <h1>kafkaQ</h1>
+        </div>
       </div>
     );
   }

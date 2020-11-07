@@ -47,7 +47,7 @@ class ProducerMetrics extends Component {
             <h1 className="metric-heading">Producer Metrics</h1>
           </div>
           <div className="metrics-container">
-            <Metric id="firstMetric" title={'Data Size'} data={dataSize} />
+            <Metric id={'firstMetric'} title={'Data Size'} data={dataSize} />
             <Metric title={'Processing Time'} data={processingTime} />
             <Metric title={'Pending Duration'} data={pendingDuration} />
           </div>

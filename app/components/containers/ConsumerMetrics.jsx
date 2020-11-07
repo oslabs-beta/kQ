@@ -39,11 +39,11 @@ class ConsumerMetrics extends Component {
       //   {/* </Container> */}
       <div className="dashboard">
         <div className="consumer-content">
-          <div>
+          <div id="consumer-heading-container">
             <h1 className="metric-heading">Consumer Metrics</h1>
           </div>
           <div className="metrics-container">
-            <Metric id="firstMetric" title={'Data Size'} data={dataSize} />
+            <Metric id={'firstMetric'} title={'Data Size'} data={dataSize} />
             <Metric title={'Processing Time'} data={processingTime} />
             <Metric title={'Pending Duration'} data={pendingDuration} />
           </div>

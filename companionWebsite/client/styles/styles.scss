@@ -106,3 +106,50 @@ footer {
 #medium-logo {
   margin-left: 0px;
 }
+
+// .token {
+
+//   keywords {
+//   color: rgb(197, 165, 197);
+//   }
+
+//   string {
+//     color: rgb(141, 200, 145);
+//   }
+
+//   symbols {
+//     color: orange;
+//   }
+
+//   comments {
+//     color: rgb(178, 178, 178);
+//   }
+// }
+
+#codeBox {
+  background-color: black;
+}
+.token.keywords {
+  color: rgb(204, 175, 204);
+}
+.token.string {
+  color: rgb(128, 211, 134);
+}
+.token.symbols {
+  color: rgb(154, 212, 206);
+}
+.token.comments {
+  color: rgb(178, 178, 178);
+}
+.token.equation {
+  color: rgb(161, 161, 240);
+}
+.token.names {
+  color: rgb(241, 216, 216);
+}
+.token.func {
+  color: rgb(247, 164, 164);
+}
+.token.keywordReq {
+  color: rgb(199, 199, 53)
+}

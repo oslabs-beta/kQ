@@ -2,6 +2,14 @@
 
 ![](images/kafkaq-logo.png)
 
+<p align="center">
+  <img alt="GitHub" src="https://img.shields.io/github/license/oslabs-beta/obsidian">
+  <img alt="GitHub issues" src="https://img.shields.io/github/issues-raw/oslabs-beta/obsidian?color=yellow">
+  <img alt="GitHub All Releases" src="https://img.shields.io/github/downloads/oslabs-beta/obsidian/total?color=green">
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/oslabs-beta/obsidian?color=orange">
+  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/oslabs-beta/obsidian?style=social">  
+</p>
+
 ## Table of Contents
 
 [Overview](#overview)  

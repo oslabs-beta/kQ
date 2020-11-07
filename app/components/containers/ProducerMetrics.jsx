@@ -42,12 +42,12 @@ class ProducerMetrics extends Component {
       //   <ProcessingTime /> */}
       //   {/* </Container> */}
       <div className="dashboard">
-        <div className="produce-content">
+        <div className="producer-content">
           <div>
             <h1 className="metric-heading">Producer Metrics</h1>
           </div>
           <div className="metrics-container">
-            <Metric title={'Data Size'} data={dataSize} />
+            <Metric id="firstMetric" title={'Data Size'} data={dataSize} />
             <Metric title={'Processing Time'} data={processingTime} />
             <Metric title={'Pending Duration'} data={pendingDuration} />
           </div>

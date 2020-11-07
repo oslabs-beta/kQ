@@ -38,11 +38,15 @@ class ConsumerMetrics extends Component {
       //   <ProcessingTime /> */}
       //   {/* </Container> */}
       <div className="dashboard">
-        <h1 className="metric-heading">Consumer Metrics</h1>
-        <div className="metrics-container">
-          <Metric title={'Data Size'} data={dataSize} />
-          <Metric title={'Processing Time'} data={processingTime} />
-          <Metric title={'Pending Duration'} data={pendingDuration} />
+        <div className="consumer-content">
+          <div>
+            <h1 className="metric-heading">Consumer Metrics</h1>
+          </div>
+          <div className="metrics-container">
+            <Metric id="firstMetric" title={'Data Size'} data={dataSize} />
+            <Metric title={'Processing Time'} data={processingTime} />
+            <Metric title={'Pending Duration'} data={pendingDuration} />
+          </div>
         </div>
       </div>
       //     {/* <DataSize />

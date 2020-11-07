@@ -51,7 +51,7 @@ class Dashboard extends Component {
     // Returns ProducerMetrics and ConsumerMetrics components with props for
     // data size, processing time, pending duration
     return (
-      <div className="dashboard">
+      <div className="mainDashboard">
         {/* <Container>
           <Col> */}
         <ProducerMetrics

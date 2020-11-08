@@ -86,14 +86,13 @@ class Docs extends Component {
         <p>
           <p className="box-background"></p>
           <code className="box-background code">
-            <span class="token func"> trackProducer</span>
+            <span class="token func"> trackConsumer</span>
             <span class="token symbols">(</span>
-            <span class="token names">producer</span>
+            <span class="token names">consumer</span>
             <span class="token symbols">)</span>
             <span class="token symbols">;</span>
           </code>
         </p>
-        <code className="box-background">trackConsumer(consumer)</code>
         {/* Breaking down our metrics */}
         <h2 className="box-background title">Breaking down our metrics</h2>
         <p>

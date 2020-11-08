@@ -134,7 +134,7 @@ footer {
   background-color: black;
 }
 .token.keywords {
-  color: rgb(204, 175, 204);
+  color: rgb(204, 137, 204);
 }
 .token.string {
   color: rgb(128, 211, 134);
@@ -156,4 +156,7 @@ footer {
 }
 .token.keywordReq {
   color: rgb(199, 199, 53)
+}
+.token.key {
+  color: rgb(91, 170, 235)
 }

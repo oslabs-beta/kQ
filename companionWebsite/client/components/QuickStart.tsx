@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
-class QuickStart extends Component {
-  render() {
+class QuickStart extends PureComponent<{}> {
+  render(): JSX.Element {
     return (
       <div className="box">
         <h1 className="box-background title">Quick Start</h1>

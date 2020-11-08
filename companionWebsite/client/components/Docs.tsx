@@ -1,17 +1,16 @@
-// rcc tab to show react boilerplate
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import env from '../icons/env.png';
 import consumer from '../icons/consumer.png';
 import dockerRunHelloWorld from '../icons/docker-run-hello-world.png';
 import localComputer from '../icons/local-computer.png';
 
-class Docs extends Component {
-  render() {
+class Docs extends PureComponent<{}> {
+  render(): JSX.Element {
     return (
       <div className="box">
         {/* Table of Contents */}
         <h2 className="box-background title">Table of Contents</h2>
-        <ul style={{ 'padding-left': '15px' }}>
+        <ul style={{ paddingLeft: '15px' }}>
           <li>Installing our NPM package</li>
           <li>Getting Started</li>
           <li>Breaking down our metrics</li>
@@ -70,16 +69,6 @@ class Docs extends Component {
           duration. For each, metric, we display the average, smallest, and
           largest values, along with a dynamic bar graph. Each of these
           statistics is updated in real-time.
-          {/* In order to make thorough
-          conclusions about your system's performance, we break down each metric
-          and show you what the average request, the smallest request, and the
-          largest request look like. Additionally, we provide a dynamic bar
-          chart that is update in real-time as data flows through your system.
-          With our application, you can identify the cause behind latency,
-          enabling a swift response whether that means increasing the quantity
-          of brokers or modifying your system architecture. In this way, kafkaQ
-          works to ensure that your users will have a seamless experience with
-          your application. */}
         </p>
         <p>
           <strong className="title">Data Size:</strong> The volume of data
@@ -150,8 +139,8 @@ class Docs extends Component {
           <li>
             For our next step, you will need to copy your computer's reference
             on your local network. On a Mac, you can find this by going to
-            Systems Preferences > Sharing. Under the section "Computer Name",
-            you should be able to find it. See the example below:
+            Systems Preferences {' > '} Sharing. Under the section "Computer
+            Name", you should be able to find it. See the example below:
             <img src={localComputer} />
           </li>
           <li>

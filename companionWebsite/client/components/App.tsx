@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import { Menu } from 'semantic-ui-react';
@@ -26,7 +26,7 @@ const linkStyling = {
   color: dimWhite,
 };
 
-class App extends PureComponent<{}> {
+class App extends Component<{}> {
   // This method generates a list of menu items to display on the top bar
   generateMenuItems() {
     const headings = ['Home', 'Quick Start', 'Documentation', 'Meet the Team'];

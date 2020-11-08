@@ -1,10 +1,10 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import env from '../icons/env.png';
 import consumer from '../icons/consumer.png';
 import dockerRunHelloWorld from '../icons/docker-run-hello-world.png';
 import localComputer from '../icons/local-computer.png';
 
-class Docs extends PureComponent<{}> {
+class Docs extends Component<{}> {
   render(): JSX.Element {
     return (
       <div className="box">

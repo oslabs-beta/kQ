@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: path.resolve(__dirname, './client/index.js'),
+  entry: path.resolve(__dirname, './client/index.tsx'),
   output: {
     path: path.resolve(__dirname, './build'),
     filename: 'bundle.js',
@@ -28,27 +28,15 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'resolve-url-loader'],
         include: [path.join(__dirname, 'src'), /node_modules/],
       },
-      // {
-      //   test: /\.(jpg|jpeg|png)$/,
-      //   use: {
-      //     loader: 'url-loader',
-      //   },
-      // },
       {
         test: /\.(png|woff|woff2|eot|ttf|svg)$/,
         loader: 'url-loader',
       },
-      // {
-      //   test: /\.(png|jp(e*)g|svg|gif)$/,
-      //   use: [
-      //     {
-      //       loader: 'file-loader',
-      //       options: {
-      //         name: 'images/[hash]-[name].[ext]',
-      //       },
-      //     },
-      //   ],
-      // },
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
     ],
   },
   devServer: {
@@ -58,5 +46,8 @@ module.exports = {
     },
     compress: true,
     disableHostCheck: true,
+  },
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
 };

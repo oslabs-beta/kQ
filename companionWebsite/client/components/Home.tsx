@@ -1,9 +1,8 @@
-// rcc tab to show react boilerplate
 import React, { Component } from 'react';
 import logo from '../icons/kafkaQ-logo.png';
 
-class Home extends Component {
-  render() {
+class Home extends Component<{}> {
+  render(): JSX.Element {
     return (
       <div className="home">
         {/* <div>

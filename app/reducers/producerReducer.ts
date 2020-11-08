@@ -1,6 +1,6 @@
-import { ADD_CONSUMER_DATA } from '../constants/actionTypes';
+import { ADD_PRODUCER_DATA } from '../constants/actionTypes';
 
-// Initial state of Consumer Data
+// Initial state of producer data
 const initialState = {
   dataSize: {
     sum: 0,
@@ -22,11 +22,26 @@ const initialState = {
   },
 };
 
-// Reducer of consumer data takes in initial state and action dispatched
-// to update the consumer data
-const consumerReducer = (state = initialState, action) => {
+interface NewData {
+  size: number;
+  pendingDuration: number;
+  processingTimeInMilliseconds: number;
+}
+
+interface Metrics {
+  data: NewData;
+}
+
+interface action {
+  type: string;
+  payload: Metrics;
+}
+
+// Reducer of producer data takes in initial state and action dispatched
+// to update the producer data
+const producerReducer = (state = initialState, action: action) => {
   switch (action.type) {
-    case ADD_CONSUMER_DATA:
+    case ADD_PRODUCER_DATA:
       const {
         size,
         processingTimeInMilliseconds,
@@ -73,4 +88,4 @@ const consumerReducer = (state = initialState, action) => {
   }
 };
 
-export default consumerReducer;
+export default producerReducer;

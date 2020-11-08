@@ -56,5 +56,7 @@ module.exports = {
     proxy: {
       '/': 'http://localhost:3001',
     },
+    compress: true,
+    disableHostCheck: true,
   },
 };

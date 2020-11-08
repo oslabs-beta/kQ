@@ -2,6 +2,14 @@
 
 ![](images/kafkaq-logo.png)
 
+<p align="center">
+  <img alt="GitHub" src="https://img.shields.io/github/license/oslabs-beta/kafkaQ">
+  <img alt="GitHub issues" src="https://img.shields.io/github/issues-raw/oslabs-beta/kafkaQ?color=yellow">
+  <img alt="GitHub All Releases" src="https://img.shields.io/github/downloads/oslabs-beta/kafkaQ/total?color=green">
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/oslabs-beta/kafkaQ?color=orange">
+  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/oslabs-beta/kafkaQ?style=social">  
+</p>
+
 ## Table of Contents
 
 [Overview](#overview)  
@@ -142,7 +150,7 @@ Before we get started with this section, you will need to create a file called `
 
 ![](images/consumer.png)
 
-4. Finally, we'll need to send some data through our system. To do so, run our Go script using `npm run go-script`. Note that if you have not installed Go, you will need to run `brew install golang` before completing this step. For future reference, if you would like to increase or decrease the volume of data sent through your system, simply change the NUM_STRINGS variable in kafkaApplicationSimulator/generate_data.go
+5. Finally, we'll need to send some data through our system. To do so, run our Go script using `npm run go-script`. Note that if you have not installed Go, you will need to run `brew install golang` before completing this step. For future reference, if you would like to increase or decrease the volume of data sent through your system, simply change the NUM_STRINGS variable in kafkaApplicationSimulator/generate_data.go
 
 ## Authors
 

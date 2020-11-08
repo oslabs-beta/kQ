@@ -8,7 +8,7 @@
     "create": "webpack",
     "client": "webpack-dev-server --open",
     "server": "nodemon server/server.js",
-    "dev": "NODE_ENV=development nodemon server/server.js & NODE_ENV=development webpack serve --open"
+    "dev": "NODE_ENV=development nodemon server/server.js & NODE_ENV=development webpack serve --host 0.0.0.0"
   },
   "keywords": [],
   "author": "",

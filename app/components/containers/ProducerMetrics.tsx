@@ -1,14 +1,24 @@
 import React, { Component } from 'react';
 
-import Metric from '../Metric.jsx';
-// import { Container, Col, Row } from 'react-bootstrap';
-// import DataSize from '../metrics/producer/DataSize.jsx';
-// import ProcessingTime from '../metrics/producer/ProcessingTime.jsx';
+import Metric from '../Metric';
+
+interface DataPoints {
+  sum: number;
+  numOfDataPoints: number;
+  smallest: number;
+  largest: number;
+}
+
+interface ProducerMetricsProps {
+  dataSize: DataPoints;
+  processingTime: DataPoints;
+  pendingDuration: DataPoints;
+}
 
 // Electron App:
 // Renders producer Metric components for data size, processing time, pending duration
-class ProducerMetrics extends Component {
-  render() {
+class ProducerMetrics extends Component<ProducerMetricsProps> {
+  render(): JSX.Element {
     const { dataSize, processingTime, pendingDuration } = this.props;
 
     return (

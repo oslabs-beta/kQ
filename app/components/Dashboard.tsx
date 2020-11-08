@@ -1,9 +1,9 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions/actions';
-import ProducerMetrics from './containers/ProducerMetrics.jsx';
-import ConsumerMetrics from './containers/ConsumerMetrics.jsx';
-import { Container, Col } from 'react-bootstrap';
+import ProducerMetrics from './containers/ProducerMetrics';
+import ConsumerMetrics from './containers/ConsumerMetrics';
+// import { Container, Col } from 'react-bootstrap';
 
 // Mapping the selected data from the store to producer and consumer metrics within props
 const mapStateToProps = (state) => ({
@@ -26,7 +26,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 // Renders ProducerMetrics and ConsumerMetrics components with props
-class Dashboard extends PureComponent<{}> {
+class Dashboard extends Component<{}> {
   // As soon as this component loads, establish a Web Socket connection to our server
   componentDidMount(): void {
     const socket = io.connect('http://localhost:5000');

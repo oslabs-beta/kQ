@@ -13,6 +13,18 @@ that can be used by the various metrics components we have. Here are all the met
 -Create a graph
 */
 
+interface DataPoints {
+  sum: number;
+  numOfDataPoints: number;
+  smallest: number;
+  largest: number;
+}
+
+interface MetricProps {
+  title: string;
+  data: DataPoints;
+}
+
 const backgroundColor = 'rgb(83, 190, 243)';
 // const backgroundColor = '#233441';
 const borderWidth = 2;
@@ -24,7 +36,7 @@ const fontSize = 24;
 const fontColor = '#d1d1d2';
 const fontFamily = 'Lato';
 
-class MetricTemplate extends Component {
+class MetricTemplate extends Component<MetricProps> {
   // Calculate avg given sum and number of data points
   // Note: this method will return 'None' if both arguments are 0
   calculateAvg(sum: number, numOfDataPoints: number): any {

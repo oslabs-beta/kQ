@@ -1,9 +1,8 @@
-import React, { PureComponent } from 'react';
-import { createBootstrapComponent } from 'react-bootstrap/esm/ThemeProvider';
+import React, { Component } from 'react';
 import Wrapper from './Wrapper';
 
 // Renders the wrapper component
-class App extends PureComponent<{}> {
+class App extends Component<{}> {
   render(): JSX.Element {
     return <Wrapper />;
   }

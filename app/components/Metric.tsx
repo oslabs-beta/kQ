@@ -1,18 +1,6 @@
 import React from 'react';
 import MetricTemplate from './MetricTemplate';
 
-// interface DataPoints {
-//   sum: number | string;
-//   numOfDataPoints: number | string;
-//   smallest: number | string;
-//   largest: number | string;
-// }
-
-// interface MetricProps {
-//   title: string;
-//   data: DataPoints;
-// }
-
 // Renders Metric component which uses methods defined in MetricTemplate to
 // render component title, labels, and generate chart
 class Metric extends MetricTemplate {

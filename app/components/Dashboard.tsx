@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions/actions';
 import ProducerMetrics from './containers/ProducerMetrics.jsx';
@@ -26,9 +26,9 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 // Renders ProducerMetrics and ConsumerMetrics components with props
-class Dashboard extends Component {
+class Dashboard extends PureComponent<{}> {
   // As soon as this component loads, establish a Web Socket connection to our server
-  componentDidMount() {
+  componentDidMount(): void {
     const socket = io.connect('http://localhost:5000');
 
     // Socket event to handle updates to producer metrics
@@ -38,7 +38,7 @@ class Dashboard extends Component {
     socket.on('consumer', (data) => this.props.addConsumerData(data));
   }
   // Render
-  render() {
+  render(): JSX.Element {
     // Destructure properties from our state
     const {
       producerDataSize,

@@ -1,5 +1,17 @@
-import React, { Component } from 'react';
-import MetricTemplate from './MetricTemplate.jsx';
+import React from 'react';
+import MetricTemplate from './MetricTemplate';
+
+// interface DataPoints {
+//   sum: number | string;
+//   numOfDataPoints: number | string;
+//   smallest: number | string;
+//   largest: number | string;
+// }
+
+// interface MetricProps {
+//   title: string;
+//   data: DataPoints;
+// }
 
 // Renders Metric component which uses methods defined in MetricTemplate to
 // render component title, labels, and generate chart
@@ -16,14 +28,6 @@ class Metric extends MetricTemplate {
     // const smallest = 4;
     // const largest = 16;
 
-    /*
-    {
-          sum: dataSize.sum + data.size,
-          numOfDataPoints: dataSize.numOfDataPoints + 1,
-          smallest: Math.min(dataSize.smallest, data.size),
-          largest: Math.max(dataSize.largest, data.size),
-    }
-    */
     // Labels used in the Metric component
     const labels = ['Average', 'Smallest', 'Largest'];
 

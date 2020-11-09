@@ -32,7 +32,7 @@ $box-background-color: #23252d;
   margin: 20px;
   padding: 20px;
 
-  height: 5000px;
+  // height: 5000px;
 
   border-radius: 4px;
 }
@@ -45,8 +45,24 @@ $box-background-color: #23252d;
   background-color: $box-background-color;
 }
 
+.menu {
+  height: 10vh;
+}
+
+// .content {
+//   height: 90vh;
+// }
+
+.main-logo {
+  // margin-top: 10vh;
+  height: 70vh;
+  width: 40vw;
+}
+
 .home {
   @include flexCenter();
+  height: 90vh;
+  // background-image: url('../icons/galaxy.png');
 
   p {
     margin: 30px;
@@ -130,7 +146,6 @@ footer {
 //   }
 // }
 
-
 #codeBox {
   background-color: black;
 }
@@ -156,8 +171,8 @@ footer {
   color: rgb(247, 164, 164);
 }
 .token.keywordReq {
-  color: rgb(199, 199, 53)
+  color: rgb(199, 199, 53);
 }
 .token.key {
-  color: rgb(91, 170, 235)
+  color: rgb(91, 170, 235);
 }

@@ -51,35 +51,37 @@ class App extends Component<{}> {
     return (
       <Router>
         <div className="app">
-          <Menu pointing style={menuStyling}>
+          <Menu pointing style={menuStyling} className="menu">
             {this.generateMenuItems()}
           </Menu>
-          <Switch>
-            {/* / */}
-            <Route exact={true} path="/">
-              <Home />
-            </Route>
+          <div className="content">
+            <Switch>
+              {/* / */}
+              <Route exact={true} path="/">
+                <Home />
+              </Route>
 
-            {/* /home */}
-            <Route path="/home">
-              <Home />
-            </Route>
+              {/* /home */}
+              <Route path="/home">
+                <Home />
+              </Route>
 
-            {/* /quick-start */}
-            <Route path="/quick-start">
-              <QuickStart />
-            </Route>
+              {/* /quick-start */}
+              <Route path="/quick-start">
+                <QuickStart />
+              </Route>
 
-            {/* /documentation */}
-            <Route path="/documentation">
-              <Docs />
-            </Route>
+              {/* /documentation */}
+              <Route path="/documentation">
+                <Docs />
+              </Route>
 
-            {/* /meet-the-team */}
-            <Route path="/meet-the-team">
-              <About />
-            </Route>
-          </Switch>
+              {/* /meet-the-team */}
+              <Route path="/meet-the-team">
+                <About />
+              </Route>
+            </Switch>
+          </div>
 
           {/* Footer */}
           <footer className="box-background">

@@ -8,7 +8,7 @@ import dbImage from '../assets/kafkaq-db-nosidebar.png';
 class Docs extends Component<{}> {
   render(): JSX.Element {
     return (
-      <div className="box">
+      <div className="box" id="docPhoto">
         {/* Table of Contents */}
         <h2 className="box-background title">Table of Contents</h2>
         <ul style={{ paddingLeft: '15px' }}>
@@ -178,7 +178,7 @@ class Docs extends Component<{}> {
             For our next step, you will need to copy your computer's reference
             on your local network. On a Mac, you can find this by going to
             System Preferences {' > '} Sharing. Under the section "Computer Name",
-            you should be able to find it. See the example below:
+            you should be able to find it. See the example below:<br/>
             <img src={localComputer} />
           </li>
           <li>

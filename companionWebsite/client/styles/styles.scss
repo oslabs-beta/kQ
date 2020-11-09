@@ -22,6 +22,11 @@ $box-background-color: #23252d;
   color: $dim-white;
 }
 
+body {
+  background-color: #3b404c;
+  min-width: 1000px;
+}
+
 .app {
   background-color: $app-background-color;
 }
@@ -32,24 +37,58 @@ $box-background-color: #23252d;
   margin: 20px;
   padding: 20px;
 
-  height: 5000px;
+  // height: 5000px;
 
   border-radius: 4px;
+
+  .cardGroup {
+    // width: 20vw;
+    // height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.card {
+  width: 20vw !important;
+}
+
+#docPhoto img {
+  margin: 1rem;
 }
 
 .app-background {
   background-color: $app-background-color;
 }
 
-.box-background {
-  background-color: $box-background-color;
+.menu {
+  height: 1vh;
+}
+
+.content {
+  // height: 99vh;
+}
+
+.main-logo {
+  // margin-top: 10vh;
+  height: 70vh;
+  width: 40vw;
 }
 
 .home {
   @include flexCenter();
+  height: 90vh;
+  background-image: url('../icons/bluebckgd.png');
+  background-size: 100% 99vh;
+
+  // margin: 20px;
+  padding: 20px;
+
+  height: 100%;
 
   p {
-    margin: 30px;
+    margin: 2rem;
     color: $bright-white;
     font-size: 20px;
   }
@@ -67,10 +106,15 @@ $box-background-color: #23252d;
   margin-left: 10px;
 }
 
+// .box-background {
+// }
+
 footer {
   @include flexCenter();
 
-  height: 175px;
+  background-color: $box-background-color;
+
+  height: 12rem;
 
   div {
     font-size: 12px;
@@ -84,7 +128,7 @@ footer {
 .footer-title {
   @include flexCenter();
   flex-direction: row;
-  margin: 20px;
+  margin: 1rem;
 
   img {
     position: relative;
@@ -130,7 +174,6 @@ footer {
 //   }
 // }
 
-
 #codeBox {
   background-color: black;
 }
@@ -156,8 +199,8 @@ footer {
   color: rgb(247, 164, 164);
 }
 .token.keywordReq {
-  color: rgb(199, 199, 53)
+  color: rgb(199, 199, 53);
 }
 .token.key {
-  color: rgb(91, 170, 235)
+  color: rgb(91, 170, 235);
 }

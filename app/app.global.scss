@@ -36,6 +36,7 @@ $dim-white: #d1d1d2;
 
 .title {
   @include flexCenter();
+  z-index: 1;
   font-family: 'Roboto', sans-serif;
   background-color: $box-background-color;
   height: 120px;
@@ -105,10 +106,57 @@ $dim-white: #d1d1d2;
 }
 
 .sidebar {
-  position: relative;
+  position: fixed;
+  top: 120px;
   left: 0;
   display: flex;
   flex-direction: column;
+  box-shadow: 8px 5px 15px 2px rgba(34, 34, 34, 0.269);
+  background-color: #25282f;
+  width: 125px;
+}
+
+.nav-item {
+  border: none;
+  background-color: #25282f;
+  padding: 12px;
+}
+
+.nav-item:hover {
+  background-color: $primary;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.dboard {
+  text-decoration: none;
+  color: $bright-white;
+}
+
+.dboard:hover {
+  background-color: $primary;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+#dboard-btn {
+  background-color: #58585c;
+}
+
+#dboard-btn:hover {
+  background-color: rgb(83, 190, 243);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.link {
+  text-decoration: none;
+  color: $dim-white;
+}
+
+.link:hover {
+  text-decoration: none;
+  color: $dim-white;
 }
 
 .dashTitle {
@@ -134,15 +182,14 @@ $dim-white: #d1d1d2;
 }
 
 .mainDashboard {
-  margin-top: 120px;
-  margin-bottom: -120px;
-  padding-bottom: 2rem;
+  margin-left: 125px;
+  // padding-bottom: 2rem;
   height: 100%;
   width: 100%;
 }
 
 .dashboard {
-  margin-top: 0.5rem;
+  // margin-top: 0.5rem;
   // display: flex;
   height: 100%;
   width: 100%;
@@ -175,32 +222,40 @@ $dim-white: #d1d1d2;
   border: none;
   background-color: rgb(83, 190, 243);
   border-spacing: 0rem;
-  border-radius: 10px;
+  border-radius: 50px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
   display: flex;
   font-size: 30px;
   margin-left: 10px;
-  margin-top: 10px;
+  // margin-top: 10px;
   color: $bright-white;
   font-weight: normal;
   // justify-content: flex-start;
   // align-self: center;
+  padding: 15px;
 }
 
-.producer-content {
+.heading-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 0.1rem;
+
+  padding: 10px;
+  border-radius: 50px;
 }
 
-.consumer-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 0.1rem;
-  // justify-content: center;
+#block {
+  width: 125px;
+  height: 500px;
+  box-shadow: 8px 5px 15px 2px rgba(34, 34, 34, 0.269);
+  background-color: #25282f;
+}
+
+.header {
+  padding: 10px;
+  border-radius: 50px;
 }
 
 .dashForm {

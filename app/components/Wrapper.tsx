@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 
-import Sidebar from './Sidebar.jsx';
+import Sidebar from './Sidebar';
 import Dashboard from './Dashboard';
 
 import logo from './assets/Kafkaq-Final-large-white.png';
@@ -48,7 +48,7 @@ class Wrapper extends Component<{}> {
           <h1>team</h1>
         </Route>
       </Switch>
-    )
+    );
   }
 }
 

@@ -22,8 +22,8 @@ class ConsumerMetrics extends Component<ConsumerMetricsProps> {
 
     return (
       <div className="dashboard">
-        <div className="consumer-content">
-          <div id="consumer-heading-container">
+        <div className="heading-content">
+          <div className="header">
             <h1 className="metric-heading">Consumer Metrics</h1>
           </div>
           <div className="metrics-container">

@@ -23,17 +23,17 @@ class ProducerMetrics extends Component<ProducerMetricsProps> {
 
     return (
       <div className="dashboard">
-      <div className="producer-content">
-        <div>
-          <h1 className="metric-heading">Producer Metrics</h1>
-        </div>
-        <div className="metrics-container">
-          <Metric title={'Data Size'} data={dataSize} />
-          <Metric title={'Processing Time'} data={processingTime} />
-          <Metric title={'Pending Duration'} data={pendingDuration} />
+        <div className="heading-content">
+          <div className="header">
+            <h1 className="metric-heading">Producer Metrics</h1>
+          </div>
+          <div className="metrics-container">
+            <Metric title={'Data Size'} data={dataSize} />
+            <Metric title={'Processing Time'} data={processingTime} />
+            <Metric title={'Pending Duration'} data={pendingDuration} />
+          </div>
         </div>
       </div>
-    </div>
     );
   }
 }

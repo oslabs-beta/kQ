@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import { Menu } from 'semantic-ui-react';
 
-import About from './About.jsx';
-import Docs from './Docs.jsx';
-import Home from './Home.jsx';
-import QuickStart from './QuickStart.jsx';
+import About from './About';
+import Docs from './Docs';
+import Home from './Home';
+import QuickStart from './QuickStart';
 
 import kafkaQlogoWithoutLetters from '../icons/kafkaQ-logo-no-letters.png';
 import gmailLogo from '../icons/gmail-logo.png';
@@ -14,13 +14,6 @@ import twitterLogo from '../icons/twitter-logo.png';
 import githubLogo from '../icons/github-logo.png';
 import mediumLogo from '../icons/medium-logo.png';
 import npmLogo from '../icons/npm-logo.png';
-
-// $bright-white: #f9f9fc;
-// $dim-white: #d1d1d2;
-
-// $app-background-color: #0a0b18;
-// $menu-background-color: #2c2c34;
-// $box-background-color: #23252d;
 
 const menuBackgroundColor = '#2c2c34';
 const dimWhite = '#d1d1d2';
@@ -33,7 +26,7 @@ const linkStyling = {
   color: dimWhite,
 };
 
-class App extends Component {
+class App extends Component<{}> {
   // This method generates a list of menu items to display on the top bar
   generateMenuItems() {
     const headings = ['Home', 'Quick Start', 'Documentation', 'Meet the Team'];
@@ -54,10 +47,10 @@ class App extends Component {
     });
   }
 
-  render() {
+  render(): JSX.Element {
     return (
       <Router>
-        <div>
+        <div className="app">
           <Menu pointing style={menuStyling}>
             {this.generateMenuItems()}
           </Menu>

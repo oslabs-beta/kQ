@@ -5,13 +5,25 @@ import { Bar } from 'react-chartjs-2';
 This class designs a "template" for our metrics. It contains basic methods to render JSX code
 that can be used by the various metrics components we have. Here are all the methods we have written:
 
--Method to calculate avg
--Method to create chartData (params: title, avg) object
--Method to create chartOptions object
--Method to create a title
--Method to create a label (these are things like avg, smallest, largest)
--Method to create a graph
+-Calculate avg
+-Create chartData (params: title, avg) object
+-Create chartOptions object
+-Create a title
+-Create a label (these are things like avg, smallest, largest)
+-Create a graph
 */
+
+interface DataPoints {
+  sum: number;
+  numOfDataPoints: number;
+  smallest: number;
+  largest: number;
+}
+
+interface MetricProps {
+  title: string;
+  data: DataPoints;
+}
 
 const backgroundColor = 'rgb(83, 190, 243)';
 // const backgroundColor = '#233441';
@@ -24,29 +36,29 @@ const fontSize = 24;
 const fontColor = '#d1d1d2';
 const fontFamily = 'Lato';
 
-class MetricTemplate extends Component {
+class MetricTemplate extends Component<MetricProps> {
   // Calculate avg given sum and number of data points
   // Note: this method will return 'None' if both arguments are 0
-  calculateAvg(sum, numOfDataPoints) {
+  calculateAvg(sum: number, numOfDataPoints: number): any {
     return sum === 0 && numOfDataPoints === 0
       ? 'None'
       : (sum / numOfDataPoints).toFixed(2);
   }
 
   // Create chart title h2 tag
-  generateTitle(title) {
+  generateTitle(title: string): JSX.Element {
     return <h2 className="metric-title">{title}</h2>;
   }
 
   // Create a label within a specific metric
-  generateLabel(label, num) {
+  generateLabel(label: string, num: number): JSX.Element {
     const processedNum =
       num === Number.POSITIVE_INFINITY || num === Number.NEGATIVE_INFINITY
         ? 'None'
         : num;
 
     return (
-      <p className="metrics">
+      <p className="metrics" key={`${label}-${processedNum}`}>
         {label}: {processedNum}
       </p>
     );
@@ -54,7 +66,7 @@ class MetricTemplate extends Component {
 
   // Create chart data object which will be used to instantiate Chart object. This contains numbers
   // to be used in the graph, along with some of the stlying like backgroundColor
-  generateChartData(title, avg) {
+  generateChartData(title: string, avg: number | string): any {
     const processedAvg = avg === 'None' ? 0 : avg;
 
     return {
@@ -71,7 +83,7 @@ class MetricTemplate extends Component {
   }
 
   // Create chartOptions object which is used to customize the look of our chart
-  generateChartOptions() {
+  generateChartOptions(): any {
     return {
       title: {
         display: false,
@@ -105,7 +117,7 @@ class MetricTemplate extends Component {
   }
 
   // Create a chart given chartData and chartOptions objects which define specs of our chart
-  generateChart(chartData, chartOptions) {
+  generateChart(chartData: any, chartOptions: any): JSX.Element {
     return (
       <div className="chart">
         <Bar data={chartData} options={chartOptions} />

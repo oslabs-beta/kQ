@@ -8,7 +8,7 @@
     "create": "webpack",
     "client": "webpack-dev-server --open",
     "server": "nodemon server/server.js",
-    "dev": "NODE_ENV=development nodemon server/server.js & NODE_ENV=development webpack-dev-server --open"
+    "dev": "NODE_ENV=development nodemon server/server.js & NODE_ENV=development webpack serve --host 0.0.0.0"
   },
   "keywords": [],
   "author": "",
@@ -35,6 +35,8 @@
     "resolve-url-loader": "^3.1.2",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.1",
+    "ts-loader": "^8.0.10",
+    "typescript": "^4.0.5",
     "url-loader": "^4.1.1",
     "webpack": "^5.2.0"
   }

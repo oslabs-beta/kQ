@@ -1,6 +1,23 @@
 # kafkaQ
 
-not sure where to put this, but add a table of contents
+![](images/kafkaq-logo.png)
+
+<p align="center">
+  <img alt="GitHub" src="https://img.shields.io/github/license/oslabs-beta/kafkaQ">
+  <img alt="GitHub issues" src="https://img.shields.io/github/issues-raw/oslabs-beta/kafkaQ?color=yellow">
+  <img alt="GitHub All Releases" src="https://img.shields.io/github/downloads/oslabs-beta/kafkaQ/total?color=green">
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/oslabs-beta/kafkaQ?color=orange">
+  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/oslabs-beta/kafkaQ?style=social">  
+</p>
+
+## Table of Contents
+
+[Overview](#overview)  
+[Demo](#demo)  
+[Documentation](#documentation)  
+[Quick Start](#quick-start)  
+[Viewing your metrics](#viewing-your-metrics)  
+[See kafkaQ in action using our Kafka application simulator](#see-kafkaq-in-action-using-our-kafka-application-simulator)
 
 ## Overview
 
@@ -27,8 +44,6 @@ kafkaQ is incredibly easy to incorporate into your application. Let's walk throu
 
 1. In your project's root directory, run `npm install kafkaq-monitor`
 2. In the producer script of your Kafka application, import our `trackProducer` method and invoke it immediately after the code connecting your producer, passing in your producer as an argument. Here's an example:
-
-FIGURE OUT WHY THESE AREN'T COLORED
 
 ```javascript
 const { Kafka } = require('kafkajs');
@@ -93,12 +108,8 @@ You're done! In just 4 lines of code, you were able to integrate kafkaQ with you
 
 To view your metrics, you will need to use the Electron app built in this repo. Follow these instructions.
 
-1. Clone this repo (`git clone XXX`) and cd into it (`cd kafkaq`).
-2. Start our server with `npm run app-server CHANGE THIS****`. This allows kafkaQ to send its metrics to our Electron UI.
-3. Finally, open the Electron app with `yarn start`.
-
-** steps 2 and 3 should be combined into 1 command for the users.
-** also figure out if they should use npm or yarn please
+1. Clone this repo (`git clone https://github.com/oslabs-beta/kafkaQ.git`) and cd into it (`cd kafkaq`).
+2. Start the application with `npm run electron-app`. This allows kafkaQ to send its metrics to our Electron UI.
 
 You're all set! You should be able to track analytics as data moves through your Kafka application, and make vital decisions about scaling your distributed system.
 
@@ -106,24 +117,21 @@ You're all set! You should be able to track analytics as data moves through your
 
 If you haven't yet set up your Kafka application, but you want to see how kafkaQ works, we've got you covered. In this section, we'll show you how to set up our Kafka application simulator and track its metrics using kafkaQ.
 
-1. Clone this repo (`git clone XXX`) and cd into it (`cd kafkaq`).
-
-We're going to break this into 3 sections for clarity:
-reorganize the last 2 sentences
+First, clone this repo (`git clone https://github.com/oslabs-beta/kafkaQ.git`) and cd into it (`cd kafkaq`). From here, we will split the instructions into 3 sections for clarity.
 
 ## Section I: Starting Kafka
 
 We will be using Docker images to start Kafka, so make sure to install Docker and create an account.
 
-1. Start by ensuring that Docker is running with `docker run hello-world`. You should see something similar to this:
+1. Start by ensuring that Docker is running with `docker run hello-world`. If Docker is not running, you should open the Docker desktop app; otherwise, you should see something similar to this:
 
-ADD SCREENSHOT HERE
+![](images/docker-run-hello-world.png)
 
-2. Now, we will start a KAFKA ZOOKEEPER INSTANCE (COME BACK TO THIS TO CHECK PRECISION). Run this command to start a zookeeper instance and expose it on port 2181: `docker run --name zookeeper -p 2181:2181 zookeeper`
+2. Now, we will start a Kafka zookeeper instance. Run this command to start a zookeeper instance and expose it on port 2181: `docker run --name zookeeper -p 2181:2181 zookeeper`
 
 3. For our next step, you will need to copy your computer's reference on your local network. On a Mac, you can find this by going to Systems Preferences > Sharing. Under the section "Computer Name", you should be able to find it. See the example below:
 
-ADD SCREENSHOT HERE
+![](images/local-computer.png)
 
 4. Now that you have your local computer's reference, you're ready to start Kafka. Make sure to replace [LOCAL_COMPUTER] with this reference (note that you should NOT include the square brackets). Run the following command: `docker run --name kafka -p 9092:9092 -e KAFKA_ZOOKEEPER_CONNECT=[LOCAL_COMPUTER]:2181 -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://[LOCAL_COMPUTER]:9092 -e KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1 confluentinc/cp-kafka`
 
@@ -131,33 +139,24 @@ This is all you need to do to start Kafka! Make sure to save your local computer
 
 ### Section II: Set up the Kafka application simulator
 
-add something about setting up their env file
+Before we get started with this section, you will need to create a file called `.env` and have it mimic this example:
+
+![](images/env.png)
 
 1. Cd into the kafkaApplicationSimulator directory (`cd kafkaApplicationSimulator`)
-2. Start the server for our Kafka application simulator using `npm run server` (CHANGE THIS NAME). This server has a route that will connect a producer and send a message, which we will use later.
-3. Start your Kafka consumer with `node kafkaApplicationSimulator/consumer.js` (CHANGE THIS TO A PACKAGE.JSON SCRIPT). You should see output similar to this:
+2. Start the server for our Kafka application simulator using `npm run simulator-server`. This server has a route that will connect a producer and send a message, which we will use later.
+3. Run `npm run electron-app` to start our server (our producer and consumer will need to connect to this) and open the Electron app.
+4. Start your Kafka consumer with `npm run consumer`. You should see output similar to this:
 
-ADD SCREENSHOT HERE
+![](images/consumer.png)
 
-(THIS NEXT PART WILL CHANGE ONCE WE SWITCH BACK TO GIN)
-
-4. Finally, we'll need to send some data through our system. To do so, run our Go script using `go run kafkaApplicationSimulator/generate_data.go` (ADD AN PACKAGE.JSON SCRIPT FOR THIS IF WE KEEP IT). Note that if you have not installed Go, you will need to run `brew install golang` before completing this step. For future reference, if you would like to increase or decrease the volume of data sent through your system, simply change the NUM_STRINGS variable in kafkaApplicationSimulator/generate_data.go
-
-### Section III: Viewing your metrics
-
-1. Run `yarn start` to open the Electron application, and you should be able to view your data in real-time!
-
-If your metrics aren't changing, you may not have any data flowing through your system. Try re-running the Go script as described in Step 4 of the previous section.
-
-## FAQ/Debugging suggestions/Common mistakes
-
-Not done
+5. Finally, we'll need to send some data through our system. To do so, run our Go script using `npm run go-script`. Note that if you have not installed Go, you will need to run `brew install golang` before completing this step. For future reference, if you would like to increase or decrease the volume of data sent through your system, simply change the NUM_STRINGS variable in kafkaApplicationSimulator/generate_data.go
 
 ## Authors
 
-_Lascaux_ Engineers
+kafkaQ Engineers
 
 [Jonathan Barenboim](https://github.com/Jbaren01)  
-[Kaiwei Hsu](https://github.com/FIXTHIS)  
+[Kaiwei Hsu](https://github.com/kaiweih)  
 [Micah Turan](https://github.com/ymturan)  
 [Shreshth Srivastava](https://github.com/Shreshth3)

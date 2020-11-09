@@ -1,29 +1,21 @@
-import React, { Component } from 'react';
-import MetricTemplate from './MetricTemplate.jsx';
+import React from 'react';
+import MetricTemplate from './MetricTemplate';
 
 // Renders Metric component which uses methods defined in MetricTemplate to
 // render component title, labels, and generate chart
 class Metric extends MetricTemplate {
   render() {
-    // const { title, data } = this.props;
-    // const { sum, numOfDataPoints, smallest, largest } = data;
+    const { title, data } = this.props;
+    const { sum, numOfDataPoints, smallest, largest } = data;
 
     /* Dummy data for UI test purposes: */
 
-    const { title } = this.props;
-    const sum = 50;
-    const numOfDataPoints = 10;
-    const smallest = 4;
-    const largest = 16;
+    // const { title } = this.props;
+    // const sum = 50;
+    // const numOfDataPoints = 10;
+    // const smallest = 4;
+    // const largest = 16;
 
-    /*
-    {
-          sum: dataSize.sum + data.size,
-          numOfDataPoints: dataSize.numOfDataPoints + 1,
-          smallest: Math.min(dataSize.smallest, data.size),
-          largest: Math.max(dataSize.largest, data.size),
-    }
-    */
     // Labels used in the Metric component
     const labels = ['Average', 'Smallest', 'Largest'];
 

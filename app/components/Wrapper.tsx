@@ -1,20 +1,14 @@
 import React, { Component } from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
-import { rootPath } from 'electron-root-path';
 
 import Sidebar from './Sidebar.jsx';
 import Dashboard from './Dashboard';
-import Homepage from './Homepage';
+
 import logo from './assets/Kafkaq-Final-large-white.png';
-/* eslint-disable */
 
 //Renders the titles and the DASHBOARD component
-class Wrapper extends Component {
-  componentDidMount() {
-    console.log(rootPath);
-  }
-
-  render() {
+class Wrapper extends Component<{}> {
+  render(): JSX.Element {
     // 'Dashboard', 'Documentation', 'About kafkaQ', 'Our Team'
 
     return (
@@ -54,7 +48,7 @@ class Wrapper extends Component {
           <h1>team</h1>
         </Route>
       </Switch>
-    );
+    )
   }
 }
 

@@ -32,7 +32,9 @@ Informed by our statistics, you can determine the optimal approach to scale your
 
 ## Demo
 
-Put some screenshots or gifs here
+![kafkaQ Gif](./kafkaq-demo.gif)
+
+<!-- ![kafkaQ Logo](./kafkaq-db.png) -->
 
 ## Documentation
 

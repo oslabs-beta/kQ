@@ -96,14 +96,19 @@ $dim-white: #d1d1d2;
   position: relative;
   top: 120px;
 
+  display: flex;
+  flex-direction: row;
+
   margin: 0;
   border: none;
   padding: 0;
 }
 
 .sidebar {
-  position: absolute;
+  position: relative;
   left: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .dashTitle {

@@ -19,11 +19,11 @@ class Wrapper extends Component {
 
     return (
       <Switch>
-        <Route path="/" exact>
+        {/* <Route path="/" exact>
           <Sidebar />
-        </Route>
+        </Route> */}
 
-        <Route path="/dashboard">
+        <Route path="/" exact>
           <div className="app">
             <div className="title">
               {/* <h2>kafkaQ</h2> */}

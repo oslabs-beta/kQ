@@ -83,6 +83,7 @@ class App extends Component<{}> {
 
           {/* Footer */}
           <footer className="box-background">
+            
             {/* kafkaQ info */}
             <div className="box-background footer-title">
               <img
@@ -95,6 +96,20 @@ class App extends Component<{}> {
             </div>
 
             <div className="logos">
+
+              {/* GitHub repo */}
+              <a
+                className="box-background"
+                href="https://github.com/oslabs-beta/kafkaQ"
+              >
+                <img
+                  className="box-background"
+                  src={githubLogo}
+                  width="70"
+                  height="49"
+                />
+              </a>
+              
               {/* Gmail */}
               <a
                 className="box-background"
@@ -119,19 +134,6 @@ class App extends Component<{}> {
                   src={twitterLogo}
                   width="40"
                   height="34"
-                />
-              </a>
-
-              {/* GitHub repo */}
-              <a
-                className="box-background"
-                href="https://github.com/oslabs-beta/kafkaQ"
-              >
-                <img
-                  className="box-background"
-                  src={githubLogo}
-                  width="70"
-                  height="49"
                 />
               </a>
 

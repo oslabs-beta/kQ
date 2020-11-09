@@ -14,12 +14,12 @@ class Sidebar extends Component {
       'Documentation',
       'About kafkaQ',
       'Our Team',
-      'Consumer',
-      'Producer',
-      'Coordinator',
-      'Admin',
-      'Broker',
-      'Cluster',
+      // 'Consumer',
+      // 'Producer',
+      // 'Coordinator',
+      // 'Admin',
+      // 'Broker',
+      // 'Cluster',
     ];
 
     const pageElements = pages.map((page) => {

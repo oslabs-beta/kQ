@@ -21,6 +21,9 @@ $dim-white: #d1d1d2;
   align-items: center;
 }
 
+html {
+  background-color: $app-background-color;
+}
 // * {
 //   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
 //     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -29,9 +32,10 @@ $dim-white: #d1d1d2;
 
 .app {
   position: relative;
+  margin-bottom: 120px;
   background-color: $app-background-color;
-  height: 100%;
-  width: 100%;
+  // height: 100%;
+  // width: 100%;
 }
 
 .title {
@@ -96,6 +100,7 @@ $dim-white: #d1d1d2;
 .container {
   position: relative;
   top: 120px;
+  bottom: -120px;
 
   display: flex;
   flex-direction: row;
@@ -183,7 +188,7 @@ $dim-white: #d1d1d2;
 
 .mainDashboard {
   margin-left: 125px;
-  // padding-bottom: 2rem;
+  padding-bottom: 2rem;
   height: 100%;
   width: 100%;
 }
@@ -228,7 +233,7 @@ $dim-white: #d1d1d2;
   display: flex;
   font-size: 30px;
   margin-left: 10px;
-  // margin-top: 10px;
+  margin-top: 30px;
   color: $bright-white;
   font-weight: normal;
   // justify-content: flex-start;
@@ -248,7 +253,7 @@ $dim-white: #d1d1d2;
 
 #block {
   width: 125px;
-  height: 500px;
+  height: 3000px;
   box-shadow: 8px 5px 15px 2px rgba(34, 34, 34, 0.269);
   background-color: #25282f;
 }

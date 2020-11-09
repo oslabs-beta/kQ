@@ -66,7 +66,7 @@ const createWindow = async () => {
 
   mainWindow = new BrowserWindow({
     show: false,
-    width: 1536,
+    width: 1400,
     height: 864,
     icon: getAssetPath('Kafkaq-Final-large-white.png'),
     webPreferences:

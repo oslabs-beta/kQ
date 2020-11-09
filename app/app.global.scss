@@ -24,6 +24,13 @@ $dim-white: #d1d1d2;
 html {
   background-color: $app-background-color;
 }
+
+* {
+  font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto,
+    helvetica neue, Arial, noto sans, sans-serif, apple color emoji,
+    segoe ui emoji, segoe ui symbol, noto color emoji;
+}
+
 // * {
 //   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
 //     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -41,7 +48,7 @@ html {
 .title {
   @include flexCenter();
   z-index: 1;
-  font-family: 'Roboto', sans-serif;
+  // font-family: 'Roboto', sans-serif;
   background-color: $box-background-color;
   height: 120px;
   // margin-bottom: 30px;
@@ -56,6 +63,8 @@ html {
 
   h1 {
     color: $bright-white;
+    padding-left: 35px;
+    margin-left: 100px;
   }
 
   h2 {
@@ -94,6 +103,8 @@ html {
 
   h1 {
     color: $bright-white;
+    padding-left: 35px;
+    margin-left: 100px;
   }
 }
 
@@ -105,7 +116,7 @@ html {
   display: flex;
   flex-direction: row;
 
-  margin: 0;
+  // margin: 0;
   border: none;
   padding: 0;
 }
@@ -118,7 +129,7 @@ html {
   flex-direction: column;
   box-shadow: 8px 5px 15px 2px rgba(34, 34, 34, 0.269);
   background-color: #25282f;
-  width: 125px;
+  width: 175px;
 }
 
 .nav-item {
@@ -141,6 +152,8 @@ html {
 .dboard:hover {
   background-color: $primary;
   transition: 0.5s;
+  text-decoration: none;
+  color: $bright-white;
   cursor: pointer;
 }
 
@@ -176,10 +189,10 @@ html {
   justify-content: space-between;
   align-items: center;
 
-  display: flex;
+  // display: flex;
   margin-left: 10px;
   flex-direction: row;
-  justify-content: left;
+  // justify-content: left;
 
   #firstMetric {
     border-radius: 5px 5px 0px 0px;
@@ -187,6 +200,10 @@ html {
 }
 
 .mainDashboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin-left: 125px;
   padding-bottom: 2rem;
   height: 100%;
@@ -196,8 +213,10 @@ html {
 .dashboard {
   // margin-top: 0.5rem;
   // display: flex;
+  @include flexCenter();
   height: 100%;
   width: 100%;
+  margin-bottom: 30px;
   // justify-content: center;
 
   // margin-left: 7px;
@@ -228,8 +247,8 @@ html {
   background-color: rgb(83, 190, 243);
   border-spacing: 0rem;
   border-radius: 50px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
+  // font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+  //   'Lucida Sans', Arial, sans-serif;
   display: flex;
   font-size: 30px;
   margin-left: 10px;
@@ -242,9 +261,7 @@ html {
 }
 
 .heading-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flexCenter();
   margin-bottom: 0.1rem;
 
   padding: 10px;

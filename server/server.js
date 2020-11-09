@@ -11,6 +11,7 @@ const server = app.listen(PORT);
 // WebSocket logic
 const io = socket(server);
 
+// middelware to send data from kafka producer in req.body to frontend kafkaq monitor 
 const producerSocketSend = (req, res) => {
   /*
   req.body.data looks like:
@@ -21,13 +22,16 @@ const producerSocketSend = (req, res) => {
   }
   */
 
+  // producer data stored in req.body.data
   const { data } = req.body; // data = {size: size, pendingDuration: pendingDuration, sentAt: sentAt}
+
   const processedData = {
     size: data.size,
     pendingDuration: data.pendingDuration,
     processingTimeInMilliseconds: Date.now() - data.sentAt,
   };
 
+  // sending processedData object to frontend monitor, Dashboard file where its listening to 'producer' on PORT 5000
   io.sockets.emit('producer', processedData);
   res.sendStatus(200);
 };
@@ -41,7 +45,7 @@ app.post('/producer', producerSocketSend);
 //   });
 // });
 
-// create a rout to handle axios.post()
+// middelware to send data from kafka consumer in req.body to frontend kafkaq monitor 
 const consumerSocketSend = (req, res) => {
   /*
   req.body.data looks like:
@@ -52,6 +56,7 @@ const consumerSocketSend = (req, res) => {
   }
   */
 
+  // consumer data stored in req.body.data
   const { data } = req.body; // data = {size: size, pendingDuration: pendingDuration, sentAt: sentAt}
   const processedData = {
     size: data.size,
@@ -59,6 +64,7 @@ const consumerSocketSend = (req, res) => {
     pendingDuration: data.pendingDuration,
   };
 
+  // sending processedData object to frontend monitor, Dashboard file where its listening to 'consumer' on PORT 5000
   io.sockets.emit('consumer', processedData);
   res.sendStatus(200);
 };

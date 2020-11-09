@@ -34,15 +34,33 @@ class Docs extends Component<{}> {
         </p>
         <p className="box-background">
           <code className="box-background code">
-            const {'{'} trackProducer {'}'} =
-            require('../../kafkaq-monitor/index.js')
+            <span className="token keywords">const</span>
+            <span className="token symbols"> {'{'} </span>
+            <span className="token names"> trackProducer </span>
+            <span className="token symbols"> {'}'} </span>
+            <span className="token equation"> = </span>
+            <span className="token keywordReq"> require </span>
+            <span className="token symbols">(</span>
+            <span className="token symbols">'</span>
+            <span className="token string">../../kafkaq-monitor/index.js</span>
+            <span className="token symbols">'</span>
+            <span className="token symbols">)</span>
+            <span className="token symbols">;</span>
           </code>
         </p>
         <p className="box-background">
           Then, invoke trackProducer with your producer as the argument after
           your producer is connected, like so:
+          <p />
+          <p className="box-background"></p>
+          <code className="box-background code">
+            <span className="token func"> trackProducer</span>
+            <span className="token symbols">(</span>
+            <span className="token names">producer</span>
+            <span className="token symbols">)</span>
+            <span className="token symbols">;</span>
+          </code>
         </p>
-        <code className="box-background code">trackProducer(producer)</code>
         <h3 className="box-background title">Consumer</h3>
         <p className="box-background">
           To monitor performance data from your Kafka consumer, import
@@ -50,15 +68,34 @@ class Docs extends Component<{}> {
         </p>
         <p className="box-background">
           <code className="box-background code">
-            const {'{'} trackConsumer {'}'} =
-            require('../../kafkaq-monitor/index.js')
+            <span className="token keywords">const</span>
+            <span className="token symbols"> {'{'} </span>
+            <span className="token names"> trackConsumer </span>
+            <span className="token symbols"> {'}'} </span>
+            <span className="token equation"> = </span>
+            <span className="token keywordReq"> require </span>
+            <span className="token symbols">(</span>
+            <span className="token symbols">'</span>
+            <span className="token string">../../kafkaq-monitor/index.js</span>
+            <span className="token symbols">'</span>
+            <span className="token symbols">)</span>
+            <span className="token symbols">;</span>
           </code>
         </p>
         <p className="box-background">
           Then, invoke trackConsumer with your consumer as the argument after
           your consumer is connected, like so:
         </p>
-        <code className="box-background code">trackConsumer(consumer)</code>
+        <p>
+          <p className="box-background"></p>
+          <code className="box-background code">
+            <span className="token func"> trackConsumer</span>
+            <span className="token symbols">(</span>
+            <span className="token names">consumer</span>
+            <span className="token symbols">)</span>
+            <span className="token symbols">;</span>
+          </code>
+        </p>
         {/* Breaking down our metrics */}
         <h2 className="box-background title">Breaking down our metrics</h2>
         <p>
@@ -139,8 +176,8 @@ class Docs extends Component<{}> {
           <li>
             For our next step, you will need to copy your computer's reference
             on your local network. On a Mac, you can find this by going to
-            Systems Preferences {' > '} Sharing. Under the section "Computer
-            Name", you should be able to find it. See the example below:
+            System Preferences {' > '} Sharing. Under the section "Computer Name",
+            you should be able to find it. See the example below:
             <img src={localComputer} />
           </li>
           <li>
@@ -155,7 +192,7 @@ class Docs extends Component<{}> {
               KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1 confluentinc/cp-kafka
             </code>
           </li>
-        </ol>
+        </ol >
         <p>
           This is all you need to do to start Kafka! Make sure to save your
           local computer's reference as we will use that in future sections.
@@ -205,7 +242,20 @@ class Docs extends Component<{}> {
             kafkaApplicationSimulator/generate_data.go
           </li>
         </ol>
-      </div>
+        {/* Section III: Viewing your metrics */}
+        <h3 className="title">Section III: Viewing your metrics</h3>
+        <ol>
+          <li>
+            Run <code className="code">yarn start</code> to open the Electron
+            application, and you should be able to view your data in real-time!
+          </li>
+        </ol>
+        <p>
+          If your metrics aren't changing, you may not have any data flowing
+          through your system. Try re-running the Go script as described in Step
+          4 of the previous section.
+        </p>
+      </div >
     );
   }
 }

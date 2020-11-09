@@ -3,6 +3,7 @@ import env from '../icons/env.png';
 import consumer from '../icons/consumer.png';
 import dockerRunHelloWorld from '../icons/docker-run-hello-world.png';
 import localComputer from '../icons/local-computer.png';
+import dbImage from '../assets/kafkaq-db.png';
 
 class Docs extends Component<{}> {
   render(): JSX.Element {
@@ -255,6 +256,7 @@ class Docs extends Component<{}> {
           through your system. Try re-running the Go script as described in Step
           4 of the previous section.
         </p>
+        <img src={dbImage} width="600" height="400" />
       </div >
     );
   }

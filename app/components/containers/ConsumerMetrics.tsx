@@ -22,11 +22,15 @@ class ConsumerMetrics extends Component<ConsumerMetricsProps> {
 
     return (
       <div className="dashboard">
-        <h1 className="metric-heading">Consumer Metrics</h1>
-        <div className="metrics-container">
-          <Metric title={'Data Size'} data={dataSize} />
-          <Metric title={'Processing Time'} data={processingTime} />
-          <Metric title={'Pending Duration'} data={pendingDuration} />
+        <div className="heading-content">
+          <div className="header">
+            <h1 className="metric-heading">Consumer Metrics</h1>
+          </div>
+          <div className="metrics-container">
+            <Metric title={'Data Size'} data={dataSize} />
+            <Metric title={'Processing Time'} data={processingTime} />
+            <Metric title={'Pending Duration'} data={pendingDuration} />
+          </div>
         </div>
       </div>
     );

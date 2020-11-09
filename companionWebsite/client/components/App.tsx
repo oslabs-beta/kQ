@@ -87,7 +87,6 @@ class App extends Component<{}> {
 
           {/* Footer */}
           <footer className="box-background">
-            
             {/* kafkaQ info */}
             <div className="box-background footer-title">
               <img
@@ -100,7 +99,6 @@ class App extends Component<{}> {
             </div>
 
             <div className="logos">
-
               {/* GitHub repo */}
               <a
                 className="box-background"
@@ -113,12 +111,9 @@ class App extends Component<{}> {
                   height="49"
                 />
               </a>
-              
+
               {/* Gmail */}
-              <a
-                className="box-background"
-                href="https://twitter.com/kafkaq21gmailc1"
-              >
+              <a className="box-background" href="https://gmail.com/">
                 <img
                   className="box-background"
                   src={gmailLogo}

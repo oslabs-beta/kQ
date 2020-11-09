@@ -1,133 +1,95 @@
 import React, { Component } from 'react';
 import { Card, Icon, Image, Button } from 'semantic-ui-react';
-// import jonathan from '../../images/jonathan.jpeg';
-// import kaiwei from '../../images/kaiwei.jpeg';
-// import micah from '../../images/micah.jpeg';
-// import shreshth from '../../images/shreshth.jpeg';
+import jonathan from '../icons/jonathan.png';
+import kaiwei from '../icons/kaiwei.png';
+import micah from '../icons/micah.png';
+import shreshth from '../icons/shreshth.png';
+import linkedinIcon from "../icons/linkedinIcon.png"
+import githubIcon from "../icons/githubIcon.png"
 
 class About extends Component<{}> {
   render() {
     return (
-      <Card.Group>
+      <div className="box">
+      <Card.Group className="cardGroup">
         <Card>
           <Image
-            src="https://ca.slack-edge.com/T016VMCKF7Y-U0184UNUU5A-ebb0296f7d44-512"
-            // src={jonathan}
+            src={jonathan}
             wrapped
             ui={false}
           />
-          <Card.Content>
-            <Card.Header>Jonathan</Card.Header>
-            <Card.Meta>
-              <span className="date">The frontend supreme leader</span>
-            </Card.Meta>
-            <Card.Description>Most productive in the bathroom</Card.Description>
-          </Card.Content>
+            <Card.Content>
+              <Card.Header>Jonathan Barenboim</Card.Header>
+              <Card.Description style={{marginTop: "0.5rem", marginBottom: "1rem"}}>Fullstack software engineer at kafkaQ</Card.Description>
+            </Card.Content>
           <Card.Content extra>
-            <Button
-              link="true"
-              href="https://www.linkedin.com/in/jonathan-barenboim/"
-              size="small"
-              color="blue"
-              icon="linkedin"
-            />
-            <Button
-              link="true"
-              href="https://github.com/Jbaren01"
-              size="small"
-              icon="github square"
-            />
-          </Card.Content>
-        </Card>
-
-        <Card>
-          <Image
-            src="https://ca.slack-edge.com/T016VMCKF7Y-U01804E3AMT-d8f5a30fc3a3-512"
-            wrapped
-            ui={false}
-          />
-          <Card.Content>
-            <Card.Header>Kaiwei</Card.Header>
-            <Card.Meta>
-              <span className="date">The what?</span>
-            </Card.Meta>
-            <Card.Description>Says hi</Card.Description>
-          </Card.Content>
-          <Card.Content extra>
-            <Button
-              link="true"
-              href="https://www.linkedin.com/in/kaiweih/"
-              size="small"
-              color="blue"
-              icon="linkedin"
-            />
-            <Button
-              link="true"
-              href="https://github.com/kaiweih"
-              size="small"
-              icon="github square"
-            />
+            <a href="https://www.linkedin.com/in/jonathan-barenboim/" target="_blank">
+              <img className="cardicon" src={linkedinIcon} width="35" height="35"/>
+            </a>
+            <a href="https://github.com/Jbaren01" target="_blank">
+              <img src={githubIcon} width="45" height="45"/>
+            </a>
           </Card.Content>
         </Card>
         <Card>
           <Image
-            src="https://ca.slack-edge.com/T016VMCKF7Y-U017GJNM9GT-g5dbb1757404-512"
+            src={kaiwei}
             wrapped
             ui={false}
           />
-          <Card.Content>
-            <Card.Header>Micah</Card.Header>
-            <Card.Meta>
-              <span className="date">The backend master</span>
-            </Card.Meta>
-            <Card.Description>Is changing Zoom background...</Card.Description>
-          </Card.Content>
+            <Card.Content>
+              <Card.Header>Kai-Wei Hsu</Card.Header>
+              <Card.Description style={{marginTop: "0.5rem", marginBottom: "1rem"}}>Fullstack software engineer at kafkaQ</Card.Description>
+            </Card.Content>
           <Card.Content extra>
-            <Button
-              link="true"
-              href="https://www.linkedin.com/"
-              size="small"
-              color="blue"
-              icon="linkedin"
-            />
-            <Button
-              link="true"
-              href="https://github.com/ymturan"
-              size="small"
-              icon="github square"
-            />
+            <a href="https://www.linkedin.com/in/kaiweih/" target="_blank">
+              <img className="cardicon" src={linkedinIcon} width="35" height="35"/>
+            </a>
+            <a href="https://github.com/kaiweih" target="_blank">
+              <img src={githubIcon} width="45" height="45"/>
+            </a>
           </Card.Content>
         </Card>
         <Card>
           <Image
-            src="https://ca.slack-edge.com/T016VMCKF7Y-U01926ZBSG4-cd26cda9860d-512"
+            src={micah}
             wrapped
             ui={false}
           />
-          <Card.Content>
-            <Card.Header>Shreshth</Card.Header>
-            <Card.Meta>
-              <span className="date">The source of truth</span>
-            </Card.Meta>
-            <Card.Description>DER MASTER</Card.Description>
-          </Card.Content>
+            <Card.Content>
+              <Card.Header>Micah Y. Turan</Card.Header>
+              <Card.Description style={{marginTop: "0.5rem", marginBottom: "1rem"}}>Fullstack software engineer at kafkaQ</Card.Description>
+            </Card.Content>
           <Card.Content extra>
-            <Button
-              link="true"
-              href="https://www.linkedin.com/in/shreshth-srivastava-1baa1a1b7/"
-              size="small"
-              color="blue"
-              icon="linkedin"
-            />
-            <Button
-              link="true"
-              href="https://github.com/Shreshth3"
-              size="small"
-              icon="github square"
-            />
+            <a href="https://www.linkedin.com/" target="_blank">
+              <img className="cardicon" src={linkedinIcon} width="35" height="35"/>
+            </a>
+            <a href="https://github.com/ymturan" target="_blank">
+              <img src={githubIcon} width="45" height="45"/>
+            </a>
           </Card.Content>
-        </Card>
+          </Card>
+        <Card>
+          <Image
+            src={shreshth}
+            wrapped
+            ui={false}
+          />
+            <Card.Content>
+              <Card.Header>Shreshth Srivastava</Card.Header>
+              <Card.Description style={{marginTop: "0.5rem", marginBottom: "1rem"}}>Fullstack software engineer at kafkaQ</Card.Description>
+            </Card.Content>
+          <Card.Content extra>
+            <a href="https://www.linkedin.com/in/shreshth-srivastava-1baa1a1b7/" target="_blank">
+              <img className="cardicon" src={linkedinIcon} width="35" height="35"/>
+            </a>
+            <a href="https://github.com/Shreshth3" target="_blank">
+              <img src={githubIcon} width="45" height="45"/>
+            </a>
+          </Card.Content>
+          </Card>
       </Card.Group>
+      </div>
     );
   }
 }

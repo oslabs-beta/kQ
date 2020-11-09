@@ -3,7 +3,7 @@ import env from '../icons/env.png';
 import consumer from '../icons/consumer.png';
 import dockerRunHelloWorld from '../icons/docker-run-hello-world.png';
 import localComputer from '../icons/local-computer.png';
-import dbImage from '../assets/kafkaq-db.png';
+import dbImage from '../assets/kafkaq-db-nosidebar.png';
 
 class Docs extends Component<{}> {
   render(): JSX.Element {

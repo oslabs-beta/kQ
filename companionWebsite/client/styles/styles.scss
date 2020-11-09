@@ -42,10 +42,16 @@ body {
   border-radius: 4px;
 
   .cardGroup {
+    // width: 20vw;
+    // height: auto;
     display: flex;
     flex-direction: row;
     justify-content: center;
   }
+}
+
+.card {
+  width: 20vw !important;
 }
 
 #docPhoto img {
@@ -61,7 +67,7 @@ body {
 }
 
 .content {
-  height: 99vh;
+  // height: 99vh;
 }
 
 .main-logo {
@@ -74,8 +80,9 @@ body {
   @include flexCenter();
   height: 90vh;
   background-image: url('../icons/bluebckgd.png');
+  background-size: 100% 99vh;
 
-  margin: 20px;
+  // margin: 20px;
   padding: 20px;
 
   height: 100%;

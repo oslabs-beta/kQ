@@ -1,13 +1,16 @@
-// rcc tab to show react boilerplate
 import React, { Component } from 'react';
+import env from '../icons/env.png';
+import consumer from '../icons/consumer.png';
+import dockerRunHelloWorld from '../icons/docker-run-hello-world.png';
+import localComputer from '../icons/local-computer.png';
 
-class Docs extends Component {
-  render() {
+class Docs extends Component<{}> {
+  render(): JSX.Element {
     return (
       <div className="box">
         {/* Table of Contents */}
         <h2 className="box-background title">Table of Contents</h2>
-        <ul style={{ 'padding-left': '15px' }}>
+        <ul style={{ paddingLeft: '15px' }}>
           <li>Installing our NPM package</li>
           <li>Getting Started</li>
           <li>Breaking down our metrics</li>
@@ -31,31 +34,31 @@ class Docs extends Component {
         </p>
         <p className="box-background">
           <code className="box-background code">
-            <span class="token keywords">const</span>
-            <span class="token symbols"> {'{'} </span>
-            <span class="token names"> trackProducer </span>
-            <span class="token symbols"> {'}'} </span>
-            <span class="token equation"> = </span>
-            <span class="token keywordReq"> require </span>
-            <span class="token symbols">(</span>
-            <span class="token symbols">'</span>
-            <span class="token string">../../kafkaq-monitor/index.js</span>
-            <span class="token symbols">'</span>
-            <span class="token symbols">)</span>
-            <span class="token symbols">;</span>
+            <span className="token keywords">const</span>
+            <span className="token symbols"> {'{'} </span>
+            <span className="token names"> trackProducer </span>
+            <span className="token symbols"> {'}'} </span>
+            <span className="token equation"> = </span>
+            <span className="token keywordReq"> require </span>
+            <span className="token symbols">(</span>
+            <span className="token symbols">'</span>
+            <span className="token string">../../kafkaq-monitor/index.js</span>
+            <span className="token symbols">'</span>
+            <span className="token symbols">)</span>
+            <span className="token symbols">;</span>
           </code>
         </p>
         <p className="box-background">
           Then, invoke trackProducer with your producer as the argument after
-          your producer is connected.
+          your producer is connected, like so:
           <p />
           <p className="box-background"></p>
           <code className="box-background code">
-            <span class="token func"> trackProducer</span>
-            <span class="token symbols">(</span>
-            <span class="token names">producer</span>
-            <span class="token symbols">)</span>
-            <span class="token symbols">;</span>
+            <span className="token func"> trackProducer</span>
+            <span className="token symbols">(</span>
+            <span className="token names">producer</span>
+            <span className="token symbols">)</span>
+            <span className="token symbols">;</span>
           </code>
         </p>
         <h3 className="box-background title">Consumer</h3>
@@ -65,32 +68,32 @@ class Docs extends Component {
         </p>
         <p className="box-background">
           <code className="box-background code">
-            <span class="token keywords">const</span>
-            <span class="token symbols"> {'{'} </span>
-            <span class="token names"> trackConsumer </span>
-            <span class="token symbols"> {'}'} </span>
-            <span class="token equation"> = </span>
-            <span class="token keywordReq"> require </span>
-            <span class="token symbols">(</span>
-            <span class="token symbols">'</span>
-            <span class="token string">../../kafkaq-monitor/index.js</span>
-            <span class="token symbols">'</span>
-            <span class="token symbols">)</span>
-            <span class="token symbols">;</span>
+            <span className="token keywords">const</span>
+            <span className="token symbols"> {'{'} </span>
+            <span className="token names"> trackConsumer </span>
+            <span className="token symbols"> {'}'} </span>
+            <span className="token equation"> = </span>
+            <span className="token keywordReq"> require </span>
+            <span className="token symbols">(</span>
+            <span className="token symbols">'</span>
+            <span className="token string">../../kafkaq-monitor/index.js</span>
+            <span className="token symbols">'</span>
+            <span className="token symbols">)</span>
+            <span className="token symbols">;</span>
           </code>
         </p>
         <p className="box-background">
           Then, invoke trackConsumer with your consumer as the argument after
-          your consumer is connected.
+          your consumer is connected, like so:
         </p>
         <p>
           <p className="box-background"></p>
           <code className="box-background code">
-            <span class="token func"> trackConsumer</span>
-            <span class="token symbols">(</span>
-            <span class="token names">consumer</span>
-            <span class="token symbols">)</span>
-            <span class="token symbols">;</span>
+            <span className="token func"> trackConsumer</span>
+            <span className="token symbols">(</span>
+            <span className="token names">consumer</span>
+            <span className="token symbols">)</span>
+            <span className="token symbols">;</span>
           </code>
         </p>
         {/* Breaking down our metrics */}
@@ -103,16 +106,6 @@ class Docs extends Component {
           duration. For each, metric, we display the average, smallest, and
           largest values, along with a dynamic bar graph. Each of these
           statistics is updated in real-time.
-          {/* In order to make thorough
-          conclusions about your system's performance, we break down each metric
-          and show you what the average request, the smallest request, and the
-          largest request look like. Additionally, we provide a dynamic bar
-          chart that is update in real-time as data flows through your system.
-          With our application, you can identify the cause behind latency,
-          enabling a swift response whether that means increasing the quantity
-          of brokers or modifying your system architecture. In this way, kafkaQ
-          works to ensure that your users will have a seamless experience with
-          your application. */}
         </p>
         <p>
           <strong className="title">Data Size:</strong> The volume of data
@@ -155,8 +148,8 @@ class Docs extends Component {
           <code className="code">
             git clone https://github.com/oslabs-beta/kafkaQ.git
           </code>
-          ) and cd into it (using <code className="code">cd kafkaq</code>). From
-          here, we will split the instructions into 3 sections for clarity.
+          ) and cd into it (using <code className="code"> cd kafkaq</code>).
+          From here, we will split the instructions into 3 sections for clarity.
         </p>
         {/* Section I: Starting Kafka */}
         <h3 className="title">Section I: Starting Kafka</h3>
@@ -167,8 +160,11 @@ class Docs extends Component {
         <ol>
           <li>
             Start by ensuring that Docker is running with{' '}
-            <code className="code">docker run hello-world</code>. You should see
-            something similar to this:
+            <code className="code"> docker run hello-world</code>. If Docker is
+            not running, you should open the Docker desktop app; otherwise, you
+            should see something similar to this:
+            <br />
+            <img src={dockerRunHelloWorld} width="600" height="400" />
           </li>
           <li>
             Now, we will start a Kafka zookeeper instance. Run this command to
@@ -180,8 +176,9 @@ class Docs extends Component {
           <li>
             For our next step, you will need to copy your computer's reference
             on your local network. On a Mac, you can find this by going to
-            Systems Preferences Sharing. Under the section "Computer Name",
+            System Preferences {' > '} Sharing. Under the section "Computer Name",
             you should be able to find it. See the example below:
+            <img src={localComputer} />
           </li>
           <li>
             Now that you have your local computer's reference, you're ready to
@@ -195,7 +192,7 @@ class Docs extends Component {
               KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1 confluentinc/cp-kafka
             </code>
           </li>
-        </ol>
+        </ol >
         <p>
           This is all you need to do to start Kafka! Make sure to save your
           local computer's reference as we will use that in future sections.
@@ -204,6 +201,12 @@ class Docs extends Component {
         <h3 className="title">
           Section II: Set up the Kafka application simulator
         </h3>
+        <p>
+          Before we get started with this section, you will need to create a
+          file called <code className="code"> .env </code> and have it mimic
+          this example:
+          <img src={env} />
+        </p>
         <ol>
           <li>
             Cd into the kafkaApplicationSimulator directory (
@@ -211,27 +214,28 @@ class Docs extends Component {
           </li>
           <li>
             Start the server for our Kafka application simulator using{' '}
-            <code className="code">npm run server</code> (CHANGE THIS NAME).
-            This server has a route that will connect a producer and send a
-            message, which we will use later.
+            <code className="code">npm run simulator-server</code>. This server
+            has a route that will connect a producer and send a message, which
+            we will use later.
+          </li>
+          <li>
+            Run <code className="code">npm run electron-app</code> to start our
+            server (our producer and consumer will need to connect to this) and
+            open the Electron app.
           </li>
           <li>
             Start your Kafka consumer with{' '}
-            <code className="code">
-              node kafkaApplicationSimulator/consumer.js
-            </code>
-            (CHANGE THIS TO A PACKAGE.JSON SCRIPT). You should see output
-            similar to this:
+            <code className="code">npm run consumer</code>. You should see
+            output similar to this:
+            <br />
+            <img src={consumer} width="600" height="400" />
           </li>
-          (THIS NEXT PART WILL CHANGE ONCE WE SWITCH BACK TO GIN)
           <li>
             Finally, we'll need to send some data through our system. To do so,
             run our Go script using{' '}
-            <code className="code">
-              go run kafkaApplicationSimulator/generate_data.go
-            </code>{' '}
-            (ADD AN PACKAGE.JSON SCRIPT FOR THIS IF WE KEEP IT). Note that if
-            you have not installed Go, you will need to run brew install golang
+            <code className="code">npm run go-script</code>. Note that if you
+            have not installed Go, you will need to run{' '}
+            <code className="code"> brew install golang </code>
             before completing this step. For future reference, if you would like
             to increase or decrease the volume of data sent through your system,
             simply change the NUM_STRINGS variable in

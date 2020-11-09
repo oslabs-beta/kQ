@@ -111,3 +111,6 @@ out/
 
 # .DS_Store
 .DS_Store
+
+# User credentials
+new_user_credentials.csv

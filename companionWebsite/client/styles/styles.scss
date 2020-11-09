@@ -46,12 +46,12 @@ $box-background-color: #23252d;
 }
 
 .menu {
-  height: 10vh;
+  height: 1vh;
 }
 
-// .content {
-//   height: 90vh;
-// }
+.content {
+  height: 99vh;
+}
 
 .main-logo {
   // margin-top: 10vh;
@@ -62,7 +62,7 @@ $box-background-color: #23252d;
 .home {
   @include flexCenter();
   height: 90vh;
-  // background-image: url('../icons/galaxy.png');
+  background-image: url('../icons/bluebckgd.png');
 
   p {
     margin: 30px;

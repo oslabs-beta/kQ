@@ -20,10 +20,12 @@ const dimWhite = '#d1d1d2';
 
 const menuStyling = {
   backgroundColor: menuBackgroundColor,
+  marginBottom: '0px',
 };
 
 const linkStyling = {
   color: dimWhite,
+  fontSize: '11px',
 };
 
 class App extends Component<{}> {

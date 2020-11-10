@@ -25,7 +25,7 @@ const menuStyling = {
 
 const linkStyling = {
   color: dimWhite,
-  fontSize: '11px',
+  fontSize: '1rem',
 };
 
 class App extends Component<{}> {

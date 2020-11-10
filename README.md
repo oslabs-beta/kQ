@@ -14,7 +14,7 @@
 
 [Overview](#overview)  
 [Demo](#demo)  
-[Documentation](#documentation)  
+[Companion Website](#companion-website)  
 [Quick Start](#quick-start)  
 [Viewing your metrics](#viewing-your-metrics)  
 [See kafkaQ in action using our Kafka application simulator](#see-kafkaq-in-action-using-our-kafka-application-simulator)
@@ -36,9 +36,9 @@ Informed by our statistics, you can determine the optimal approach to scale your
 
 <!-- ![kafkaQ Logo](./kafkaq-db.png) -->
 
-## Documentation
+## Companion Website
 
-Link to our companion website
+You can find more information and documentation about kafkaQ [here](http://kafkaq.com).
 
 ## Quick Start
 

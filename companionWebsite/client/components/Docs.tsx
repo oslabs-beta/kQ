@@ -43,7 +43,7 @@ class Docs extends Component<{}> {
             <span className="token keywordReq"> require </span>
             <span className="token symbols">(</span>
             <span className="token symbols">'</span>
-            <span className="token string">../../kafkaq-monitor/index.js</span>
+            <span className="token string">kafkaq-monitor</span>
             <span className="token symbols">'</span>
             <span className="token symbols">)</span>
             <span className="token symbols">;</span>
@@ -77,7 +77,7 @@ class Docs extends Component<{}> {
             <span className="token keywordReq"> require </span>
             <span className="token symbols">(</span>
             <span className="token symbols">'</span>
-            <span className="token string">../../kafkaq-monitor/index.js</span>
+            <span className="token string">kafkaq-monitor</span>
             <span className="token symbols">'</span>
             <span className="token symbols">)</span>
             <span className="token symbols">;</span>
@@ -177,8 +177,9 @@ class Docs extends Component<{}> {
           <li>
             For our next step, you will need to copy your computer's reference
             on your local network. On a Mac, you can find this by going to
-            System Preferences {' > '} Sharing. Under the section "Computer Name",
-            you should be able to find it. See the example below:<br/>
+            System Preferences {' > '} Sharing. Under the section "Computer
+            Name", you should be able to find it. See the example below:
+            <br />
             <img src={localComputer} />
           </li>
           <li>
@@ -193,7 +194,7 @@ class Docs extends Component<{}> {
               KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1 confluentinc/cp-kafka
             </code>
           </li>
-        </ol >
+        </ol>
         <p>
           This is all you need to do to start Kafka! Make sure to save your
           local computer's reference as we will use that in future sections.
@@ -257,7 +258,7 @@ class Docs extends Component<{}> {
           4 of the previous section.
         </p>
         <img src={dbImage} width="600" height="400" />
-      </div >
+      </div>
     );
   }
 }

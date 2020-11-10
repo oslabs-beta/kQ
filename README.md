@@ -38,7 +38,7 @@ Informed by our statistics, you can determine the optimal approach to scale your
 
 ## Documentation
 
-Link to our companion website
+[](kafkaq.com/documentation)
 
 ## Quick Start
 

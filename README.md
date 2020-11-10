@@ -36,9 +36,9 @@ Informed by our statistics, you can determine the optimal approach to scale your
 
 <!-- ![kafkaQ Logo](./kafkaq-db.png) -->
 
-## Documentation
+## Companion Website
 
-[](kafkaq.com/documentation)
+You can find more information and documentation about kafkaQ [here](kafkaq.com).
 
 ## Quick Start
 

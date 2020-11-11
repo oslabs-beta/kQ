@@ -1,5 +1,5 @@
 const { Kafka } = require('kafkajs');
-const { trackConsumer } = require('../kafkaq-monitor/index.js');
+const { trackConsumer } = require('kafkaq-monitor');
 require('dotenv').config();
 
 run();

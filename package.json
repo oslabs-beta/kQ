@@ -36,7 +36,7 @@
     "test-e2e-live": "node -r @babel/register ./internals/scripts/CheckBuildsExist.js && cross-env NODE_ENV=test testcafe --live electron:./app ./test/e2e/HomePage.e2e.ts",
     "test-watch": "yarn test --watch",
     "consumer": "node kafkaApplicationSimulator/consumer.js",
-    "electron-server": "nodemon server/server.js",
+    "electron-server": "node server/server.js",
     "electron-app": "npm run electron-server & yarn start",
     "go-script": "go run kafkaApplicationSimulator/generate_data.go",
     "simulator-server": "nodemon kafkaApplicationSimulator/kafkaSimulatorServer.js"

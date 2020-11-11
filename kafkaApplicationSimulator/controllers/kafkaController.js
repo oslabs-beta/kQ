@@ -1,5 +1,5 @@
 const { Kafka } = require('kafkajs');
-const { trackProducer } = require('../../kafkaq-monitor/index.js');
+const { trackProducer } = require('kafkaq-monitor');
 require('dotenv').config();
 
 const kafkaController = {};

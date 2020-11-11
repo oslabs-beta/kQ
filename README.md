@@ -145,14 +145,13 @@ Before we get started with this section, you will need to create a file called `
 
 ![](images/env.png)
 
-1. Cd into the kafkaApplicationSimulator directory (`cd kafkaApplicationSimulator`)
-2. Start the server for our Kafka application simulator using `npm run simulator-server`. This server has a route that will connect a producer and send a message, which we will use later.
-3. Run `npm run electron-app` to start our server (our producer and consumer will need to connect to this) and open the Electron app.
-4. Start your Kafka consumer with `npm run consumer`. You should see output similar to this:
+1. Start the server for our Kafka application simulator using `npm run simulator-server`. This server has a route that will connect a producer and send a message, which we will use later.
+2. Run `npm run electron-app` to start our server (our producer and consumer will need to connect to this) and open the Electron app.
+3. Start your Kafka consumer with `npm run consumer`. You should see output similar to this:
 
 ![](images/consumer.png)
 
-5. Finally, we'll need to send some data through our system. To do so, run our Go script using `npm run go-script`. Note that if you have not installed Go, you will need to run `brew install golang` before completing this step. For future reference, if you would like to increase or decrease the volume of data sent through your system, simply change the NUM_STRINGS variable in kafkaApplicationSimulator/generate_data.go
+4. Finally, we'll need to send some data through our system. To do so, run our Go script using `npm run go-script`. Note that if you have not installed Go, you will need to run `brew install golang` before completing this step. For future reference, if you would like to increase or decrease the volume of data sent through your system, simply change the NUM_STRINGS variable in kafkaApplicationSimulator/generate_data.go
 
 ## Authors
 

@@ -28,9 +28,9 @@ kQ is a central location where you can find important data about your Kafka appl
 
 Informed by our statistics, you can determine the optimal approach to scale your Kafka architecture, whether it means adding more brokers or reconfiguring your zookeeper.
 
-## Demo
+<!-- ## Demo
 
-![kQ Gif](./kafkaq-demo.gif)
+![kQ Gif](./kafkaq-demo.gif) -->
 
 <!-- ![kQ Logo](./kafkaq-db.png) -->
 
@@ -93,7 +93,7 @@ await consumer.subscribe({
   fromBeginning: true,
 });
 
-trackConsumer(consumer); // Invoke kafkaQ's trackConsumer method with your consumer as the argument
+trackConsumer(consumer); // Invoke kQ's trackConsumer method with your consumer as the argument
 
 await consumer.run({
   eachMessage: async (result) => {
@@ -115,7 +115,7 @@ You're all set! You should be able to track analytics as data moves through your
 
 ## See kQ in action using our Kafka application simulator
 
-If you haven't yet set up your Kafka application, but you want to see how kQ works, we've got you covered. In this section, we'll show you how to set up our Kafka application simulator and track its metrics using kafkaQ.
+If you haven't yet set up your Kafka application, but you want to see how kQ works, we've got you covered. In this section, we'll show you how to set up our Kafka application simulator and track its metrics using kQ.
 
 First, clone this repo (`git clone https://github.com/oslabs-beta/kafkaQ.git`) and cd into it (`cd kafkaq`). From here, we will split the instructions into 3 sections for clarity.
 

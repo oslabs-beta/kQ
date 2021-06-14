@@ -1,6 +1,4 @@
-# kafkaQ
-
-![](images/kafkaq-logo.png)
+# kQ
 
 <p align="center">
   <img alt="GitHub" src="https://img.shields.io/github/license/oslabs-beta/kafkaQ">
@@ -17,39 +15,39 @@
 [Companion Website](#companion-website)  
 [Quick Start](#quick-start)  
 [Viewing your metrics](#viewing-your-metrics)  
-[See kafkaQ in action using our Kafka application simulator](#see-kafkaq-in-action-using-our-kafka-application-simulator)
+[See kQ in action using our Kafka application simulator](#see-kq-in-action-using-our-kafka-application-simulator)
 
 ## Overview
 
 - Monitor your Kafka application in real-time to diagnose vulnerabilities and improve system health
 - Track key metrics like data size, processing time, and pending duration for producers and consumers
-- Integrate kafkaQ with your application in a matter of minutes
+- Integrate kQ with your application in a matter of minutes
 - Compatible with the KafkaJS API for Node.js backends
 
-kafkaQ is a central location where you can find important data about your Kafka application's performance. Our dashboard provides critical insight about your system's activity, allowing rapid diagnosis of vulnerabilities.
+kQ is a central location where you can find important data about your Kafka application's performance. Our dashboard provides critical insight about your system's activity, allowing rapid diagnosis of vulnerabilities.
 
 Informed by our statistics, you can determine the optimal approach to scale your Kafka architecture, whether it means adding more brokers or reconfiguring your zookeeper.
 
 ## Demo
 
-![kafkaQ Gif](./kafkaq-demo.gif)
+![kQ Gif](./kafkaq-demo.gif)
 
-<!-- ![kafkaQ Logo](./kafkaq-db.png) -->
+<!-- ![kQ Logo](./kafkaq-db.png) -->
 
 ## Companion Website
 
-You can find more information and documentation about kafkaQ [here](http://kafkaq.com).
+You can find more information and documentation about kQ [here](http://kafkaq.com).
 
 ## Quick Start
 
-kafkaQ is incredibly easy to incorporate into your application. Let's walk through the steps you'll need to take.
+kQ is incredibly easy to incorporate into your application. Let's walk through the steps you'll need to take.
 
 1. In your project's root directory, run `npm install kafkaq-monitor`
 2. In the producer script of your Kafka application, import our `trackProducer` method and invoke it immediately after the code connecting your producer, passing in your producer as an argument. Here's an example:
 
 ```javascript
 const { Kafka } = require('kafkajs');
-const { trackProducer } = require('kafkaq-monitor'); // kafkaQ's NPM package
+const { trackProducer } = require('kafkaq-monitor'); // kQ's NPM package
 
 const kafka = new Kafka({
   clientId: 'myapp',
@@ -59,7 +57,7 @@ const kafka = new Kafka({
 const producer = kafka.producer();
 await producer.connect();
 
-trackProducer(producer); // Invoke kafkaQ's trackProducer method with your producer as the argument
+trackProducer(producer); // Invoke kQ's trackProducer method with your producer as the argument
 
 const result = await producer.send({
   topic: 'Users',
@@ -74,11 +72,11 @@ const result = await producer.send({
 await producer.disconnect();
 ```
 
-3. We will now connect kafkaQ to your consumer. This will be very similar to the previous step. Import our `trackConsumer` method and invoke it after your consumer subscribes to a topic, passing your consumer as the argument. Here's an example:
+3. We will now connect kQ's to your consumer. This will be very similar to the previous step. Import our `trackConsumer` method and invoke it after your consumer subscribes to a topic, passing your consumer as the argument. Here's an example:
 
 ```javascript
 const { Kafka } = require('kafkajs');
-const { trackConsumer } = require('kafkaq-monitor'); // kafkaQ's NPM package
+const { trackConsumer } = require('kafkaq-monitor'); // kQ's NPM package
 
 const kafka = new Kafka({
   clientId: 'myapp',
@@ -104,20 +102,20 @@ await consumer.run({
 });
 ```
 
-You're done! In just 4 lines of code, you were able to integrate kafkaQ with your application for real-time tracking. In the next section, we'll see how to view your metrics.
+You're done! In just 4 lines of code, you were able to integrate kQ with your application for real-time tracking. In the next section, we'll see how to view your metrics.
 
 ## Viewing your metrics
 
 To view your metrics, you will need to use the Electron app built in this repo. Follow these instructions.
 
 1. Clone this repo (`git clone https://github.com/oslabs-beta/kafkaQ.git`) and cd into it (`cd kafkaq`).
-2. Start the application with `npm run electron-app`. This allows kafkaQ to send its metrics to our Electron UI.
+2. Start the application with `npm run electron-app`. This allows kQ to send its metrics to our Electron UI.
 
 You're all set! You should be able to track analytics as data moves through your Kafka application, and make vital decisions about scaling your distributed system.
 
-## See kafkaQ in action using our Kafka application simulator
+## See kQ in action using our Kafka application simulator
 
-If you haven't yet set up your Kafka application, but you want to see how kafkaQ works, we've got you covered. In this section, we'll show you how to set up our Kafka application simulator and track its metrics using kafkaQ.
+If you haven't yet set up your Kafka application, but you want to see how kQ works, we've got you covered. In this section, we'll show you how to set up our Kafka application simulator and track its metrics using kafkaQ.
 
 First, clone this repo (`git clone https://github.com/oslabs-beta/kafkaQ.git`) and cd into it (`cd kafkaq`). From here, we will split the instructions into 3 sections for clarity.
 
@@ -155,9 +153,11 @@ Before we get started with this section, you will need to create a file called `
 
 ## Authors
 
-kafkaQ Engineers
+kQ Engineers
 
 [Jonathan Barenboim](https://github.com/Jbaren01)  
 [Kaiwei Hsu](https://github.com/kaiweih)  
 [Micah Turan](https://github.com/ymturan)  
 [Shreshth Srivastava](https://github.com/Shreshth3)
+
+Disclaimer: Apache Kafka is a registered trademark of the ASF and that `kQ` is an independent product and not endorsed by the ASF.
